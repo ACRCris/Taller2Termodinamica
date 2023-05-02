@@ -1,0 +1,184 @@
+\documentclass[a4paper]{article}
+\usepackage{student}
+\usepackage{graphicx}
+
+\usepackage{cancel}
+
+% Metadata
+\date{\today}
+
+%-------------------------------%
+% Other details
+% TODO: Fill these
+%-------------------------------%
+\title{Ejercicio 9}
+\setmembername{Cristian Camilo Pérez Puentes} 
+
+%-------------------------------%
+% Add / Delete commands and packages
+% TODO: Add / Delete here as you need
+%-------------------------------%
+\usepackage{amsmath,amssymb,bm}
+\usepackage[spanish]{babel}
+
+% Custom your usual commands here. Renew these.
+\newcommand{\KL}{\mathrm{KL}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\T}{\top}
+\newcommand{\expdist}[2]{%
+        \normalfont{\textsc{Exp}}(#1, #2)%
+    }
+\newcommand{\expparam}{\bm \lambda}
+\newcommand{\Expparam}{\bm \Lambda}
+\newcommand{\natparam}{\bm \eta}
+\newcommand{\Natparam}{\bm H}
+\newcommand{\sufstat}{\bm u}
+
+% Main document
+\begin{document}
+    % Add header
+    \header{}
+
+    % Use `answer` environment to add solutions
+    % \begin{answer}[Question 1.1] for example starts an environment formatted
+    % for Question 1.1
+
+
+    A box containing a particle is divided into a right and a left compartment by a thin
+    partition. If the particle is known to be on the right (left) side with certainty, the state
+    is represented by the position eigenket $|R\rangle (|L\rangle)$, where we have neglected spatial
+    variations within each half of the box. The most general state vector can then be
+    written as
+\begin{equation}
+    |\alpha\rangle = |R\rangle\langle R|\alpha \rangle+|L\rangle\langle L|\alpha\rangle
+\end{equation}
+where $\langle R|\alpha\rangle$ and  $\langle L|\alpha \rangle$ can be regarded as “wave functions.” The particle can tunnel
+through the partition; this tunneling effect is characterized by the Hamiltonian
+\begin{equation}
+    H = \Delta(|L\rangle \langle R|+|R\rangle \langle L|),
+\end{equation}
+where $\Delta$ is a real number with the dimension of energy.
+\begin{itemize}
+    \item [a.] Find the normalized energy eigenkets. What are the corresponding energy 
+    eigenvalues?
+    \item [b.] In the Schrodinger picture the base kets $|R\rangle$ and $|L\rangle$ 
+    are fixed, and the state vector moves with time. Suppose the system is represented 
+    by $|\alpha \rangle$ as given above at $t = 0$. Find the state vector 
+    $|\alpha,t_0 = 0; t\rangle $ for $t > 0$ by applying the appropriate 
+    time-evolution operator to $|\alpha\rangle$.
+    \item [c.] Suppose at $t = 0$ the particle is on the right side with certainty. What is the
+    probability for observing the particle on the left side as a function of time?
+    \item [d.] Write down the coupled Schrodinger equations for the wave functions
+    $R|\alpha,t_0 = 0; t\rangle$ and $L|\alpha,t_0 = 0; t\rangle$. Show that the 
+    solutions to the coupled Schrodinger equations are just what you expect from (b). 
+    \item [e.] Suppose the printer made an error and wrote $H$ as 
+    $H = \Delta|L\rangle \langle R|$. 
+
+    By explicitly solving the most general time-evolution problem with this Hamiltonian, show that probability conservation is violated.
+\end{itemize}
+    \begin{answer}
+        \begin{itemize}
+            \item [a.]Los autoestados de energia son aquellos que:
+            $$H|h'\rangle = E_{h'}|h'\rangle \qquad  \Rightarrow $$
+            \begin{align*}
+                H|h'\rangle - E_{h'}|h'\rangle &= 0 \\
+                \Delta(|L\rangle \langle R|+|R\rangle \langle L|)|h'\rangle - E_{h'}|h'\rangle &= 0 \\
+                \Delta|L\rangle \langle R|h'\rangle + \Delta|R\rangle \langle L|h'\rangle - E_{h'}|h'\rangle &= 0 \\
+                \Delta\langle L |L\rangle \langle R|h'\rangle + \Delta\langle L |R\rangle \langle L|h'\rangle - E_{h'}\langle L |h'\rangle &= 0 \\
+                \Delta \langle R|h'\rangle - E_{h'}\langle L |h'\rangle &= 0 \\
+            \end{align*}
+        ademas 
+        \begin{align*}
+            \Delta|L\rangle \langle R|h'\rangle + \Delta|R\rangle \langle L|h'\rangle - E_{h'}|h'\rangle &= 0 \\
+            \Delta\langle R |L\rangle \langle R|h'\rangle + \Delta\langle R |R\rangle \langle L|h'\rangle - E_{h'}\langle R|h'\rangle &= 0 \\
+            \Delta \langle L|h'\rangle - E_{h'}\langle R |h'\rangle &= 0 \\
+        \end{align*}
+        por lo que
+        \begin{align*}(\Delta - E_{h'}) \langle R |h'\rangle + (\Delta - E_{h'})\langle L |h'\rangle &= 0\\
+            &= ( \Delta - E_{h'}) (\langle R |h'\rangle + \langle L |h'\rangle) = 0\\
+        \end{align*}
+        \begin{align*}(\Delta + E_{h'}) \langle R |h'\rangle - (\Delta + E_{h'})\langle L |h'\rangle &= 0\\
+            &= ( \Delta + E_{h'}) (\langle R |h'\rangle + \langle L |h'\rangle) = 0\\
+        \end{align*}
+        Y como $\langle R |h'\rangle$ y $\langle L |h'\rangle$ son funciones de onda que en general no van a coincidir en todos los valores 
+        de $x$ y $t$, por lo que 
+        $$E_{h'} = \pm \Delta$$
+        son los autolvalores de energia. Usando estos autolvalores en la ecuacion de autolvalores para $H$ entonces
+        \begin{align*}
+            H|h'\rangle - E_{h'}|h'\rangle &= 0 \\
+            \Delta(|L\rangle \langle R|+|R\rangle \langle L|)|h'\rangle - \Delta|h'\rangle &= 0 \\
+            \Delta|L\rangle \langle R|h'\rangle + \Delta|R\rangle \langle L|h'\rangle - \Delta|h'\rangle &= 0 \\
+            \left(
+                |L\rangle \langle R|+|R\rangle \langle L| - 1
+            \right) \Delta|h'\rangle &= 0 \\
+            \left(
+                |L\rangle \langle R|+|R\rangle \langle L| - |R\rangle \langle R| - |L\rangle \langle L|
+            \right) \Delta |h'\rangle &= 0 \\
+            |L\rangle \langle R|h'\rangle +|R\rangle \langle L|h'\rangle  - |R\rangle \langle R|h'\rangle  - |L\rangle \langle L| h'\rangle &= 0 \\
+            \langle R|h'\rangle - \langle L| h'\rangle &= 0 \\
+            \langle L|h'\rangle - \langle R| h'\rangle &= 0 \\
+        \end{align*}
+        Si bien este ultimo procedimiento no es necesario en este ejercicio para encontra los autoestados de energia, pues es suficiente con
+        reemplazar los autovalores de energia ya sea alguna de las ecuaciones $\Delta \langle R|h'\rangle - E_{h'}\langle L |h'\rangle = 0$ o
+        $\Delta \langle L|h'\rangle - E_{h'}\langle R |h'\rangle = 0$ e inferir $|h'\rangle$. Este procedimiento muestra un analogo a resolver
+        la equacion de autolvalores, sin usar el equivalente de los operadores y estados en matrices, en donde el equivaltente a la ecuacion en
+        representacion matricial:
+        $$ (\mathbb H - \mathbb I \Delta) \mathbf h' = 0$$
+        es 
+        $$
+        \left(|L\rangle \langle R|+|R\rangle \langle L| - 1
+        \right) \Delta|h'\rangle = \left((|L\rangle \langle R|+|R\rangle \langle L)\Delta - 1\Delta
+        \right) |h'\rangle = 0$$
+        donde
+        $$\Delta(|L\rangle \langle R|+|R\rangle \langle L|) \doteq \mathbb{H} \qquad |h'\rangle \doteq \mathbf h'$$
+        $$1\Delta = \Delta\sum_{b'} \Lambda_{b'} = \Delta(|L\rangle \langle L| + |R\rangle \langle R|) \doteq \mathbb{I}\Delta$$
+        y como los coeficientes $c_L = \langle L| h'\rangle$ y $c_R = \langle R| h'\rangle$ pueden representar las proyecciones en algun 
+        instante $x_0,t_0$ del autoestados $|h'\rangle$ en los estados $|L\rangle$ y $|R\rangle$ respectivamente, entonces para ese 
+        instante la relacion 
+    
+        $$c_L = c_R \qquad \Leftrightarrow \qquad \langle R|h'\rangle = \langle L| h'\rangle =h' $$
+        Es el equivalente a al encontrar un relacion entre la componentes $\mathbf h'$ tipo $h_1 = h_2$ al solucionar la representacion 
+        matricial de la ecuacion de autolvalores para $\mathbb H$, por algun metodo de solucion de sistemas de ecuaciones lineales, 
+        la cual tiene una infinitas soluciones no triviales, escogiendose alguna solucion que de una representacion normalizada de los 
+        autoestados de $\mathbb H$.
+    
+        De lo anterior dicho,  $|h'\rangle = h'|L \rangle + h'|R\rangle$ de la misma forma en la que $\mathbf h'$ se puede descompener 
+        en la superposicion $|L\rangle \doteq \mathbf{e_1} $ y $|R\rangle \doteq \mathbf{e_2}$. Lo que se puede verificar, pues
+        \begin{align*}
+            \langle R|h'\rangle - \langle L| h'\rangle &= \\
+            \langle R|h'(|L \rangle + |R\rangle) - \langle L|h'(|L \rangle + |R\rangle) &= 0 \\
+            h\langle R|L \rangle +h \langle R|R\rangle - h\langle L| L\rangle - h\langle L|R\rangle &= 0 \\
+            0 + h - h - 0 &= 0 \\
+        \end{align*}
+        Y de la misma forma reemplazando $E_h = -\Delta$ en $\Delta \langle R|h'\rangle - E_{h'}\langle L |h'\rangle = 0$ se obtiene
+        $$-h'' = \langle R|h''\rangle = - \langle L| h''\rangle$$
+        por lo que $|h''\rangle = h''|L \rangle - h''|R\rangle$.
+        Normalizando los autoestados de energia
+        \begin{align*}
+            \langle h'|h'\rangle &= (h'\langle L| + h'\langle R|)(h'|L \rangle + h'|R\rangle) \\
+            &= h'^2 + h'^2 = 2h'^2 = 1 \qquad \Rightarrow \qquad \\
+            h' &= \frac{1}{\sqrt{2}} \qquad \Rightarrow \qquad \\
+            |h'\rangle&= \frac{1}{\sqrt{2}}(|L \rangle + |R\rangle) 
+        \end{align*}
+        \begin{align*}
+            \langle h''|h''\rangle &= (h''\langle L| - h''\langle R|)(h''|L \rangle - h''|R\rangle) \\
+            &= h''^2 + h''^2 = 2h''^2 = 1 \qquad \Rightarrow \qquad \\
+            h'' &= \frac{1}{\sqrt{2}} \qquad \Rightarrow \qquad \\
+            |h''\rangle&= \frac{1}{\sqrt{2}}(|L \rangle - |R\rangle)
+        \end{align*}    
+        Luego los autoestados de energia normalizados son $|h'\rangle = \frac{1}{\sqrt{2}}(|L \rangle + |R\rangle)$ y $|h''\rangle = \frac{1}{\sqrt{2}}(|L \rangle - |R\rangle)$, 
+        con correspondientes autovalores de energia $E_{h'} = \Delta$ y $E_{h''} = -\Delta$ respectivamente.
+
+        \item[b.] Como los kets base son fijos y el Hamiltoniano esta representado en terminos de los kets base y una constante real $\Delta$
+        entonces el Hamiltoniano es constante en el tiempo y por lo que el poderador evolucion temporal tiene la forma
+        $$U(t) = \exp{\left[-\frac{iHt}{\hbar}\right]}$$  
+        El cual expandido en terminos de eigenkets de $H$ base es:
+        \begin{align*}
+            U(t) &= |h'\rangle \exp{\left[-\frac{i\Delta}{\hbar}\right]} \langle h'| + |h''\rangle \exp{\left[\frac{i\Delta t}{\hbar}\right]} \langle h''|\\
+            &= \frac{1}{\sqrt{2}}(|L \rangle + |R\rangle) \exp{\left[-\frac{i\Delta t}{\hbar}\right]} \frac{1}{\sqrt{2}}(\langle L| + \langle R|)+ \frac{1}{\sqrt{2}}(|L \rangle - |R\rangle) \exp{\left[\frac{i\Delta t}{\hbar}\right]} \frac{1}{\sqrt{2}}(\langle L| - \langle R|)\\
+        \end{align*}
+    \end{itemize}
+
+    \end{answer}
+\end{document}
