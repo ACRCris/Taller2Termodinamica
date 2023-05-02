@@ -185,11 +185,15 @@ where $\Delta$ is a real number with the dimension of energy.
         |\alpha,t\rangle &= U(t)|\alpha\rangle \\
         &= \frac{1}{\sqrt{2}}(|L \rangle + |R\rangle) \exp{\left[-\frac{i\Delta t}{\hbar}\right]} \frac{1}{\sqrt{2}}(\langle L| + \langle R|)|\alpha\rangle + \frac{1}{\sqrt{2}}(|L \rangle - |R\rangle) \exp{\left[\frac{i\Delta t}{\hbar}\right]} \frac{1}{\sqrt{2}}(\langle L| - \langle R|)|\alpha\rangle\\
         &= \frac{1}{2}(|L \rangle + |R\rangle) \exp{\left[-\frac{i\Delta t}{\hbar}\right]} (\langle L|\alpha\rangle + \langle R|\alpha\rangle) + \frac{1}{2}(|L \rangle - |R\rangle) \exp{\left[\frac{i\Delta t}{\hbar}\right]} (\langle L|\alpha\rangle - \langle R|\alpha\rangle)\\
-        &= \frac{1}{2}(|L \rangle + |R\rangle) \exp{\left[-\frac{i\Delta t}{\hbar}\right]} (\langle L|(|L\rangle \langle L|\alpha\rangle + |R\rangle \langle R|\alpha\rangle) + \langle R|(|L\rangle \langle L|\alpha\rangle + |R\rangle \langle R|\alpha\rangle)) \\
-        &+ \frac{1}{2}(|L \rangle - |R\rangle) \exp{\left[\frac{i\Delta t}{\hbar}\right]} (\langle L|(|L\rangle \langle L|\alpha\rangle + |R\rangle \langle R|\alpha\rangle) - \langle R|(|L\rangle \langle L|\alpha\rangle + |R\rangle \langle R|\alpha\rangle))\\
-        &= \frac{1}{2}(|L \rangle + |R\rangle) \exp{\left[-\frac{i\Delta t}{\hbar}\right]} (\langle L|\alpha\rangle + \langle R|\alpha\rangle) + \frac{1}{2}(|L \rangle - |R\rangle) \exp{\left[\frac{i\Delta t}{\hbar}\right]} (\langle L|\alpha\rangle - \langle R|\alpha\rangle)\\
         &= \frac{1}{2}(|L \rangle \langle L | \alpha \rangle + |L \rangle \langle R | \alpha \rangle + |R \rangle \langle L | \alpha \rangle + |R \rangle \langle R | \alpha \rangle) \exp{\left[-\frac{i\Delta t}{\hbar}\right]} \\
         &+ \frac{1}{2}(|L \rangle \langle L | \alpha \rangle - |L \rangle \langle R | \alpha \rangle - |R \rangle \langle L | \alpha \rangle + |R \rangle \langle R | \alpha \rangle) \exp{\left[\frac{i\Delta t}{\hbar}\right]} \\
+        &= \frac{1}{2}(|L \rangle \langle L | \alpha \rangle + |R \rangle \langle R | \alpha \rangle) \exp{\left[-\frac{i\Delta t}{\hbar}\right]} + \frac{1}{2}(|L \rangle \langle L | \alpha \rangle + |R \rangle \langle R | \alpha \rangle) \exp{\left[\frac{i\Delta t}{\hbar}\right]} \\
+        &+ \frac{1}{2}(|L \rangle \langle R | \alpha \rangle + |R \rangle \langle L | \alpha \rangle) \exp{\left[-\frac{i\Delta t}{\hbar}\right]} - \frac{1}{2}(|L \rangle \langle R | \alpha \rangle + |R \rangle \langle L | \alpha \rangle) \exp{\left[\frac{i\Delta t}{\hbar}\right]} \\
+        &= \frac{1}{2}|\alpha\rangle\left(
+            \exp{\left[-\frac{i\Delta t}{\hbar}\right]} + \exp{\left[\frac{i\Delta t}{\hbar}\right]}
+        \right) + \frac{1}{2}(|L \rangle \langle R | \alpha \rangle + |R \rangle \langle L | \alpha \rangle) \left(
+            \exp{\left[-\frac{i\Delta t}{\hbar}\right]} - \exp{\left[\frac{i\Delta t}{\hbar}\right]} \right)\\
+        &= |\alpha\rangle \cos{\left(\frac{\Delta t}{\hbar}\right)} + \frac{i}{\Delta}H |\alpha\rangle \sin{\left(\frac{\Delta t}{\hbar}\right)}\\
     \end{align*}
     \end{answer}
 \end{document}
