@@ -177,8 +177,19 @@ where $\Delta$ is a real number with the dimension of energy.
         \begin{align*}
             U(t) &= |h'\rangle \exp{\left[-\frac{i\Delta}{\hbar}\right]} \langle h'| + |h''\rangle \exp{\left[\frac{i\Delta t}{\hbar}\right]} \langle h''|\\
             &= \frac{1}{\sqrt{2}}(|L \rangle + |R\rangle) \exp{\left[-\frac{i\Delta t}{\hbar}\right]} \frac{1}{\sqrt{2}}(\langle L| + \langle R|)+ \frac{1}{\sqrt{2}}(|L \rangle - |R\rangle) \exp{\left[\frac{i\Delta t}{\hbar}\right]} \frac{1}{\sqrt{2}}(\langle L| - \langle R|)\\
-        \end{align*}
+        \end{align*} 
     \end{itemize}
+    por lo que la evolucion temporal del operador de estado $|\alpha \rangle = |\alpha,t_0=0\rangle = |L\rangle \langle L|\alpha\rangle + |R\rangle \langle R|\alpha\rangle$ es 
 
+    \begin{align*}
+        |\alpha,t\rangle &= U(t)|\alpha\rangle \\
+        &= \frac{1}{\sqrt{2}}(|L \rangle + |R\rangle) \exp{\left[-\frac{i\Delta t}{\hbar}\right]} \frac{1}{\sqrt{2}}(\langle L| + \langle R|)|\alpha\rangle + \frac{1}{\sqrt{2}}(|L \rangle - |R\rangle) \exp{\left[\frac{i\Delta t}{\hbar}\right]} \frac{1}{\sqrt{2}}(\langle L| - \langle R|)|\alpha\rangle\\
+        &= \frac{1}{2}(|L \rangle + |R\rangle) \exp{\left[-\frac{i\Delta t}{\hbar}\right]} (\langle L|\alpha\rangle + \langle R|\alpha\rangle) + \frac{1}{2}(|L \rangle - |R\rangle) \exp{\left[\frac{i\Delta t}{\hbar}\right]} (\langle L|\alpha\rangle - \langle R|\alpha\rangle)\\
+        &= \frac{1}{2}(|L \rangle + |R\rangle) \exp{\left[-\frac{i\Delta t}{\hbar}\right]} (\langle L|(|L\rangle \langle L|\alpha\rangle + |R\rangle \langle R|\alpha\rangle) + \langle R|(|L\rangle \langle L|\alpha\rangle + |R\rangle \langle R|\alpha\rangle)) \\
+        &+ \frac{1}{2}(|L \rangle - |R\rangle) \exp{\left[\frac{i\Delta t}{\hbar}\right]} (\langle L|(|L\rangle \langle L|\alpha\rangle + |R\rangle \langle R|\alpha\rangle) - \langle R|(|L\rangle \langle L|\alpha\rangle + |R\rangle \langle R|\alpha\rangle))\\
+        &= \frac{1}{2}(|L \rangle + |R\rangle) \exp{\left[-\frac{i\Delta t}{\hbar}\right]} (\langle L|\alpha\rangle + \langle R|\alpha\rangle) + \frac{1}{2}(|L \rangle - |R\rangle) \exp{\left[\frac{i\Delta t}{\hbar}\right]} (\langle L|\alpha\rangle - \langle R|\alpha\rangle)\\
+        &= \frac{1}{2}(|L \rangle \langle L | \alpha \rangle + |L \rangle \langle R | \alpha \rangle + |R \rangle \langle L | \alpha \rangle + |R \rangle \langle R | \alpha \rangle) \exp{\left[-\frac{i\Delta t}{\hbar}\right]} \\
+        &+ \frac{1}{2}(|L \rangle \langle L | \alpha \rangle - |L \rangle \langle R | \alpha \rangle - |R \rangle \langle L | \alpha \rangle + |R \rangle \langle R | \alpha \rangle) \exp{\left[\frac{i\Delta t}{\hbar}\right]} \\
+    \end{align*}
     \end{answer}
 \end{document}
