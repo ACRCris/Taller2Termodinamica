@@ -11,7 +11,7 @@
 % Other details
 % TODO: Fill these
 %-------------------------------%
-\title{Ejercicio 9}
+\title{Taller 2}
 \setmembername{Cristian Camilo Pérez Puentes} 
 
 %-------------------------------%
@@ -43,157 +43,193 @@
     % Use `answer` environment to add solutions
     % \begin{answer}[Question 1.1] for example starts an environment formatted
     % for Question 1.1
-
-
-    A box containing a particle is divided into a right and a left compartment by a thin
-    partition. If the particle is known to be on the right (left) side with certainty, the state
-    is represented by the position eigenket $|R\rangle (|L\rangle)$, where we have neglected spatial
-    variations within each half of the box. The most general state vector can then be
-    written as
-\begin{equation}
-    |\alpha\rangle = |R\rangle\langle R|\alpha \rangle+|L\rangle\langle L|\alpha\rangle
-\end{equation}
-where $\langle R|\alpha\rangle$ and  $\langle L|\alpha \rangle$ can be regarded as “wave functions.” The particle can tunnel
-through the partition; this tunneling effect is characterized by the Hamiltonian
-\begin{equation}
-    H = \Delta(|L\rangle \langle R|+|R\rangle \langle L|),
-\end{equation}
-where $\Delta$ is a real number with the dimension of energy.
-\begin{itemize}
-    \item [a.] Find the normalized energy eigenkets. What are the corresponding energy 
-    eigenvalues?
-    \item [b.] In the Schrodinger picture the base kets $|R\rangle$ and $|L\rangle$ 
-    are fixed, and the state vector moves with time. Suppose the system is represented 
-    by $|\alpha \rangle$ as given above at $t = 0$. Find the state vector 
-    $|\alpha,t_0 = 0; t\rangle $ for $t > 0$ by applying the appropriate 
-    time-evolution operator to $|\alpha\rangle$.
-    \item [c.] Suppose at $t = 0$ the particle is on the right side with certainty. What is the
-    probability for observing the particle on the left side as a function of time?
-    \item [d.] Write down the coupled Schrodinger equations for the wave functions
-    $R|\alpha,t_0 = 0; t\rangle$ and $L|\alpha,t_0 = 0; t\rangle$. Show that the 
-    solutions to the coupled Schrodinger equations are just what you expect from (b). 
-    \item [e.] Suppose the printer made an error and wrote $H$ as 
-    $H = \Delta|L\rangle \langle R|$. 
-
-    By explicitly solving the most general time-evolution problem with this Hamiltonian, show that probability conservation is violated.
-\end{itemize}
-    \begin{answer}
-        \begin{itemize}
-            \item [a.]Los autoestados de energia son aquellos que:
-            $$H|h'\rangle = E_{h'}|h'\rangle \qquad  \Rightarrow $$
-            \begin{align*}
-                H|h'\rangle - E_{h'}|h'\rangle &= 0 \\
-                \Delta(|L\rangle \langle R|+|R\rangle \langle L|)|h'\rangle - E_{h'}|h'\rangle &= 0 \\
-                \Delta|L\rangle \langle R|h'\rangle + \Delta|R\rangle \langle L|h'\rangle - E_{h'}|h'\rangle &= 0 \\
-                \Delta\langle L |L\rangle \langle R|h'\rangle + \Delta\langle L |R\rangle \langle L|h'\rangle - E_{h'}\langle L |h'\rangle &= 0 \\
-                \Delta \langle R|h'\rangle - E_{h'}\langle L |h'\rangle &= 0 \\
-            \end{align*}
-        ademas 
-        \begin{align*}
-            \Delta|L\rangle \langle R|h'\rangle + \Delta|R\rangle \langle L|h'\rangle - E_{h'}|h'\rangle &= 0 \\
-            \Delta\langle R |L\rangle \langle R|h'\rangle + \Delta\langle R |R\rangle \langle L|h'\rangle - E_{h'}\langle R|h'\rangle &= 0 \\
-            \Delta \langle L|h'\rangle - E_{h'}\langle R |h'\rangle &= 0 \\
-        \end{align*}
-        por lo que
-        \begin{align*}(\Delta - E_{h'}) \langle R |h'\rangle + (\Delta - E_{h'})\langle L |h'\rangle &= 0\\
-            &= ( \Delta - E_{h'}) (\langle R |h'\rangle + \langle L |h'\rangle) = 0\\
-        \end{align*}
-        \begin{align*}(\Delta + E_{h'}) \langle R |h'\rangle - (\Delta + E_{h'})\langle L |h'\rangle &= 0\\
-            &= ( \Delta + E_{h'}) (\langle R |h'\rangle + \langle L |h'\rangle) = 0\\
-        \end{align*}
-        Y como $\langle R |h'\rangle$ y $\langle L |h'\rangle$ son funciones de onda que en general no van a coincidir en todos los valores 
-        de $x$ y $t$, por lo que 
-        $$E_{h'} = \pm \Delta$$
-        son los autolvalores de energia. Usando estos autolvalores en la ecuacion de autolvalores para $H$ entonces
-        \begin{align*}
-            H|h'\rangle - E_{h'}|h'\rangle &= 0 \\
-            \Delta(|L\rangle \langle R|+|R\rangle \langle L|)|h'\rangle - \Delta|h'\rangle &= 0 \\
-            \Delta|L\rangle \langle R|h'\rangle + \Delta|R\rangle \langle L|h'\rangle - \Delta|h'\rangle &= 0 \\
-            \left(
-                |L\rangle \langle R|+|R\rangle \langle L| - 1
-            \right) \Delta|h'\rangle &= 0 \\
-            \left(
-                |L\rangle \langle R|+|R\rangle \langle L| - |R\rangle \langle R| - |L\rangle \langle L|
-            \right) \Delta |h'\rangle &= 0 \\
-            |L\rangle \langle R|h'\rangle +|R\rangle \langle L|h'\rangle  - |R\rangle \langle R|h'\rangle  - |L\rangle \langle L| h'\rangle &= 0 \\
-            \langle R|h'\rangle - \langle L| h'\rangle &= 0 \\
-            \langle L|h'\rangle - \langle R| h'\rangle &= 0 \\
-        \end{align*}
-        Si bien este ultimo procedimiento no es necesario en este ejercicio para encontra los autoestados de energia, pues es suficiente con
-        reemplazar los autovalores de energia ya sea alguna de las ecuaciones $\Delta \langle R|h'\rangle - E_{h'}\langle L |h'\rangle = 0$ o
-        $\Delta \langle L|h'\rangle - E_{h'}\langle R |h'\rangle = 0$ e inferir $|h'\rangle$. Este procedimiento muestra un analogo a resolver
-        la equacion de autolvalores, sin usar el equivalente de los operadores y estados en matrices, en donde el equivaltente a la ecuacion en
-        representacion matricial:
-        $$ (\mathbb H - \mathbb I \Delta) \mathbf h' = 0$$
-        es 
-        $$
-        \left(|L\rangle \langle R|+|R\rangle \langle L| - 1
-        \right) \Delta|h'\rangle = \left((|L\rangle \langle R|+|R\rangle \langle L)\Delta - 1\Delta
-        \right) |h'\rangle = 0$$
-        donde
-        $$\Delta(|L\rangle \langle R|+|R\rangle \langle L|) \doteq \mathbb{H} \qquad |h'\rangle \doteq \mathbf h'$$
-        $$1\Delta = \Delta\sum_{b'} \Lambda_{b'} = \Delta(|L\rangle \langle L| + |R\rangle \langle R|) \doteq \mathbb{I}\Delta$$
-        y como los coeficientes $c_L = \langle L| h'\rangle$ y $c_R = \langle R| h'\rangle$ pueden representar las proyecciones en algun 
-        instante $x_0,t_0$ del autoestados $|h'\rangle$ en los estados $|L\rangle$ y $|R\rangle$ respectivamente, entonces para ese 
-        instante la relacion 
-    
-        $$c_L = c_R \qquad \Leftrightarrow \qquad \langle R|h'\rangle = \langle L| h'\rangle =h' $$
-        Es el equivalente a al encontrar un relacion entre la componentes $\mathbf h'$ tipo $h_1 = h_2$ al solucionar la representacion 
-        matricial de la ecuacion de autolvalores para $\mathbb H$, por algun metodo de solucion de sistemas de ecuaciones lineales, 
-        la cual tiene una infinitas soluciones no triviales, escogiendose alguna solucion que de una representacion normalizada de los 
-        autoestados de $\mathbb H$.
-    
-        De lo anterior dicho,  $|h'\rangle = h'|L \rangle + h'|R\rangle$ de la misma forma en la que $\mathbf h'$ se puede descompener 
-        en la superposicion $|L\rangle \doteq \mathbf{e_1} $ y $|R\rangle \doteq \mathbf{e_2}$. Lo que se puede verificar, pues
-        \begin{align*}
-            \langle R|h'\rangle - \langle L| h'\rangle &= \\
-            \langle R|h'(|L \rangle + |R\rangle) - \langle L|h'(|L \rangle + |R\rangle) &= 0 \\
-            h\langle R|L \rangle +h \langle R|R\rangle - h\langle L| L\rangle - h\langle L|R\rangle &= 0 \\
-            0 + h - h - 0 &= 0 \\
-        \end{align*}
-        Y de la misma forma reemplazando $E_h = -\Delta$ en $\Delta \langle R|h'\rangle - E_{h'}\langle L |h'\rangle = 0$ se obtiene
-        $$-h'' = \langle R|h''\rangle = - \langle L| h''\rangle$$
-        por lo que $|h''\rangle = h''|L \rangle - h''|R\rangle$.
-        Normalizando los autoestados de energia
-        \begin{align*}
-            \langle h'|h'\rangle &= (h'\langle L| + h'\langle R|)(h'|L \rangle + h'|R\rangle) \\
-            &= h'^2 + h'^2 = 2h'^2 = 1 \qquad \Rightarrow \qquad \\
-            h' &= \frac{1}{\sqrt{2}} \qquad \Rightarrow \qquad \\
-            |h'\rangle&= \frac{1}{\sqrt{2}}(|L \rangle + |R\rangle) 
-        \end{align*}
-        \begin{align*}
-            \langle h''|h''\rangle &= (h''\langle L| - h''\langle R|)(h''|L \rangle - h''|R\rangle) \\
-            &= h''^2 + h''^2 = 2h''^2 = 1 \qquad \Rightarrow \qquad \\
-            h'' &= \frac{1}{\sqrt{2}} \qquad \Rightarrow \qquad \\
-            |h''\rangle&= \frac{1}{\sqrt{2}}(|L \rangle - |R\rangle)
-        \end{align*}    
-        Luego los autoestados de energia normalizados son $|h'\rangle = \frac{1}{\sqrt{2}}(|L \rangle + |R\rangle)$ y $|h''\rangle = \frac{1}{\sqrt{2}}(|L \rangle - |R\rangle)$, 
-        con correspondientes autovalores de energia $E_{h'} = \Delta$ y $E_{h''} = -\Delta$ respectivamente.
-
-        \item[b.] Como los kets base son fijos y el Hamiltoniano esta representado en terminos de los kets base y una constante real $\Delta$
-        entonces el Hamiltoniano es constante en el tiempo y por lo que el poderador evolucion temporal tiene la forma
-        $$U(t) = \exp{\left[-\frac{iHt}{\hbar}\right]}$$  
-        El cual expandido en terminos de eigenkets de $H$ base es:
-        \begin{align*}
-            U(t) &= |h'\rangle \exp{\left[-\frac{i\Delta}{\hbar}\right]} \langle h'| + |h''\rangle \exp{\left[\frac{i\Delta t}{\hbar}\right]} \langle h''|\\
-            &= \frac{1}{\sqrt{2}}(|L \rangle + |R\rangle) \exp{\left[-\frac{i\Delta t}{\hbar}\right]} \frac{1}{\sqrt{2}}(\langle L| + \langle R|)+ \frac{1}{\sqrt{2}}(|L \rangle - |R\rangle) \exp{\left[\frac{i\Delta t}{\hbar}\right]} \frac{1}{\sqrt{2}}(\langle L| - \langle R|)\\
-        \end{align*} 
+    \input{intro.tex}
+    1.Consideremos que la energía interna de un sistema termodinámico sea una función de T y P,
+    obtenga las siguientes ecuaciones:
+    \begin{itemize}
+        \item  $\quad\left(\frac{\partial U}{\partial T}\right)_P=C_P-P V \beta$.
+        \item $\left(\frac{\partial U}{\partial P}\right)_T=P V \kappa-\left(C_P-C_V\right) \frac{\kappa}{\beta}$.
     \end{itemize}
-    por lo que la evolucion temporal del operador de estado $|\alpha \rangle = |\alpha,t_0=0\rangle = |L\rangle \langle L|\alpha\rangle + |R\rangle \langle R|\alpha\rangle$ es 
+    \begin{answer}[Problema 1]
+        \begin{itemize}
+            \item[a.]Dado que la energia interna es funcion de T y P, entonces:
+            \begin{equation}
+                U=U(T,P)
+            \end{equation}
+            Por lo tanto, la diferencial total de U es:
+            \begin{equation}
+                dU=\left(\frac{\partial U}{\partial T}\right)_P dT+\left(\frac{\partial U}{\partial P}\right)_T dP
+            \end{equation}
+            Por otro lado de la primera ley de la termodinamica tenemos que:
+            \begin{align*}
+                d Q = dU + PdV &=\left( \frac{\partial U}{\partial T} \right)_P dT + \left( \frac{\partial U}{\partial P} \right)_T dP + PdV \quad \Rightarrow\\
+                & \Rightarrow \left(
+                    \frac{dQ}{dT}
+                \right)_P = \left( \frac{\partial U}{\partial T} \right)_P + P \left( \frac{\partial V}{\partial T} \right)_P\\
+                & \Rightarrow \left(
+                    \frac{dQ}{dT}
+                    \right)_P = \left( \frac{\partial U}{\partial T} \right)_P + PV \frac{1}{V} \left( \frac{\partial V}{\partial T} \right)_P\\
+                & \Rightarrow \left(
+                        C_P = \left( \frac{\partial U}{\partial T} \right)_P + PV \beta
+                    \right)\\
+                & \Rightarrow \left(
+                    \frac{\partial U}{\partial T}
+                    \right)_P = C_P - PV \beta
+            \end{align*}   
+    
+            Donde como se realiza $\frac{dQ}{dT}$ a volumen constante entonces 
+    
+            $$\left(\frac{dV}{dT}\right)_P = \left(\frac{\partial V}{\partial T}\right)_P$$  
+            \item [b.] De forma analoga paratiendo de la expresion 
+            \begin{align*}
+                d Q = dU + PdV &=\left( \frac{\partial U}{\partial T} \right)_P dT + \left( \frac{\partial U}{\partial P} \right)_T dP + PdV \quad \Rightarrow\\
+                & \Rightarrow \left(
+                    \frac{dQ}{dT}
+                \right)_V = \left( \frac{\partial U}{\partial T} \right)_P +  \left( \frac{\partial U}{\partial P} \right)_T \left( \frac{\partial P}{\partial T} \right)_V\\
+                & \Rightarrow 
+                C_V = C_P - PV \beta - \left( \frac{\partial U}{\partial P} \right)_T \left( \frac{\partial P}{\partial V} \right)_T \left( \frac{\partial V}{\partial T} \right)_P\\
+                & \Rightarrow
+                    \left( \frac{\partial U}{\partial P} \right)_T = \frac{C_P - PV - C_V}{\left( \frac{\partial P}{\partial V} \right)_T \left( \frac{\partial V}{\partial T} \right)_P}\\
+                & \Rightarrow
+                    \left( \frac{\partial U}{\partial P} \right)_T = (C_P - PV\beta - C_V)\left( \frac{\partial V}{\partial P} \right)_T \left( \frac{\partial T}{\partial V} \right)_P\\
+                & \Rightarrow
+                    \left( \frac{\partial U}{\partial P} \right)_T = -(C_P - PV\beta - C_V)\kappa \frac{1}{\beta}\\            \end{align*}\\
+        \end{itemize}
+        
+    \end{answer}
+    \input{punto2.tex}
+    \begin{answer}
+        Si consideramos la energia interna como funcion de $P, V$ es decir $U = U(P,V)$ entonces de la primera ley de la termodinamica para sistema hidrostatico:
+    \begin{align*}
+        dQ = dU + PdV  \quad (2.1)
+    \end{align*}
+    \begin{itemize}
+        \item [a.]  Como $U = U(P,V)$ entonces:
+        \begin{align*}
+            dU = \left( \frac{\partial U}{\partial P} \right)_V dP + \left( \frac{\partial U}{\partial V} \right)_P dV \quad (2.2)       
+       \end{align*}
+       Reemplazando (2.2) en (2.1) tenemos que:
+       \begin{align*}
+           dQ &= \left( \frac{\partial U}{\partial P} \right)_V dP + \left( \frac{\partial U}{\partial V} \right)_P dV + PdV \\
+            &= \left( \frac{\partial U}{\partial P} \right)_V dP + \left[ \left( \frac{\partial U}{\partial V} \right)_P + P \right] dV \quad (2.3)
+        \end{align*}     
+    \end{itemize} 
+    \begin{itemize}
+        \item [b.] De (2.3)
+        \begin{align*}
+            \left(
+                \frac{dQ}{dT} 
+                \right)_V = \left( \frac{\partial U}{\partial P} \right)_V \left( \frac{dP}{dT}\right)_V \quad  (2.4)
+        \end{align*}
+        Y como la ecuacion de estado esta en terminos de $P$ y $V$ entonces:
+        \begin{align*}
+            dT = \left( \frac{\partial T}{\partial P} \right)_V dP + \left( \frac{\partial T}{\partial V} \right)_P dV \quad \Rightarrow \quad \left( \frac{dT}{dP} \right)_V = \left( \frac{\partial T}{\partial P} \right)_V
+        \end{align*}
+        Luego (2.4) queda:
+        \begin{align*}
+            \left(
+                \frac{dQ}{dT} 
+                \right)_V &= \left( \frac{\partial U}{\partial P} \right)_V \left( \frac{\partial T}{\partial P}\right)_V \\
+                &= -\left( \frac{\partial U}{\partial P} \right)_V \left( \frac{\partial T}{\partial V}\right)_P \left( \frac{\partial V}{\partial P}\right)_V \\
+                &= \left( \frac{\partial U}{\partial P} \right)_V \frac{\beta}{\kappa} = C_V \quad  \Rightarrow
+        \end{align*}
+        \begin{align*}
+            \left( \frac{\partial U}{\partial P} \right)_V = \frac{C_V \kappa}{\beta}
+        \end{align*}
+
+        Haciendo uso de  
+        \begin{align*}
+            C_V = \left( \frac{\partial U}{\partial T} \right)_V  = \left(\frac{dQ}{dT}\right)_V 
+        \end{align*}
+        \item [c.] De (2.3)
+
+        \begin{align*}
+            \left(
+                \frac {dQ}{dT}
+        \right)_P &= \left( \frac{\partial U}{\partial V} \right)_P \left( \frac{\partial V}{\partial T} \right)_P + P \left( \frac{\partial V}{\partial T} \right)_P\\
+        &= \left( \frac{\partial U}{\partial V} \right)_P V \beta + P V \beta = C_P \quad \Rightarrow
+        \end{align*}
+        \begin{align*}
+            \left( \frac{\partial U}{\partial V} \right)_P V\beta = C_P - PV\beta \quad \Rightarrow \quad \left( \frac{\partial U}{\partial V} \right)_P = \frac{C_P}{V\beta} - P
+        \end{align*}
+        Donde se ha hecho uso de la ecuacion de estado es funcion de $P$ y $V$.
+        $$ \left(
+            \frac {dT}{dV}
+        \right)_P = \left( \frac{\partial T}{\partial V} \right)_P$$
+        \end{itemize}
+    \end{answer}
+    \input{p3.tex}
+    \begin{answer}[Punto 3]
+    Si consideramos la enegia interna como funcion de $T$ y $V$ es decir $U = U(T,V)$ entonces:
+    \begin{align*}
+        dU = \left( \frac{\partial U}{\partial T} \right)_V dT + \left( \frac{\partial U}{\partial V} \right)_T dV \quad (3.1)
+    \end{align*}
+    entonces Reemplazando (3.1) en (2.1) tenemos que:
+    \begin{align*}
+        &dQ = \left( \frac{\partial U}{\partial T} \right)_V dT + \left( \frac{\partial U}{\partial V} \right)_T dV + PdV \quad (3.2)\quad\\ 
+        &\Rightarrow \quad  C_P = \left( \frac{dQ}{dT} \right)_P = \left( \frac{\partial U}{\partial T} \right)_V + \left( \frac{\partial U}{\partial V} \right)_T \left( \frac{\partial V}{\partial T} \right)_P + P \left( \frac{\partial V}{\partial T} \right)_P\\
+        &\Rightarrow \quad C_V = \left( \frac {dQ}{dT} \right)_V = \left( \frac{\partial U}{\partial T} \right)_V \quad \Rightarrow
+    \end{align*}
+    \begin{align*}
+        C_P - C_V = \left[ \left( \frac{\partial U}{\partial V} \right)_T + P \right] \left( \frac{\partial V}{\partial T} \right)_P \quad (3.3)
+    \end{align*}
+    Tambien de (3.2)
+    \begin{align*}
+        \left(\frac{dQ}{dV}\right)_T = \left( \frac{\partial U}{\partial V} \right)_T + P \quad &\Rightarrow \quad \left( \frac{\partial U}{\partial V} \right)_T = \left(\frac{dQ}{dV}\right)_T - P\\
+        &\Rightarrow \quad \left( \frac{\partial U}{\partial V} \right)_T = T \left( \frac{\partial S}{\partial V} \right)_T - P \quad dQ = TdS \quad \text{$T$ constante}\\
+        &\Rightarrow \quad \left( \frac{\partial U}{\partial V} \right)_T = T\left( \frac{\partial P}{\partial T} \right)_V - P \quad (3.4) \quad \text{$\left( \frac{\partial S}{\partial V} \right)_T = \left( \frac{\partial P}{\partial T} \right)_V$}
+    \end{align*}
+    De (3.3) y (3.4)
+    \begin{align*}
+        C_P - C_V &= \left[ T\left( \frac{\partial P}{\partial T} \right)_V - P + P \right] \left( \frac{\partial V}{\partial T} \right)_P \quad &\Rightarrow \quad C_P - C_V = T\left( \frac{\partial P}{\partial T} \right)_V \left( \frac{\partial V}{\partial T} \right)_P\\
+        &=T \left( \frac{\partial P}{\partial T} \right)_V \left( \frac{\partial V}{\partial T} \right)_P \\
+     \end{align*}
+    
+    Del taller anterior sabemos que:
+    \begin{align*}
+        \left( \frac{\partial P}{\partial T} \right)_V = \frac{R}{V-b} \quad \text{y} \quad \left( \frac{\partial V} {\partial T}\right)_P  = \frac{RV^3}{2ab - aV + PV^3}
+    \end{align*}
+    Por lo tanto 
 
     \begin{align*}
-        |\alpha,t\rangle &= U(t)|\alpha\rangle \\
-        &= \frac{1}{\sqrt{2}}(|L \rangle + |R\rangle) \exp{\left[-\frac{i\Delta t}{\hbar}\right]} \frac{1}{\sqrt{2}}(\langle L| + \langle R|)|\alpha\rangle + \frac{1}{\sqrt{2}}(|L \rangle - |R\rangle) \exp{\left[\frac{i\Delta t}{\hbar}\right]} \frac{1}{\sqrt{2}}(\langle L| - \langle R|)|\alpha\rangle\\
-        &= \frac{1}{2}(|L \rangle + |R\rangle) \exp{\left[-\frac{i\Delta t}{\hbar}\right]} (\langle L|\alpha\rangle + \langle R|\alpha\rangle) + \frac{1}{2}(|L \rangle - |R\rangle) \exp{\left[\frac{i\Delta t}{\hbar}\right]} (\langle L|\alpha\rangle - \langle R|\alpha\rangle)\\
-        &= \frac{1}{2}(|L \rangle \langle L | \alpha \rangle + |L \rangle \langle R | \alpha \rangle + |R \rangle \langle L | \alpha \rangle + |R \rangle \langle R | \alpha \rangle) \exp{\left[-\frac{i\Delta t}{\hbar}\right]} \\
-        &+ \frac{1}{2}(|L \rangle \langle L | \alpha \rangle - |L \rangle \langle R | \alpha \rangle - |R \rangle \langle L | \alpha \rangle + |R \rangle \langle R | \alpha \rangle) \exp{\left[\frac{i\Delta t}{\hbar}\right]} \\
-        &= \frac{1}{2}(|L \rangle \langle L | \alpha \rangle + |R \rangle \langle R | \alpha \rangle) \exp{\left[-\frac{i\Delta t}{\hbar}\right]} + \frac{1}{2}(|L \rangle \langle L | \alpha \rangle + |R \rangle \langle R | \alpha \rangle) \exp{\left[\frac{i\Delta t}{\hbar}\right]} \\
-        &+ \frac{1}{2}(|L \rangle \langle R | \alpha \rangle + |R \rangle \langle L | \alpha \rangle) \exp{\left[-\frac{i\Delta t}{\hbar}\right]} - \frac{1}{2}(|L \rangle \langle R | \alpha \rangle + |R \rangle \langle L | \alpha \rangle) \exp{\left[\frac{i\Delta t}{\hbar}\right]} \\
-        &= \frac{1}{2}|\alpha\rangle\left(
-            \exp{\left[-\frac{i\Delta t}{\hbar}\right]} + \exp{\left[\frac{i\Delta t}{\hbar}\right]}
-        \right) + \frac{1}{2}(|L \rangle \langle R | \alpha \rangle + |R \rangle \langle L | \alpha \rangle) \left(
-            \exp{\left[-\frac{i\Delta t}{\hbar}\right]} - \exp{\left[\frac{i\Delta t}{\hbar}\right]} \right)\\
-        &= |\alpha\rangle \cos{\left(\frac{\Delta t}{\hbar}\right)} + \frac{i}{\Delta}H |\alpha\rangle \sin{\left(\frac{\Delta t}{\hbar}\right)}\\
+        C_P - C_V &= T \frac{R}{V-b} \frac{RV^3}{2ab - aV + PV^3} \\
+        &= \frac{R^2TV^3}{2(ab - aV)(V-b) +(V-b)\left(\frac a{V^2} + P\right)V^3}\\
+        &= \frac{R^2TV^3}{-2a(V - b)(V-b) +RT V^3}\\
+        &= \frac{R}{1 -\frac{2a(V- b)^2}{RTV^3}}\\
     \end{align*}
     \end{answer}
+    \input{p4.tex}
+    \begin{answer}
+        Dado que la ecuacion de estado representa un sistema hidrostatico con $u = u(P,v)$ entonces:
+
+        \begin{align*}
+            du = \left( \frac{\partial u}{\partial P} \right)_v dP + \left( \frac{\partial u}{\partial v} \right)_P dv \quad (4.2)
+        \end{align*}
+        Donde de (4.1):
+        \begin{align*}
+            \left(\frac {\partial u}{\partial P}\right)_v &= \left(
+                \frac{\partial}{\partial P} \left(  P\frac v\Gamma + \frac{f(v)}\Gamma \right)
+            \right)_v \\ 
+            &= \frac{v}{\Gamma} 
+        \end{align*}
+        \begin{align*}
+            \left(\frac {\partial u}{\partial v}\right)_P &= \left(
+                \frac{\partial}{\partial v} \left(  P\frac v\Gamma + \frac{f(v)}\Gamma \right)
+            \right)_P\\
+            &= \left( \frac{\partial}{\partial v} \left( \frac{f(v)}\Gamma \right) \right)_P + \frac P \Gamma\left( \frac{\partial}{\partial v} \left(  v \right) \right)_P\\
+            &= \frac 1\Gamma \left( \frac{\partial f(v)}{\partial v} \right)_P + \frac P \Gamma\\
+        \end{align*}
+        Reemplazando en (4.2) tenemos que:
+        \begin{align*}
+            \Gamma dU = v dP + \left( \frac{\partial f(v)}{\partial v} \right)_P dv + P dv \quad  &\Rightarrow \quad \left(\frac {\partial u}{\partial T}\right)_v = \frac v\Gamma \left( \frac{\partial P}{\partial T} \right)_v = c_V\\
+            &\Rightarrow \quad c_V =- \frac v\Gamma \left( \frac{\partial P}{\partial v } \right)_T \left( \frac{\partial v}{\partial T} \right)_v\\
+            &\Rightarrow \quad c_V = \frac v\Gamma \frac \beta \kappa \\
+            &\Rightarrow \quad \Gamma = \frac{\beta v}{c_V \kappa}
+        \end{align*}
+
+
+
+    \end{answer}
+
+
 \end{document}
