@@ -1,7 +1,7 @@
 \documentclass[a4paper]{article}
 \usepackage{student}
 \usepackage{graphicx}
-
+\usepackage{mathrsfs}
 \usepackage{cancel}
 
 % Metadata
@@ -69,9 +69,8 @@
                 & \Rightarrow \left(
                     \frac{dQ}{dT}
                     \right)_P = \left( \frac{\partial U}{\partial T} \right)_P + PV \frac{1}{V} \left( \frac{\partial V}{\partial T} \right)_P\\
-                & \Rightarrow \left(
-                        C_P = \left( \frac{\partial U}{\partial T} \right)_P + PV \beta
-                    \right)\\
+                & \Rightarrow 
+                        C_P = \left( \frac{\partial U}{\partial T} \right)_P + PV \beta\\
                 & \Rightarrow \left(
                     \frac{\partial U}{\partial T}
                     \right)_P = C_P - PV \beta
@@ -226,10 +225,231 @@
             &\Rightarrow \quad c_V = \frac v\Gamma \frac \beta \kappa \\
             &\Rightarrow \quad \Gamma = \frac{\beta v}{c_V \kappa}
         \end{align*}
+       
+    \end{answer}
+    \input{p5.tex}
+    \begin{answer}[Punto 5]
+        Dado que este es este es un sistema hidrostatico y paramagnetico la primera ley de la termodinamica toma la forma:
+        \begin{align*}
+            dQ = dU - PdV + \mu_0 \mathscr Hd\mathscr{M} \quad (5.1)
+        \end{align*}
+        Donde las variables termodinamicas asociadas a un sistema hidrostatico son $T,~P,~V$ y las variable termodinamicas asociadas a un sistema paramagnetico son $T, \mathscr{H}, \mathscr{M}$.
+        Coordenadas de las cuales solo tres son independientes, siendo las mas convinientes $T,V,\mathscr M$, por lo tanto 
+        $$dU = dU(T,V, \mathscr{M}) =  \left(\frac{\partial U}{\partial T}\right)_{V, \mathscr{M}} dT +\left(\frac{\partial U}{\partial V}\right)_{T, \mathscr{M}} dV + \left(\frac{\partial U}{\partial \mathscr{M}}\right)_{T,V} d\mathscr{M}$$ 
 
+        Reemplazando el diferencial de energia interna en (5.1) entonces:
 
+        \begin{align*}
+            dQ &=  \left(\frac{\partial U}{\partial T}\right)_{V, \mathscr{M}} dT +\left(\frac{\partial U}{\partial V}\right)_{T, \mathscr{M}} dV + \left(\frac{\partial U}{\partial \mathscr{M}}\right)_{T,V} d\mathscr{M} - PdV + \mu_0 \mathscr H d\mathscr M\\
+             &= \left(\frac{\partial U}{\partial T}\right)_{V, \mathscr{M}} dT + \left[\left(\frac{\partial U}{\partial V}\right)_{T, \mathscr{M}} - P \right]dV + \left[\left(\frac{\partial U}{\partial \mathscr{M} } \right)_{T,V} + \mu_0\mathscr H\right] d\mathscr M
+        \end{align*}
+    \end{answer}
+    \input{p6.tex}
+    \begin{answer}[Punto 6]
+        Dado que la ecuacion de estado para un gas ideal es:
+        \begin{align*}
+            PV = nRT \quad (6.1) \quad \text{con}  \quad \left(\frac{\partial U}{\partial V}\right)_T = 0 \quad \text{y} \quad \left(\frac{\partial U}{\partial P}\right)_V = 0
+        \end{align*}
+        Por lo que la energia interna cumple que $U = U(T)$
+        \begin{align*}
+            dU = \left(\frac{\partial U}{\partial T}\right)_V dT   \quad \Rightarrow \quad C_V =  \frac{dU}{dT}= \left(\frac{\partial U}{\partial T}\right)_V \quad (6.2)
+        \end{align*}\
+        Por otro lado de la primera ley de la termodinamica para el gas ideal, desde las ecuacion (2.1) y (6.2), toma la forma:
+        \begin{align*}
+            dQ = \left(\frac{\partial U}{\partial T}\right)_V dT + PdV  = C_VdT + PdV \quad (6.3)
+        \end{align*}
+        Donde 
+        \begin{align*}
+            dT &= \left(\frac{\partial T}{\partial V}\right)_P dV + \left(\frac{\partial T}{\partial P}\right)_V dP\\
+            &= \frac{P}{nR}dV + \frac{V}{nR}dP \quad 
+        \end{align*}
+        Reemplazando en (6.3) tenemos que:
+        \begin{align*}
+            dQ = C_V \left( \frac{P}{nR}dV + \frac{V}{nR}dP \right) + PdV \quad &\Rightarrow \quad dQ = \frac{C_V}{nR}PdV + \frac{C_V}{nR}VdP + PdV\\
+            &\Rightarrow \quad dQ = \frac{C_V}{nR}VdP + \left( \frac{C_V}{nR} + 1 \right)PdV\\
+            &\Rightarrow \quad dQ =  \frac{C_V}{nR}VdP + \left( \frac{C_V + nR}{nR}\right)PdV\\
+            &\Rightarrow \quad dQ =  \frac{C_V}{nR}VdP +  \frac{C_P}{nR} PdV \quad (6.4)\\
+        \end{align*}
+        Donde se uso que $C_P - C_V = nR$ para un gas ideal.
+        Ahora si consideramos tambien que es gas esta sometido a un proceso adiabatico entonces de (6.4)
+        \begin{align*}
+            dQ = 0 \quad &\Rightarrow \quad \frac{C_V}{nR}VdP +  \frac{C_P}{nR} PdV = 0\\
+            &\Rightarrow \quad \frac{C_V}{nR}VdP = - \frac{C_P}{nR} PdV\\
+            &\Rightarrow \quad \frac{C_P}{C_V}\frac{dV}{V} = -\frac{dP}{P}\\
+            &\Rightarrow \quad \gamma \ln(V) = -\ln(P) + C\\
+            &\Rightarrow \quad \ln(V^\gamma) = \ln(P^{-1}) + C\\
+            &\Rightarrow \quad V^\gamma = P^{-1}e^C\\
+            &\Rightarrow \quad PV^\gamma = e^C = \text{constante}\\
+        \end{align*}
 
     \end{answer}
+    \input{p7.tex}
+    \begin{answer}[Punto 7]
+        Dado que este es un sistema paramagnetico e hidrostatico  con funcion de energia interna $U = U(T)$ tal que $dU = C_{V, \mathscr{M}} dT$, entonces de el ejercicio 5 tenemos que la primera ley de la termodinamica queda:
+        \begin{align*}
+            dQ = C_{V, \mathscr{M}} dT + PdV - \mu_0 \mathscr{H} d\mathscr{M} \quad (7.1) \quad \text{donde } \quad \left(\frac{\partial U}{\partial V}\right)_{\mathscr{M},T} = 0 \quad \text{y} \quad \left(\frac{\partial U}{\partial \mathscr{M}}\right)_{T,V} = 0 
+        \end{align*}
+        Y para un proceso adiabatico $dQ = 0$ entonces de (7.1) tenemos que:
+        \begin{align*}
+            0 = C_{V, \mathscr{M}} dT + PdV - \mu_0 \mathscr{H} d\mathscr{M} \quad &\Rightarrow \quad C_{V, \mathscr{M}} + P\frac{dV}{dT}= \mu_0 \mathscr{H}\frac{d\mathscr{M}}{dT} \quad (7.2)\\
+        \end{align*}
+        Donde para un gas ideal y para un sistema paramagnetico se cumplem respectivamente que:
+        \begin{align*}
+            PV = nRT \quad \text{y} \quad \mathscr{M} = \frac{C_C \mathscr{H}}{T} \quad &\Rightarrow \quad V = \frac{nRT}{P} \quad \text{y} \quad \frac{d\mathscr{M}}{dT} = -\frac{C_C\mathscr H}{T^2}\\
+        \end{align*}
+        Reemplazando en (7.2)
+        \begin{align*}
+            C_{V, \mathscr{M}} + P\frac{dV}{dT}= \mu_0 \mathscr{H}\frac{d\mathscr{M}}{dT} \quad &\Rightarrow \quad \frac{nRT}{V} dV =  -\left( C_{V,\mathscr M} +  \mu_0 \mathscr H\frac{C_C\mathscr H}{T^2} \right)dT\\
+            & \Rightarrow \quad \frac{nR}{V} dV + C_{V,\mathscr M}\frac{dT}{T}  +  \mu_0C_C\mathscr H^2 \frac{dT}{T^3} = 0\\ 
+            & \Rightarrow \quad nR \ln(V) + C_{V,\mathscr M} \ln(T) -  \frac{\mu_0 C_C\mathscr H^2 }{2T^2}  = C\\ 
+            & \Rightarrow \quad nR \ln(V) + C_{V,\mathscr M} \ln(T) -  \frac{\mathscr{M}^2 }{2 C_C}  = C \quad  \frac{\mathscr{H}^2}{T^2} = \frac{ \mathscr{M}^2}{C_C^2}\\
+            & \Rightarrow \quad \frac{C_{V,\mathscr M}}{nR} + \ln(V)  = \frac{\mathscr{M}^2}{2 C_C nR} + \ln(A) \quad \text{donde } A = e^C = \text{constante}\\
+        \end{align*}
 
+    \end{answer}
+    \input{p8.tex}
+    \begin{answer}[Punto 8]
+        Dado que durante todo el ciclo se tiene que durante proceso isobarico se cumple
+        \begin{align*}
+            C_P = \left( \frac{dQ}{dT} \right)_P  \quad &\Rightarrow \quad Q_{12} = C_P \int _{T_1}^{T_2} dT = C_P (T_2 - T_1) \quad (8.1.1) \quad \text{si el calor es absorbido}\\
+            &\Rightarrow \quad Q_{12} = -C_P \int _{T_1}^{T_2} dT = -C_P (T_2 - T_1) \quad (8.1.2) \quad \text{si el calor es cedido}\\
+        \end{align*}
+        Como de $1 \rightarrow 2$ es un proceso adiabatico entonces $dQ = 0$ y por lo tanto
+        \begin{align*}
+            P_1V_1^\gamma = P_2V_2^\gamma \quad (8.2)
+        \end{align*}
+        De $2 \rightarrow 3$ es un proceso isobarico el calor absorbido por el sistema es:
+        \begin{align*}
+            Q_{2\rightarrow 3} = C_P \Delta T = C_P (T_3 - T_2) \quad \text{Aplicando (8.1.1)}
+        \end{align*}
+        De $3 \rightarrow 4$ es un proceso adiabatico:
+        \begin{align*}
+            P_1V_4^\gamma = P_2V_3^\gamma \quad (8.3)
+        \end{align*}
+        Por ultimo de $4 \rightarrow 1$ es un proceso isocorico por lo que el calor absorbido es
+        \begin{align*}
+            Q_{4\rightarrow 1} = C_V \Delta T = C_P (T_4 - T_1) \quad \text{Aplicando (8.1.2)}
+        \end{align*}
+        Dividiendo ahora las expresiones (8.2) y (8.3) tenemos que:
+        \begin{align*}
+            \frac{V_1^\gamma}{V_4^\gamma} = \frac{V_2^\gamma}{V_3^\gamma} \quad &\Rightarrow \quad \frac{V_1}{V_4} = \frac{V_2}{V_3}\\
+            & \Rightarrow \quad V_1 V_3 = V_2 V_4 \quad (8.4)
+        \end{align*}
 
+        Por la definicion de eficiencia:
+        \begin{align*}
+            \eta &= 1 - \frac{Q_{4\rightarrow 1}}{Q_{2\rightarrow 3}} = 1 - \frac{C_P (T_4 - T_1)}{C_P (T_3 - T_2)}\\
+            &= 1 - \frac{T_3 - T_2}{T_4 - T_1} = 1 - \frac{\frac{P_1 V_4}{nR} - \frac{P_1 V_1}{nR}}{\frac{P_2 V_3}{nR}  -\frac{P_2 V_2}{nR}} \quad \text{Aplicando (6.1)}\\
+            &= 1 - \frac{P_1V_4 -P_1 V_1 }{P_2 V_3 - P_2 V_2} = 1 - \frac{P_1}{P_2} \frac{V_3 - V_2}{V_1 - V_4}\\
+            &= 1 - \left( \frac{V_2}{V_1} \right)^{\gamma} \frac{V_4 - V_1}{V_3 - V_2} = \left( \frac{V_2}{V_1} \right)^{\gamma-1} \frac{V_4V_2 - V_1V_2}{V_3V_1 - V_2V_1}  \quad \text{Aplicando (8.2)}\\
+            &= 1 - \left( \frac{V_2}{V_1} \right)^{\gamma-1} \frac{ V_3 V_1 - V_2 V_1}{V_3 V_1 - V_2 V_1} = 1 - \left( \frac{V_2}{V_1} \right)^{\gamma-1} \quad \text{Aplicando (8.4)}\\
+            &= 1 - \left( \frac{V_2^\gamma}{V_1^\gamma} \right)^{\frac{\gamma-1}{\gamma}} = 1 - \left( \frac{P_1}{P_2} \right)^{\frac{\gamma-1}{\gamma}} \quad \text{Aplicando (8.2)}\\
+        \end{align*}
+    \end{answer}
+    \input{p9.tex}
+    \begin{answer}
+        Dado que el calor y la entropia estan relacionada por la ecuacion:
+        \begin{align*}
+            dQ = TdS \quad (9.1)
+        \end{align*}
+        \begin{itemize}
+            \item [a.] En un diagrama $PV$ del un ciclo de Carnot consiste de dos curvas adiabaticas, la cuales en un digrama $TS$ consisten de dos lineas rectas que representa la entropia constante para distintos valores de la temperatura, pero a difrencia del diagrama anterior, este diagrama tambien consistira de dos curvas isotermicas representadas por dos lineas horizontales conectando las dos lineas adiabaticas, como se ve en la figura 1
+            De esta manera la eficiencia va estar dada por 
+    
+            \begin{align*}
+                \eta &= 1 - \frac{Q_{4\rightarrow 1}}{Q_{2\rightarrow 3}} = 1 - \frac{|Q_L|}{|Q_H|}\\
+                &= 1 - \frac{T_L \Delta S_L}{T_H \Delta S_H} \quad \text{Aplicando (9.1)}\\
+                &= 1 - \frac{T_L}{T_H} \quad 
+            \end{align*}
+            Esto ultimo debido a que  $2\rightarrow 3 \quad \text{y} \quad 4\rightarrow 1 \quad \text{son isoentropicos es decir} \quad S_3 = S_2 \quad \text{y} \quad S_4 = S_1 \Rightarrow \Delta S_L = \Delta S_H$
+            \item [b.] Del diagrama de la izquierda obtenemos que:
+            \begin{align*}
+                |Q_H| &= T_1 (S_ 1- S_2)= T_1 \Delta S_H \\
+                |Q_L| &= -\int_{S_1}^{S_2} T(S) dS = -\int_{S_1}^{S_2} \left( \frac{T_1 - T_2 }{S_1 - S_2}S - \frac{T_1S_2 - T_2S_1}{S_1 - S_2}\right)dS \\
+                &= -\left( \frac{T_1 - T_2 }{S_1 - S_2} \frac{S_2^2 - S_1^2}{2} - \frac{T_1S_2 - T_2S_1}{S_1 - S_2} (S_2 - S_1)\right)\\
+                &=-\left( T_2 - T_1 \frac{S_2 + S_1}{2} + T_1S_2 - T_2S_1\right)\\
+                &= - \left(\frac 12 T_2S_1 + \frac 12 T_2 S_2 - \frac 12 T_1 S_1 - \frac 12 T_1 S_2  + T_1S_2 -T_2S_1\right)\\
+                &= - \left( -\frac 12 T_1 S_1 + \frac 12 T_1 S_2 - \frac 12 T_2 S_1 + \frac 12 T_2 S_2 \right)\\
+                &= - \left( \frac 12 T_1 (S_2 - S_1) + \frac 12 T_2 (S_2- S_1) \right)\\
+                &= \frac 12 (T_1 + T_2) (S_1 - S_2)\\
+            \end{align*}
+            De esta manera la eficiencia queda:
+            \begin{align*}
+                \eta_L = 1 - \frac{|Q_H|}{|Q_L|} = 1 - \frac{T_1 + T_2}{2T_1} = \frac{T_1 - T_2}{2T_1}
+            \end{align*}
+            Ahora del  diagrama de la derecha obtenemos que:
+            \begin{align*}
+                |Q_L| &= T_2 (S_ 2- S_1)\\
+                |Q_H| &= \int_{S_1}^{S_2} T(S) dS = \int_{S_1}^{S_2} \left( \frac{T_2 - T_1 }{S_2 - S_1}S - \frac{T_2S_1 - T_1S_2}{S_2 - S_1}\right)dS \\
+                &= \left( \frac{T_2 - T_1 }{S_2 - S_1} \frac{S_2^2 - S_1^2}{2} - \frac{T_2S_1 - T_1S_2}{S_2 - S_1} (S_2 - S_1)\right)\\
+                &=\left( T_2 - T_1 \frac{S_2 + S_1}{2} - T_2S_1 + T_1S_2\right)\\
+                &= \left(-\frac 12 T_1S_1 - \frac 12 T_1 S_2 + \frac 12 T_2 S_1 + \frac 12 T_2 S_2  - T_2S_1 +T_1S_2\right)\\
+                &= \left( -\frac 12 T_1 S_1 + \frac 12 T_1 S_2 - \frac 12 T_2 S_1 + \frac 12 T_2 S_2 \right)\\
+                &= \left( \frac 12 T_1 (S_2 - S_1) + \frac 12 T_2 (S_2- S_1) \right)\\
+                &= \frac 12 (T_1 + T_2) (S_2 - S_1)\\
+            \end{align*}
+            Por lo que ahora la eficiencia queda:
+            \begin{align*}
+                \eta_R = 1 - \frac{|Q_H|}{|Q_L|} = 1 - \frac{2T_2}{T_1 + T_2} = \frac{T_1 - T_2}{T_1+T_2}
+            \end{align*}
+            Si realizamos la difrencia de estas dos eficiencias tenemos que:
+            \begin{align*}
+                \eta_L - \eta_R &= \frac{T_1 - T_2}{2T_1} - \frac{T_1 - T_2}{T_1+T_2} = \frac{(T_1 - T_2)(T_1 + T_2) - 2T_1(T_1 - T_2)}{2T_1(T_1 + T_2)}\\
+                &= \frac {T_1^2 - T_2^2 - 2T_1^2 + 2T_1T_2}{2T_1(T_1 + T_2)} = \frac{-T_1^2 + 2T_1T_2 - T_2^2}{2T_1(T_1 + T_2)}\\
+                &= \frac{-(T_1 - T_2)^2}{2T_1(T_1 + T_2)} < 0 
+            \end{align*}
+            De esta forma el ciclo de la derecha es mas eficiente que el de la izquierda.
+
+        \end{itemize}
+        
+    \end{answer}
+
+    \begin{figure}[h]
+        \centering
+        \includegraphics[width=0.5\textwidth]{Diagrama3.png}
+        \caption{Diagrama $TS$ de un ciclo de Carnot}
+    \end{figure}
+
+    \input{p10.tex}
+    \begin{answer}
+        De la primera ley para un sistema paramagnetico, la cual es:
+        \begin{align*}
+            dQ = dU - \mu_0 \mathscr{H} d\mathscr{M} \quad (10.1)
+        \end{align*}
+        Donde la energia $U= U(\mathscr{M}, T)$ por lo tanto:
+
+        \begin{align*}
+            dU = \left(\frac{\partial U}{\partial \mathscr{M}}\right)_T d\mathscr{M} + \left(\frac{\partial U}{\partial T}\right)_{\mathscr{M}} dT \quad (10.2)
+        \end{align*}
+        entonces Reemplazando (10.2) en (10.1)
+        \begin{align*}
+            &dQ = \left(\frac{\partial U}{\partial \mathscr{M}}\right)_T d\mathscr{M} + \left(\frac{\partial U}{\partial T}\right)_{\mathscr{M}} dT - \mu_0 \mathscr{H} d\mathscr{M} \\
+            &\Rightarrow \quad  dQ = \left(\frac{\partial U}{\partial T}\right)_{\mathscr{M}} dT + \left[\left(\frac{\partial U}{\partial \mathscr{M}}\right)_T - \mu_0 \mathscr{H} \right] d\mathscr{M}\\
+            &\Rightarrow \quad  \left(\frac {dQ}{dT}\right)_{\mathscr{H}}  = \left(\frac{\partial U}{\partial T}\right)_{\mathscr{M}} + \left[\left(\frac{\partial U}{\partial \mathscr{M}}\right)_T - \mu_0 \mathscr{H} \right] \left(\frac{\partial \mathscr{M}}{\partial T}\right)_{\mathscr{H}}\\
+            &\Rightarrow \quad C_{\mathscr{H}} = \left(\frac{\partial U}{\partial T}\right)_{\mathscr{M}} + \left[\left(\frac{\partial U}{\partial \mathscr{M}}\right)_T - \mu_0 \mathscr{H} \right] \left(\frac{\partial \mathscr{M}}{\partial T}\right)_{\mathscr{H}} \\ 
+            &\Rightarrow \quad C_{\mathscr{H}} = \left(\frac{\partial U}{\partial T}\right)_{\mathscr{M}} + \left[\left(\frac{\partial U}{\partial \mathscr{M}}\right)_T  \left(\frac{\partial \mathscr{M}}{\partial T}\right)_{\mathscr{H}} - \mu_0 \mathscr{H}  \left(\frac{\partial \mathscr{M}}{\partial T}\right)_{\mathscr{H}} \right] \\
+            &\Rightarrow \quad C_{\mathscr{H}} = \left(\frac{\partial U}{\partial T}\right)_{\mathscr{M}} + \left[-\left(\frac{\partial U}{\partial T}\right)_{\mathscr{M}}  - \mu_0 \mathscr{H}  \left(\frac{\partial \mathscr{M}}{\partial T}\right)_{\mathscr{H}} \right] \\  
+            &\Rightarrow \quad C_{\mathscr{H}} = - \mu_0 \mathscr{H}  \left(\frac{\partial \mathscr{M}}{\partial T}\right)_{\mathscr{H}}\\  
+        \end{align*}
+        Ahora desde la ley de Curie:
+        \begin{align*}
+            \mathscr{M} = \frac{C_C \mathscr{H}}{T} \quad &\Rightarrow \quad \left(\frac{\partial \mathscr{M}}{\partial T}\right)_{\mathscr{H}} = -\frac{C_C \mathscr{H}}{T^2}\\
+        \end{align*}
+        luego:
+        \begin{align*}
+            C_{\mathscr{H}} = \mu_0 \mathscr{H}\frac{C_C \mathscr{H}}{T^2}
+        \end{align*}
+        Ahora la entropia esta definida por:
+        \begin{align*}
+            dQ = TdS \quad &\Rightarrow \quad \left( \frac{dQ}{dT}\right)_{\mathscr{H}} = T \left(\frac{dS}{dT}\right)_\mathscr{H}\\
+            &\Rightarrow \quad C_{\mathscr{H}} = T \left(\frac{dS}{dT}\right)_{\mathscr{H}}\\
+            &\Rightarrow \quad dS = \frac{C_{\mathscr{H}}}{T}dT\\
+            &\Rightarrow \quad dS = \left(\frac{B+C \mathscr{H_0}}{T^2}+D T^2\right)\frac{dT}{T}\\
+            &\Rightarrow \quad S = \int_{T_i}^{T_f} \left(\frac{B+C \mathscr{H_0}}{T^2}+D T^2\right)\frac{dT}{T}\\
+            &\Rightarrow \quad S = \int_{T_i}^{T_f} \left(\frac{B+C \mathscr{H_0}}{T^3}+D T\right)dT\\
+            &\Rightarrow \quad S = \left[-\frac{B+C \mathscr{H_0}}{2T^2}+D \frac{T^2}{2}\right]_{T_i}^{T_f}\\
+            &\Rightarrow \quad S = -\frac{B+C \mathscr{H_0}}{2T_f^2}+D \frac{T_f^2}{2} + \frac{B+C \mathscr{H_0}}{2T_i^2}-D \frac{T_i^2}{2}\\
+            &\Rightarrow \quad S = \frac{B+C \mathscr{H_0}}{2}\left(\frac{1}{T_i^2}-\frac{1}{T_f^2}\right)+D \left(\frac{T_f^2}{2} -\frac{T_i^2}{2}\right)\\
+        \end{align*}
+    \end{answer}
 \end{document}
