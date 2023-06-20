@@ -1,6 +1,6 @@
-PWD c:\Users\ASUS\OneDrive\Documentos\Unal-2023-1\Termodinamica\Taller2
+PWD c:\Users\ASUS\OneDrive\Documentos\Unal-2023-1\Analitica II\Taller3\Taller2
 INPUT C:\Users\ASUS\AppData\Local\MiKTeX\miktex\data\le\pdftex\pdflatex.fmt
-INPUT c:\Users\ASUS\OneDrive\Documentos\Unal-2023-1\Termodinamica\Taller2\main.tex
+INPUT c:\Users\ASUS\OneDrive\Documentos\Unal-2023-1\Analitica II\Taller3\Taller2\main.tex
 OUTPUT main.log
 INPUT C:\Users\ASUS\AppData\Local\Programs\MiKTeX\tex\latex\base\article.cls
 INPUT C:\Users\ASUS\AppData\Local\Programs\MiKTeX\tex\latex\base\article.cls
@@ -675,10 +675,10 @@ INPUT C:\Users\ASUS\AppData\Local\Programs\MiKTeX\tex\latex\00miktex\epstopdf-sy
 INPUT C:\Users\ASUS\AppData\Local\Programs\MiKTeX\tex\latex\00miktex\epstopdf-sys.cfg
 INPUT C:\Users\ASUS\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmbx10.tfm
 INPUT C:\Users\ASUS\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmbx12.tfm
-INPUT .\intro.tex
-INPUT intro.tex
-INPUT .\intro.tex
-INPUT intro.tex
+INPUT .\p1.tex
+INPUT p1.tex
+INPUT .\p1.tex
+INPUT p1.tex
 INPUT C:\Users\ASUS\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\cmextra\cmex7.tfm
 INPUT C:\Users\ASUS\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\cmextra\cmex7.tfm
 INPUT C:\Users\ASUS\AppData\Local\Programs\MiKTeX\tex\latex\jknappen\ursfs.fd
@@ -720,6 +720,7 @@ INPUT .\p3.tex
 INPUT p3.tex
 INPUT .\p3.tex
 INPUT p3.tex
+INPUT C:\Users\ASUS\AppData\Local\Programs\MiKTeX\fonts\tfm\jknappen\ec\tcrm1000.tfm
 INPUT .\p4.tex
 INPUT p4.tex
 INPUT .\p4.tex
@@ -770,6 +771,8 @@ INPUT p10.tex
 INPUT .\p10.tex
 INPUT p10.tex
 INPUT main.aux
+INPUT C:\Users\ASUS\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\tcrm1000.pk
+INPUT C:\Users\ASUS\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\tcrm1000.pk
 INPUT C:\Users\ASUS\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmbx10.pfb
 INPUT C:\Users\ASUS\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmbx10.pfb
 INPUT C:\Users\ASUS\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmbx12.pfb

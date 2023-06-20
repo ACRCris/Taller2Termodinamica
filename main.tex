@@ -12,7 +12,7 @@
 % TODO: Fill these
 %-------------------------------%
 \title{Taller 2}
-\setmembername{Cristian Camilo Pérez Puentes} 
+\setmembername{Laura Rodríguez,Cristian Peña,Daniel Pardo,Miguel Martínez,Cristian Perez} 
 
 %-------------------------------%
 % Add / Delete commands and packages
@@ -43,162 +43,323 @@
     % Use `answer` environment to add solutions
     % \begin{answer}[Question 1.1] for example starts an environment formatted
     % for Question 1.1
-    \input{intro.tex}
-    1.Consideremos que la energía interna de un sistema termodinámico sea una función de T y P,
-    obtenga las siguientes ecuaciones:
-    \begin{itemize}
-        \item  $\quad\left(\frac{\partial U}{\partial T}\right)_P=C_P-P V \beta$.
-        \item $\left(\frac{\partial U}{\partial P}\right)_T=P V \kappa-\left(C_P-C_V\right) \frac{\kappa}{\beta}$.
-    \end{itemize}
+    \input{p1.tex}
     \begin{answer}[Problema 1]
-        \begin{itemize}
-            \item[a.]Dado que la energia interna es funcion de T y P, entonces:
-            \begin{equation}
-                U=U(T,P)
-            \end{equation}
-            Por lo tanto, la diferencial total de U es:
-            \begin{equation}
-                dU=\left(\frac{\partial U}{\partial T}\right)_P dT+\left(\frac{\partial U}{\partial P}\right)_T dP
-            \end{equation}
-            Por otro lado de la primera ley de la termodinamica tenemos que:
-            \begin{align*}
-                d Q = dU + PdV &=\left( \frac{\partial U}{\partial T} \right)_P dT + \left( \frac{\partial U}{\partial P} \right)_T dP + PdV \quad \Rightarrow\\
-                & \Rightarrow \left(
-                    \frac{dQ}{dT}
-                \right)_P = \left( \frac{\partial U}{\partial T} \right)_P + P \left( \frac{\partial V}{\partial T} \right)_P\\
-                & \Rightarrow \left(
-                    \frac{dQ}{dT}
-                    \right)_P = \left( \frac{\partial U}{\partial T} \right)_P + PV \frac{1}{V} \left( \frac{\partial V}{\partial T} \right)_P\\
-                & \Rightarrow 
-                        C_P = \left( \frac{\partial U}{\partial T} \right)_P + PV \beta\\
-                & \Rightarrow \left(
-                    \frac{\partial U}{\partial T}
-                    \right)_P = C_P - PV \beta
-            \end{align*}   
-    
-            Donde como se realiza $\frac{dQ}{dT}$ a volumen constante entonces 
-    
-            $$\left(\frac{dV}{dT}\right)_P = \left(\frac{\partial V}{\partial T}\right)_P$$  
-            \item [b.] De forma analoga paratiendo de la expresion 
-            \begin{align*}
-                d Q = dU + PdV &=\left( \frac{\partial U}{\partial T} \right)_P dT + \left( \frac{\partial U}{\partial P} \right)_T dP + PdV \quad \Rightarrow\\
-                & \Rightarrow \left(
-                    \frac{dQ}{dT}
-                \right)_V = \left( \frac{\partial U}{\partial T} \right)_P +  \left( \frac{\partial U}{\partial P} \right)_T \left( \frac{\partial P}{\partial T} \right)_V\\
-                & \Rightarrow 
-                C_V = C_P - PV \beta - \left( \frac{\partial U}{\partial P} \right)_T \left( \frac{\partial P}{\partial V} \right)_T \left( \frac{\partial V}{\partial T} \right)_P\\
-                & \Rightarrow
-                    \left( \frac{\partial U}{\partial P} \right)_T = \frac{C_P - PV - C_V}{\left( \frac{\partial P}{\partial V} \right)_T \left( \frac{\partial V}{\partial T} \right)_P}\\
-                & \Rightarrow
-                    \left( \frac{\partial U}{\partial P} \right)_T = (C_P - PV\beta - C_V)\left( \frac{\partial V}{\partial P} \right)_T \left( \frac{\partial T}{\partial V} \right)_P\\
-                & \Rightarrow
-                    \left( \frac{\partial U}{\partial P} \right)_T = -(C_P - PV\beta - C_V)\kappa \frac{1}{\beta}\\            \end{align*}\\
-        \end{itemize}
+       Sean en  $(p,q)$ la coordenadas generalizadas de un sistema en el espacion de fase, y sea $H(p,q)$ la funcion de Hamilton, entonces las ecuaciones de Hamilton son:
         
+        \begin{align*}
+            \dot p &= -\frac{\partial H}{\partial q}, \quad \dot q = \frac{\partial H}{\partial p} \quad \text{y} \quad  \frac{\partial H}{\partial t} =0  \quad (15.1)
+        \end{align*}
+
+        Dado que la transformacion puntual de coordenadas generalizadas $(p,q)$ a coordenadas generalizadas $(P,Q)$ dada por:
+        \begin{equation*}
+            \begin{align*}  
+                Q&=\arctan \frac{\alpha q}{p}, \\
+                P&=\frac{\alpha q^2}{2}\left(1+\frac{p^2}{\alpha^2 q^2}\right) = \frac{1}{2}\left(\alpha q^2 + \frac{p^2}{\alpha} \right)
+            \end{align*} \quad (15.2)
+        \end{equation*}
+      
+        es canónica, entonces deben satisfacer las ecuaciones de Hamilton (15.1) con $K(P,Q) = K$ constante, es decir:
+        \begin{align*}
+            \dot P &= -\frac{\partial K}{\partial Q} \quad \text{y} \quad \dot Q = \frac{\partial K}{\partial P}  \quad \text{y} \quad \frac{\partial K}{\partial t} =0  \quad (15.3)
+        \end{align*}
+
+        Para mostrar esto ultimo, usando la regla de la cadena en la ecuaciones (15.2) y reemplazando (15.1)
+        \begin{align*}
+            \frac{dQ}{dt} &= \frac{\partial Q}{\partial q} \frac{dq}{dt} + \frac{\partial Q}{\partial p} \frac{dp}{dt}\\
+            & = -\frac{\alpha q}{p^2 + \alpha^2 q^2} \left( -\frac{\partial H}{\partial q} \right) + \frac{\alpha p}{p^2 + \alpha^2 q^2} \left( \frac{\partial H}{\partial p} \right)\\
+            &= \frac{\alpha}{p^2 + \alpha^2 q^2} \left( q\frac{\partial H}{\partial q} + p \frac{\partial H}{\partial p} \right)\\
+            &= \frac 12\frac{2\alpha }{p^2 + \alpha^2 q^2} \left( q\frac{\partial H}{\partial q} +  p \frac{\partial H}{\partial p} \right)\\
+            &= \frac 1 {2P}  \left( q\frac{\partial H}{\partial q} +  p \frac{\partial H}{\partial p} \right) \quad (15.4.1)
+        \end{align*}
+        \begin{align*}
+            \frac{dP}{dt} &= \frac{\partial P}{\partial q} \frac{dq}{dt} + \frac{\partial P}{\partial p} \frac{dp}{dt}\\
+            &=  \frac{p}{\alpha} \left( -\frac{\partial H}{\partial q} \right) + q\alpha\left( \frac{\partial H}{\partial p} \right) \quad (15.4.2)
+        \end{align*}
+
+        Ahora expresando $p= p(Q,P)$ y $q = q(Q,P)$:
+
+        \begin{align*}
+            \frac q p = \frac 1 \alpha \tan(Q) \quad &\Rightarrow \quad  \frac{q^2}{p^2} = \frac 1 {\alpha^2} \tan^2(Q)\\
+            &\Rightarrow \quad  \frac{p^2}{\alpha^2 q^2} = \frac 1 {\tan^2(Q)}\\
+            & \Rightarrow \quad  P = \frac{\alpha q^2}{2}\left(1+\frac{p^2}{\alpha^2 q^2}\right) = \frac{\alpha q^2}{2}\left(1+ \frac{1}{\tan^2(Q)} \right)\\
+            & \Rightarrow \quad  q = \sqrt{
+                \frac{2 P}{\alpha}}\sin (Q) \quad \text{y} \quad p = \sqrt{
+                    2 P \alpha}\cos (Q) \quad (15.5)
+        \end{align*}
+
+        Y aplicando la regla de la cadena en (15.3) y reemplazando (15.5) tenemos que:
+        \begin{align*}
+            \dot P &= -\frac{\partial K}{\partial Q} = -\frac{\partial K}{\partial q} \frac{\partial q}{\partial Q} - \frac{\partial K}{\partial p} \frac{\partial p}{\partial Q}\\
+            &=  -\frac{\partial K}{\partial q}\left( \sqrt{
+                \frac{2 P}{\alpha}}\cos (Q) \right) - \frac{\partial K}{\partial p} \left( -\sqrt{
+                    2 P \alpha}\sin (Q) \right)\\
+            &= -\frac{\partial K}{\partial q}\sqrt{
+                \frac{2 P}{\alpha}}\cos (Q) + \frac{\partial K}{\partial p} \sqrt{
+                    2 P \alpha}\sin (Q) \quad (15.6.1)
+        \end{align*}
+
+        \begin{align*}
+            \dot Q = \frac{\partial K}{\partial P} &= \frac{\partial K}{\partial q} \frac{\partial q}{\partial P} + \frac{\partial K}{\partial p} \frac{\partial p}{\partial P}\\
+            &= \frac{\partial K}{\partial q}\left(\sqrt{\frac{1}{2Pa}} \sin (Q)\right) + \frac{\partial K}{\partial p} \left( \sqrt{\frac{a}{2P}} \cos (Q)\right) \quad (15.6.2)
+        \end{align*}
+
+        Igualando (15.4.1) con (15.6.1) y (15.4.2) con (15.6.2) tenemos que:
+
+        \begin{align*}
+            \frac 1 {2P}  \left( q\frac{\partial H}{\partial q} +  p \frac{\partial H}{\partial p} \right) &= -\frac{\partial K}{\partial q}\sqrt{
+                \frac{2 P}{\alpha}}\cos (Q) + \frac{\partial K}{\partial p} \sqrt{
+                    2 P \alpha}\sin (Q)\\
+        \end{align*}
+
+        Aplicando la regla de la cadena en (15.1) tenemos que:
+        \begin{align*}
+            \dot p = -\frac{\partial H}{\partial q} &= -\frac{\partial H}{\partial Q} \frac{\partial Q}{\partial q} - \frac{\partial H}{\partial P} \frac{\partial P}{\partial q}\\
+            &= -\frac{\partial H}{\partial Q} \frac{\alpha p}{p^2 + \alpha^2 q^2}  - \frac{\partial H}{\partial P} \alpha q \quad (15.7.1)
+        \end{align*}
+
+        \begin{align*}
+            \dot q = \frac{\partial H}{\partial p} &= \frac{\partial H}{\partial Q} \frac{\partial Q}{\partial p} + \frac{\partial H}{\partial P} \frac{\partial P}{\partial p}\\
+            &= -\frac{\partial H}{\partial Q} \frac{\alpha q}{p^2 + \alpha^2 q^2}  + \frac{\partial H}{\partial P} \frac p\alpha \quad (15.7.2)
+        \end{align*}
+
+       
+
+    Reemplazando (15.5) en (15.7.1) y (15.7.2) tenemos que:
+    \begin{align*}
+        \dot Q &= \frac 1 {2P}  \left( q\frac{\partial H}{\partial q} +  p \frac{\partial H}{\partial p} \right) \\
+        &= \frac 1 {2P}  \left( q\left(\frac{\partial H}{\partial Q} \frac{\alpha p}{p^2 + \alpha^2 q^2} + \frac{\partial H}{\partial P} \alpha q\right) +  p \left(-\frac{\partial H}{\partial Q} \frac{\alpha q}{p^2 + \alpha^2 q^2}  + \frac{\partial H}{\partial P} \frac p\alpha \right) \right)\\
+        &= \frac 1 {2P}  \left( \frac{\partial H}{\partial Q} \frac{\alpha pq}{p^2 + \alpha^2 q^2}  + \frac{\partial H}{\partial P} \alpha q^2 - \frac{\partial H}{\partial Q} \frac{\alpha pq}{p^2 + \alpha^2 q^2} + \frac{\partial H}{\partial P} \frac{p^2}{\alpha} \right)\\
+        &= \frac 1 {2P}  \left( \frac{\partial H}{\partial P} \alpha q^2 + \frac{\partial H}{\partial P} \frac{p^2}{\alpha} \right)\\
+        &= \frac 1 {2P}   \frac{\partial H}{\partial P} \left(\alpha q^2 + \frac{p^2}{\alpha} \right) \\
+        &= \frac 1 {2P}   \frac{\partial H}{\partial P} 2P = \frac{\partial H}{\partial P}  \\
+    \end{align*}
+
+    \begin{align*}
+        \dot P &= \frac{p}{\alpha} \left( -\frac{\partial H}{\partial q} \right) + q\alpha\left( \frac{\partial H}{\partial p} \right)\\
+        &= \frac{p}{\alpha} \left( -\frac{\partial H}{\partial Q} \frac{\alpha p}{p^2 + \alpha^2 q^2}  - \frac{\partial H}{\partial P} \alpha q\right) + q\alpha\left( -\frac{\partial H}{\partial Q} \frac{\alpha q}{p^2 + \alpha^2 q^2}  + \frac{\partial H}{\partial P} \frac p\alpha \right)\\
+        &=  -\frac{\partial H}{\partial Q} \frac{ p^2}{p^2 + \alpha^2 q^2}  - \frac{\partial H}{\partial P} pq  -\frac{\partial H}{\partial Q} \frac{\alpha^2 q^2}{p^2 + \alpha^2 q^2}  + \frac{\partial H}{\partial P} p q\\
+        &=  -\frac{\partial H}{\partial Q} \frac{ p^2 + \alpha^2 q^2}{p^2 + \alpha^2 q^2} \\
+        &=  -\frac{\partial H}{\partial Q} \\
+    \end{align*}
+
+    Por lo que si $K = H(P,Q)$ entonces las anterioes ecuaciones son las ecuaciones de Hamilton (15.3) y por lo tanto la transformacion (15.2) es canónica. Vease que como $H= H(q,p)$ no depende de $t$ entonces $K = H(P,Q)$ tampoco depende de $t$, es decir $\frac{\partial K}{\partial t} = 0$.
+
     \end{answer}
     \input{punto2.tex}
-    \begin{answer}
-        Si consideramos la energia interna como funcion de $P, V$ es decir $U = U(P,V)$ entonces de la primera ley de la termodinamica para sistema hidrostatico:
-    \begin{align*}
-        dQ = dU + PdV  \quad (2.1)
-    \end{align*}
-    \begin{itemize}
-        \item [a.]  Como $U = U(P,V)$ entonces:
+    \begin{answer}[Punto 2]
+        De las ecuaciones de transformacion asociadas a al funcion generatriz $F_2 (q_j, P_j)\quad j =1,\dots n$ dadas por:
         \begin{align*}
-            dU = \left( \frac{\partial U}{\partial P} \right)_V dP + \left( \frac{\partial U}{\partial V} \right)_P dV \quad (2.2)       
-       \end{align*}
-       Reemplazando (2.2) en (2.1) tenemos que:
-       \begin{align*}
-           dQ &= \left( \frac{\partial U}{\partial P} \right)_V dP + \left( \frac{\partial U}{\partial V} \right)_P dV + PdV \\
-            &= \left( \frac{\partial U}{\partial P} \right)_V dP + \left[ \left( \frac{\partial U}{\partial V} \right)_P + P \right] dV \quad (2.3)
-        \end{align*}     
-    \end{itemize} 
-    \begin{itemize}
-        \item [b.] De (2.3)
-        \begin{align*}
-            \left(
-                \frac{dQ}{dT} 
-                \right)_V = \left( \frac{\partial U}{\partial P} \right)_V \left( \frac{dP}{dT}\right)_V \quad  (2.4)
+            Q_j &= \frac{\partial F_2}{\partial P_j},\quad  p_j = \frac{\partial F_2}{\partial q_j} \quad \text{y} \quad K = H+\frac{\partial F_2}{\partial t}  \quad (16.1)
         \end{align*}
-        Y como la ecuacion de estado esta en terminos de $P$ y $V$ entonces:
+        Se tiene que:
         \begin{align*}
-            dT = \left( \frac{\partial T}{\partial P} \right)_V dP + \left( \frac{\partial T}{\partial V} \right)_P dV \quad \Rightarrow \quad \left( \frac{dT}{dP} \right)_V = \left( \frac{\partial T}{\partial P} \right)_V
+            &\frac{\partial F_2}{\partial t} = 0 \quad \Rightarrow \quad K = H(Q_j,P_j)\\
+            &Q_j = \frac{\partial F_2}{\partial P_j} = \frac{\partial}{\partial P_j} (P_j q_j) = q_j\\
+            &p_j = \frac{\partial F_2}{\partial q_j} = \frac{\partial}{\partial q_j} (P_j q_j) = P_j\\ 
         \end{align*}
-        Luego (2.4) queda:
+        De esta forma la matriz de transformacion $M$ es tal que:
         \begin{align*}
-            \left(
-                \frac{dQ}{dT} 
-                \right)_V &= \left( \frac{\partial U}{\partial P} \right)_V \left( \frac{\partial T}{\partial P}\right)_V \\
-                &= -\left( \frac{\partial U}{\partial P} \right)_V \left( \frac{\partial T}{\partial V}\right)_P \left( \frac{\partial V}{\partial P}\right)_V \\
-                &= \left( \frac{\partial U}{\partial P} \right)_V \frac{\beta}{\kappa} = C_V \quad  \Rightarrow
+            M = \begin{pmatrix}
+                \frac{\partial Q_i}{\partial q_j} & \frac{\partial Q_i}{\partial p_j}\\
+                \frac{\partial P_i}{\partial q_j} & \frac{\partial P_i}{\partial p_j}\\
+            \end{pmatrix} =\begin{pmatrix}
+                \mathbf 1 & 0\\
+                0 & \mathbf 1\\
+            \end{pmatrix} =  \begin{pmatrix}
+                1 & 0 & \dots & 0\\
+                0 & 1 & \dots & 0\\
+                \vdots & \vdots & \ddots & \vdots\\
+                0 & 0 & \dots & 1\\
+            \end{pmatrix}
         \end{align*}
-        \begin{align*}
-            \left( \frac{\partial U}{\partial P} \right)_V = \frac{C_V \kappa}{\beta}
-        \end{align*}
-
-        Haciendo uso de  
-        \begin{align*}
-            C_V = \left( \frac{\partial U}{\partial T} \right)_V  = \left(\frac{dQ}{dT}\right)_V 
-        \end{align*}
-        \item [c.] De (2.3)
-
-        \begin{align*}
-            \left(
-                \frac {dQ}{dT}
-        \right)_P &= \left( \frac{\partial U}{\partial V} \right)_P \left( \frac{\partial V}{\partial T} \right)_P + P \left( \frac{\partial V}{\partial T} \right)_P\\
-        &= \left( \frac{\partial U}{\partial V} \right)_P V \beta + P V \beta = C_P \quad \Rightarrow
-        \end{align*}
-        \begin{align*}
-            \left( \frac{\partial U}{\partial V} \right)_P V\beta = C_P - PV\beta \quad \Rightarrow \quad \left( \frac{\partial U}{\partial V} \right)_P = \frac{C_P}{V\beta} - P
-        \end{align*}
-        Donde se ha hecho uso de la ecuacion de estado es funcion de $P$ y $V$.
-        $$ \left(
-            \frac {dT}{dV}
-        \right)_P = \left( \frac{\partial T}{\partial V} \right)_P$$
-        \end{itemize}
     \end{answer}
     \input{p3.tex}
     \begin{answer}[Punto 3]
-    Si consideramos la enegia interna como funcion de $T$ y $V$ es decir $U = U(T,V)$ entonces:
-    \begin{align*}
-        dU = \left( \frac{\partial U}{\partial T} \right)_V dT + \left( \frac{\partial U}{\partial V} \right)_T dV \quad (3.1)
-    \end{align*}
-    entonces Reemplazando (3.1) en (2.1) tenemos que:
-    \begin{align*}
-        &dQ = \left( \frac{\partial U}{\partial T} \right)_V dT + \left( \frac{\partial U}{\partial V} \right)_T dV + PdV \quad (3.2)\quad\\ 
-        &\Rightarrow \quad  C_P = \left( \frac{dQ}{dT} \right)_P = \left( \frac{\partial U}{\partial T} \right)_V + \left( \frac{\partial U}{\partial V} \right)_T \left( \frac{\partial V}{\partial T} \right)_P + P \left( \frac{\partial V}{\partial T} \right)_P\\
-        &\Rightarrow \quad C_V = \left( \frac {dQ}{dT} \right)_V = \left( \frac{\partial U}{\partial T} \right)_V \quad \Rightarrow
-    \end{align*}
-    \begin{align*}
-        C_P - C_V = \left[ \left( \frac{\partial U}{\partial V} \right)_T + P \right] \left( \frac{\partial V}{\partial T} \right)_P \quad (3.3)
-    \end{align*}
-    Tambien de (3.2)
-    \begin{align*}
-        \left(\frac{dQ}{dV}\right)_T = \left( \frac{\partial U}{\partial V} \right)_T + P \quad &\Rightarrow \quad \left( \frac{\partial U}{\partial V} \right)_T = \left(\frac{dQ}{dV}\right)_T - P\\
-        &\Rightarrow \quad \left( \frac{\partial U}{\partial V} \right)_T = T \left( \frac{\partial S}{\partial V} \right)_T - P \quad dQ = TdS \quad \text{$T$ constante}\\
-        &\Rightarrow \quad \left( \frac{\partial U}{\partial V} \right)_T = T\left( \frac{\partial P}{\partial T} \right)_V - P \quad (3.4) \quad \text{$\left( \frac{\partial S}{\partial V} \right)_T = \left( \frac{\partial P}{\partial T} \right)_V$}
-    \end{align*}
-    De (3.3) y (3.4)
-    \begin{align*}
-        C_P - C_V &= \left[ T\left( \frac{\partial P}{\partial T} \right)_V - P + P \right] \left( \frac{\partial V}{\partial T} \right)_P \quad &\Rightarrow \quad C_P - C_V = T\left( \frac{\partial P}{\partial T} \right)_V \left( \frac{\partial V}{\partial T} \right)_P\\
-        &=T \left( \frac{\partial P}{\partial T} \right)_V \left( \frac{\partial V}{\partial T} \right)_P \\
-     \end{align*}
-    
-    Del taller anterior sabemos que:
-    \begin{align*}
-        \left( \frac{\partial P}{\partial T} \right)_V = \frac{R}{V-b} \quad \text{y} \quad \left( \frac{\partial V} {\partial T}\right)_P  = \frac{RV^3}{2ab - aV + PV^3}
-    \end{align*}
-    Por lo tanto 
+        Dado que se busca una funcion generatriz $F'= F'(q_j, p_k,Q_l,P_m,t), \quad j + k + l+m = 2n$ tal que la transformacion canonica $M$ asociada satisfaga que:
+        \begin{align*}
+            \mathbf{\dot X} = M \dot {\mathbf{x} }\quad (17.1)
+        \end{align*}
+        Donode:
+        \begin{align*}
+            \mathbf X = \begin{pmatrix}
+                Q_j\\
+                P_j\\
+            \end{pmatrix} = \begin{pmatrix}
+                p_j\\
+                q_j\\
+            \end{pmatrix},\quad \mathbf x = \begin{pmatrix}
+                q_j\\
+                p_j\\
+            \end{pmatrix}
+            \quad \text{y} \quad 
+            M = \begin{pmatrix}
+                \frac{\partial Q_j}{\partial q_i} & \frac{\partial Q_j}{\partial p_i}\\
+                \frac{\partial P_j}{\partial q_i} & \frac{\partial P_j}{\partial p_i}\\
+            \end{pmatrix}
+            \quad (17.2)
+        \end{align*}
+        Por lo que de (17.2):
+        \begin{align*}
+            M = \begin{pmatrix}
+                \frac{\partial Q_j}{\partial q_i} & \frac{\partial Q_j}{\partial p_i}\\
+                \frac{\partial P_j}{\partial q_i} & \frac{\partial P_j}{\partial p_i}\\
+            \end{pmatrix} = \begin{pmatrix}
+                \frac{\partial p_j }{\partial q_i} & \frac{\partial p_j }{\partial p_i}\\
+                \frac{\partial q_j }{\partial q_i} & \frac{\partial q_j }{\partial p_i}\\
+            \end{pmatrix} = \begin{pmatrix}
+                0 & \delta_{ij}\\
+                \delta_{ij} & 0\\
+            \end{pmatrix} = \begin{pmatrix}
+                0 & \mathbf 1\\
+                \mathbf 1 & 0\\
+            \end{pmatrix} \quad (17.3)
+        \end{align*}
+        Vease que $M$ de (17.3) no una transformacion canonica, pues:
 
+        \begin{align*}
+            M^T J M = \begin{pmatrix}
+                0 & \mathbf 1\\
+                \mathbf 1 & 0\\
+            \end{pmatrix}^T \begin{pmatrix}
+                0 & \mathbf 1\\
+                -\mathbf 1 & 0\\
+            \end{pmatrix} \begin{pmatrix}
+                0 & \mathbf 1\\
+                \mathbf 1 & 0\\
+            \end{pmatrix}
+            = \begin{pmatrix}
+                0 & \mathbf 1\\
+                \mathbf 1 & 0\\
+            \end{pmatrix} \begin{pmatrix}
+                \mathbf 1 & 0\\
+                0 & -\mathbf 1\\
+            \end{pmatrix} = \begin{pmatrix}
+                0 & -\mathbf 1\\
+                \mathbf 1 & 0\\
+            \end{pmatrix} \not = J
+        \end{align*}
+        Por lo que en su lugar se propone:
+            \begin{align*}
+                \mathbf X = \begin{pmatrix}
+                    Q_j\\
+                    P_j\\
+                \end{pmatrix} = \begin{pmatrix}
+                    p_j\\
+                    -q_j\\
+                \end{pmatrix}
+                \quad \text{y} \quad 
+                M = \begin{pmatrix}
+                    \frac{\partial Q_j}{\partial q_i} & \frac{\partial Q_j}{\partial p_i}\\
+                    \frac{\partial P_j}{\partial q_i} & \frac{\partial P_j}{\partial p_i}\\
+                \end{pmatrix} \quad (17.4)
+            \end{align*}
+       
+
+     Asi de (17.4):
+        \begin{align*}
+            M = \begin{pmatrix}
+                \frac{\partial Q_j}{\partial q_i} & \frac{\partial Q_j}{\partial p_i}\\
+                \frac{\partial P_j}{\partial q_i} & \frac{\partial P_j}{\partial p_i}\\
+            \end{pmatrix} = \begin{pmatrix}
+                \frac{\partial p_j }{\partial q_i} & \frac{\partial p_j }{\partial p_i}\\
+                \frac{\partial (-q_j) }{\partial q_i} & \frac{\partial (-q_j) }{\partial p_i}\\
+            \end{pmatrix} = \begin{pmatrix}
+                0 & \delta_{ij}\\
+                -\delta_{ij} & 0\\
+            \end{pmatrix} = \begin{pmatrix}
+                0 & \mathbf 1\\
+                -\mathbf 1 & 0\\
+            \end{pmatrix} \quad (17.5)
+        \end{align*}
+        Vease que $M$ de (17.5) es una transformacion canonica, pues:
+        \begin{align*}
+            M^T J M = \begin{pmatrix}
+                0 & \mathbf 1\\
+                -\mathbf 1 & 0\\
+            \end{pmatrix}^T \begin{pmatrix}
+                0 & \mathbf 1\\
+                -\mathbf 1 & 0\\
+            \end{pmatrix} \begin{pmatrix}
+                0 & \mathbf 1\\
+                -\mathbf 1 & 0\\
+            \end{pmatrix}
+            = \begin{pmatrix}
+                0 & -\mathbf 1\\
+                \mathbf 1 & 0\\
+            \end{pmatrix} \begin{pmatrix}
+                -\mathbf 1 & 0\\
+                0 & -\mathbf 1\\
+            \end{pmatrix} = \begin{pmatrix}
+                0 & \mathbf 1\\
+                -\mathbf 1 & 0\\
+            \end{pmatrix} = J
+        \end{align*}
+        Donde las ecuaciones de transformacion canonica para $ F'= F'(q_j, p_k,Q_l,P_m,t)$, dadas por las transformaciones de Legnedre:
+
+        
+        \begin{align*}
+            F(q_j, q_k, Q_l, Q_m, t)  \rightarrow F''(q_j, p_k, Q_l, Q_m, t) \quad \Rightarrow\\
+        \end{align*} 
+        \begin{align*}F''(q_j, p_k, Q_l, Q_m, t) &= q_k \frac{\partial F}{\partial q_k}  - F\\
+            &= q_k p_k - F
+        \end{align*}
+        \begin{align*}
+            F''(q_j,p_k,Q_l,Q_m,t) \rightarrow F'(q_j, p_k, Q_l, P_m, t) \quad \Rightarrow 
+        \end{align*}
+        \begin{align*}
+            \quad F'(q_j,p_k,Q_l,P_m,t) &= Q_m \frac{\partial F''}{\partial Q_m}  - F''\\
+            &= -Q_m \frac{\partial F}{\partial Q_m}  - q_k p_k + F \\
+            &= Q_m P_m - q_k p_k + F(q_j, q_k, Q_l, Q_m, t) \quad (17.6)
+        \end{align*}
+
+        Donde de (17.6) se tiene que:
+
+        \begin{align*}
+            \frac{dF}{dt}  &=p_j \dot q_j + p_k \dot q_k - P_l\dot Q_l- P_m \dot Q_m - (H - K)\\
+            &= \frac{\partial F}{\partial q_j} \dot q_j + \frac{\partial F}{\partial q_k} \dot q_k - \frac{\partial F}{\partial Q_l}\dot Q_l- \frac{\partial F}{\partial Q_m} \dot Q_m\\
+            &= \frac d{dt}\left(F'(q_j, p_k, Q_l, P_m, t) + q_k p_k - Q_m P_m \right)\\
+            &= \frac d{dt}\left(F'(q_j, p_k, Q_l, P_m, t) \right) + \frac d{dt}\left(q_k p_k \right) - \frac d{dt}\left(Q_m P_m \right)\\
+            &= \frac d{dt}\left(F'(q_j, p_k, Q_l, P_m, t) \right) + \dot q_k p_k + q_k \dot p_k - \dot Q_m P_m - Q_m \dot P_m \quad \Rightarrow\\
+        \end{align*}
+        \begin{align*}
+            \frac {dF'}{dt} &= p_j\dot q_j - q_k \dot p_k - P_l\dot Q_l + Q_m \dot P_m - (H-K)\\
+            &= \frac{\partial F'}{\partial q_j} \dot q_j + \frac{\partial F'}{\partial p_k} \dot p_k + \frac{\partial F'}{\partial Q_l}\dot Q_l+\frac{\partial F'}{\partial P_m} \dot P_m + \frac{\partial F'}{\partial t} \quad \Rightarrow\\
+        \end{align*}
+        \begin{equation*}
+            \begin{align*}
+                p_j = \frac{\partial F'}{\partial q_j} & \qquad q_k = -\frac{\partial F'}{\partial p_k} \\\\
+                P_l = -\frac{\partial F'}{\partial Q_l} & \qquad Q_m = \frac{\partial F'}{\partial P_m} \\\\
+                \qquad K = H+\frac{\partial F'}{\partial t} 
+            \end{align*} \quad (17.7)    
+        \end{equation*}
+        Reemplazando (17.4) en (17.7) tenemos que:
+        \begin{align*}
+            p_j = \frac{\partial F'}{\partial q_j} & \qquad q_k = -\frac{\partial F'}{\partial p_k} \\\\
+            q_l = \frac{\partial F'}{\partial p_l} & \qquad p_m = -\frac{\partial F'}{\partial q_m} \\\\
+            \qquad K = H+\frac{\partial F'}{\partial t}
+        \end{align*}
+    Si consideramos $F'(q_j, p_k, Q_l, P_m, t) = F^{q}_j(q_j)F^{p}_k(p_k)F^{Q}_l(Q_l)F^{P}_m(P_m)F^t(t)$ entonces:
     \begin{align*}
-        C_P - C_V &= T \frac{R}{V-b} \frac{RV^3}{2ab - aV + PV^3} \\
-        &= \frac{R^2TV^3}{2(ab - aV)(V-b) +(V-b)\left(\frac a{V^2} + P\right)V^3}\\
-        &= \frac{R^2TV^3}{-2a(V - b)(V-b) +RT V^3}\\
-        &= \frac{R}{1 -\frac{2a(V- b)^2}{RTV^3}}\\
+        p_j = \frac{dF^q_j}{dq_j} & \qquad q_k = -\frac{dF^p_k}{dp_k} \\\\
+        q_l = \frac{dF^p_l}{dp_l} & \qquad p_m = -\frac{dF^q_m}{dq_m} \\\\
+        \qquad K = H+\frac{dF^t}{dt}
+    \end{align*}
+    Ecuaciones las cuales tiene como solucion:
+    \begin{align*}
+        F^q_j(q_j) &= \int p_j dq_j = p_jq_j + c_1\\
+        F^p_k(p_k) &= -\int q_k dp_k = - p_k q_k + c_2\\
+        F^Q_l(Q_l) &= \int P_l dQ_l = P_lQ_l + c_3\\
+        F^P_m(P_m) &= -\int Q_m dP_m  = -P_m Q_m + c_4\\
+        F^t(t) &= \int (K-H) dt\\
+    \end{align*}
+    Por lo que una funcion generatriz que satisface (17.4) es
+    \begin{align*}
+        F'(q_j, p_k, Q_l, P_m, t) = (p_j q_j + c_1)(- p_k q_k + c_2)(P_l Q_l + c_3)(-P_m Q_m + c_4) F^t(t)
     \end{align*}
     \end{answer}
     \input{p4.tex}
-    \begin{answer}
+    \begin{answer}[Punto 4]
         Dado que la ecuacion de estado representa un sistema hidrostatico con $u = u(P,v)$ entonces:
 
         \begin{align*}
@@ -347,7 +508,7 @@
         \end{align*}
     \end{answer}
     \input{p9.tex}
-    \begin{answer}
+    \begin{answer}[Punto 9]
         Dado que el calor y la entropia estan relacionada por la ecuacion:
         \begin{align*}
             dQ = TdS \quad (9.1)
@@ -375,7 +536,7 @@
             \end{align*}
             De esta manera la eficiencia queda:
             \begin{align*}
-                \eta_L = 1 - \frac{|Q_H|}{|Q_L|} = 1 - \frac{T_1 + T_2}{2T_1} = \frac{T_1 - T_2}{2T_1}
+                \eta_L = 1 - \frac{|Q_L|}{|Q_H|} = 1 - \frac{T_1 + T_2}{2T_1} = \frac{T_1 - T_2}{2T_1}
             \end{align*}
             Ahora del  diagrama de la derecha obtenemos que:
             \begin{align*}
@@ -390,7 +551,7 @@
             \end{align*}
             Por lo que ahora la eficiencia queda:
             \begin{align*}
-                \eta_R = 1 - \frac{|Q_H|}{|Q_L|} = 1 - \frac{2T_2}{T_1 + T_2} = \frac{T_1 - T_2}{T_1+T_2}
+                \eta_R = 1 - \frac{|Q_L|}{|Q_H|} = 1 - \frac{2T_2}{T_1 + T_2} = \frac{T_1 - T_2}{T_1+T_2}
             \end{align*}
             Si realizamos la difrencia de estas dos eficiencias tenemos que:
             \begin{align*}
@@ -411,45 +572,20 @@
     \end{figure}
 
     \input{p10.tex}
-    \begin{answer}
-        De la primera ley para un sistema paramagnetico, la cual es:
-        \begin{align*}
-            dQ = dU - \mu_0 \mathscr{H} d\mathscr{M} \quad (10.1)
-        \end{align*}
-        Donde la energia $U= U(\mathscr{M}, T)$ por lo tanto:
-
-        \begin{align*}
-            dU = \left(\frac{\partial U}{\partial \mathscr{M}}\right)_T d\mathscr{M} + \left(\frac{\partial U}{\partial T}\right)_{\mathscr{M}} dT \quad (10.2)
-        \end{align*}
-        entonces Reemplazando (10.2) en (10.1)
-        \begin{align*}
-            &dQ = \left(\frac{\partial U}{\partial \mathscr{M}}\right)_T d\mathscr{M} + \left(\frac{\partial U}{\partial T}\right)_{\mathscr{M}} dT - \mu_0 \mathscr{H} d\mathscr{M} \\
-            &\Rightarrow \quad  dQ = \left(\frac{\partial U}{\partial T}\right)_{\mathscr{M}} dT + \left[\left(\frac{\partial U}{\partial \mathscr{M}}\right)_T - \mu_0 \mathscr{H} \right] d\mathscr{M}\\
-            &\Rightarrow \quad  \left(\frac {dQ}{dT}\right)_{\mathscr{H}}  = \left(\frac{\partial U}{\partial T}\right)_{\mathscr{M}} + \left[\left(\frac{\partial U}{\partial \mathscr{M}}\right)_T - \mu_0 \mathscr{H} \right] \left(\frac{\partial \mathscr{M}}{\partial T}\right)_{\mathscr{H}}\\
-            &\Rightarrow \quad C_{\mathscr{H}} = \left(\frac{\partial U}{\partial T}\right)_{\mathscr{M}} + \left[\left(\frac{\partial U}{\partial \mathscr{M}}\right)_T - \mu_0 \mathscr{H} \right] \left(\frac{\partial \mathscr{M}}{\partial T}\right)_{\mathscr{H}} \\ 
-            &\Rightarrow \quad C_{\mathscr{H}} = \left(\frac{\partial U}{\partial T}\right)_{\mathscr{M}} + \left[\left(\frac{\partial U}{\partial \mathscr{M}}\right)_T  \left(\frac{\partial \mathscr{M}}{\partial T}\right)_{\mathscr{H}} - \mu_0 \mathscr{H}  \left(\frac{\partial \mathscr{M}}{\partial T}\right)_{\mathscr{H}} \right] \\
-            &\Rightarrow \quad C_{\mathscr{H}} = \left(\frac{\partial U}{\partial T}\right)_{\mathscr{M}} + \left[-\left(\frac{\partial U}{\partial T}\right)_{\mathscr{M}}  - \mu_0 \mathscr{H}  \left(\frac{\partial \mathscr{M}}{\partial T}\right)_{\mathscr{H}} \right] \\  
-            &\Rightarrow \quad C_{\mathscr{H}} = - \mu_0 \mathscr{H}  \left(\frac{\partial \mathscr{M}}{\partial T}\right)_{\mathscr{H}}\\  
-        \end{align*}
-        Ahora desde la ley de Curie:
-        \begin{align*}
-            \mathscr{M} = \frac{C_C \mathscr{H}}{T} \quad &\Rightarrow \quad \left(\frac{\partial \mathscr{M}}{\partial T}\right)_{\mathscr{H}} = -\frac{C_C \mathscr{H}}{T^2}\\
-        \end{align*}
-        luego:
-        \begin{align*}
-            C_{\mathscr{H}} = \mu_0 \mathscr{H}\frac{C_C \mathscr{H}}{T^2}
-        \end{align*}
-        Ahora la entropia esta definida por:
+    \begin{answer}[Punto 10]
+        La entropia esta definida por:
         \begin{align*}
             dQ = TdS \quad &\Rightarrow \quad \left( \frac{dQ}{dT}\right)_{\mathscr{H}} = T \left(\frac{dS}{dT}\right)_\mathscr{H}\\
             &\Rightarrow \quad C_{\mathscr{H}} = T \left(\frac{dS}{dT}\right)_{\mathscr{H}}\\
             &\Rightarrow \quad dS = \frac{C_{\mathscr{H}}}{T}dT\\
-            &\Rightarrow \quad dS = \left(\frac{B+C \mathscr{H_0}}{T^2}+D T^2\right)\frac{dT}{T}\\
-            &\Rightarrow \quad S = \int_{T_i}^{T_f} \left(\frac{B+C \mathscr{H_0}}{T^2}+D T^2\right)\frac{dT}{T}\\
-            &\Rightarrow \quad S = \int_{T_i}^{T_f} \left(\frac{B+C \mathscr{H_0}}{T^3}+D T\right)dT\\
-            &\Rightarrow \quad S = \left[-\frac{B+C \mathscr{H_0}}{2T^2}+D \frac{T^2}{2}\right]_{T_i}^{T_f}\\
-            &\Rightarrow \quad S = -\frac{B+C \mathscr{H_0}}{2T_f^2}+D \frac{T_f^2}{2} + \frac{B+C \mathscr{H_0}}{2T_i^2}-D \frac{T_i^2}{2}\\
-            &\Rightarrow \quad S = \frac{B+C \mathscr{H_0}}{2}\left(\frac{1}{T_i^2}-\frac{1}{T_f^2}\right)+D \left(\frac{T_f^2}{2} -\frac{T_i^2}{2}\right)\\
+            &\Rightarrow \quad dS = \left(\frac{B+C \mathscr{H}_0^2}{T^2}+D T^2\right)\frac{dT}{T}\\
+            &\Rightarrow \quad S = \int_{T_i}^{T_f} \left(\frac{B+C \mathscr{H}_0^2}{T^2}+D T^2\right)\frac{dT}{T}\\
+            &\Rightarrow \quad S = \int_{T_i}^{T_f} \left(\frac{B+C \mathscr{H}_0^2}{T^3}+D T\right)dT\\
+            &\Rightarrow \quad S = \left[-\frac{B+C \mathscr{H}_0^2}{2T^2}+D \frac{T^2}{2}\right]_{T_i}^{T_f}\\
+            &\Rightarrow \quad S = -\frac{B+C \mathscr{H}_0^2}{2T_f^2}+D \frac{T_f^2}{2} + \frac{B+C \mathscr{H}_0^2}{2T_i^2}-D \frac{T_i^2}{2}\\
+            &\Rightarrow \quad S = \frac{B+C \mathscr{H}_0^2}{2}\left(\frac{1}{T_i^2}-\frac{1}{T_f^2}\right)+D \left(\frac{T_f^2}{2} -\frac{T_i^2}{2}\right)\\
+            &\Rightarrow \quad S = \frac{B+C \mathscr{H}_0^2}{2}\left(\frac{T_f^2 - T_i^2}{T_i^2T_f^2}\right)+D \left(\frac{T_f^2 - T_i^2}{2}\right)\\
+            &\Rightarrow \quad S =\frac{T_f^2 - T_i^2}2\left[ \left(\frac{B+C \mathscr{H}_0^2}{T_i^2T_f^2}\right)+D \left(T_f^2 - T_i^2\right)\right]\\
         \end{align*}
     \end{answer}
 \end{document}
