@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 23.1) (preloaded format=pdflatex 2023.3.3)  20 JUN 2023 02:24
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 23.1) (preloaded format=pdflatex 2023.3.3)  20 JUN 2023 16:12
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -574,38 +574,31 @@ l.59             \end{align*}
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
-Package mdframed Info: Box was splittet wrong
- starting loop to iterate the splitting point
-(mdframed)              on input line 148.
 [1
 
-{C:/Users/ASUS/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}] [2] (punto2.tex)
+{C:/Users/ASUS/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}] (punto2.tex)
+Package mdframed Info: Not enough space on this page on input line 141.
+ [2]
+Package mdframed Info: Not enough space on this page on input line 141.
+ (p3.tex)
 Package mdframed Info: Box was splittet wrong
  starting loop to iterate the splitting point
-(mdframed)              on input line 176.
- [3] (p3.tex)
+(mdframed)              on input line 271.
+ [3] (p4.tex)
+Overfull \hbox (19.9473pt too wide) detected at line 325
+[]
+ []
 
-c:/Users/ASUS/OneDrive/Documentos/Unal-2023-1/Analitica II/Taller3/Taller2/main.tex:334: Package amsmath Error: Erroneous nesting of equation structures;
-(amsmath)                trying to recover with `aligned'.
 
-See the amsmath package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.334             \end{align*}
-                               \quad (17.7)
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
+Overfull \hbox (16.37167pt too wide) detected at line 331
+[]
+ []
 
-Package mdframed Info: Box was splittet wrong
- starting loop to iterate the splitting point
-(mdframed)              on input line 360.
-[4]
-Package mdframed Info: Box was splittet wrong
- starting loop to iterate the splitting point
-(mdframed)              on input line 360.
- [5] (p4.tex [6]) (p5.tex) [7] (p6.tex) [8] (p7.tex) [9] (p8.tex
-<diagrama.png, id=46, 214.30063pt x 199.24437pt>
+Package mdframed Info: You first box width is to small
+ mdframed fixed it
+(mdframed)              on input line 366.
+[4] [5] [6] (p6.tex) [7] (p7.tex) [8] (p8.tex
+<diagrama.png, id=44, 214.30063pt x 199.24437pt>
 File: diagrama.png Graphic file (type png)
 <use diagrama.png>
 Package pdftex.def Info: diagrama.png  used on input line 9.
@@ -613,24 +606,436 @@ Package pdftex.def Info: diagrama.png  used on input line 9.
 )
 Package mdframed Info: Box was splittet wrong
  starting loop to iterate the splitting point
-(mdframed)              on input line 509.
- [10 <./diagrama.png>] (p9.tex
-<diagram2.png, id=54, 436.63126pt x 169.13188pt>
+(mdframed)              on input line 468.
+
+Overfull \vbox (1.02238pt too high) detected at line 468
+ []
+
+
+Overfull \vbox (2.02238pt too high) detected at line 468
+ []
+
+
+Overfull \vbox (3.02238pt too high) detected at line 468
+ []
+
+
+Overfull \vbox (4.02238pt too high) detected at line 468
+ []
+
+
+Overfull \vbox (5.02238pt too high) detected at line 468
+ []
+
+
+Overfull \vbox (6.02238pt too high) detected at line 468
+ []
+
+
+Overfull \vbox (7.02238pt too high) detected at line 468
+ []
+
+
+Overfull \vbox (8.02238pt too high) detected at line 468
+ []
+
+
+Overfull \vbox (9.02238pt too high) detected at line 468
+ []
+
+
+Overfull \vbox (10.02238pt too high) detected at line 468
+ []
+
+
+Overfull \vbox (11.02238pt too high) detected at line 468
+ []
+
+
+Overfull \vbox (12.02238pt too high) detected at line 468
+ []
+
+
+Overfull \vbox (13.02238pt too high) detected at line 468
+ []
+
+
+Overfull \vbox (14.02238pt too high) detected at line 468
+ []
+
+
+Overfull \vbox (15.02238pt too high) detected at line 468
+ []
+
+
+Overfull \vbox (16.02238pt too high) detected at line 468
+ []
+
+
+Overfull \vbox (17.02238pt too high) detected at line 468
+ []
+
+
+Overfull \vbox (18.02238pt too high) detected at line 468
+ []
+
+
+Overfull \vbox (19.02238pt too high) detected at line 468
+ []
+
+
+Overfull \vbox (20.02238pt too high) detected at line 468
+ []
+
+
+Overfull \vbox (21.02238pt too high) detected at line 468
+ []
+
+
+Overfull \vbox (22.02238pt too high) detected at line 468
+ []
+
+
+Overfull \vbox (23.02238pt too high) detected at line 468
+ []
+
+
+Overfull \vbox (24.02238pt too high) detected at line 468
+ []
+
+
+Overfull \vbox (25.02238pt too high) detected at line 468
+ []
+
+
+Overfull \vbox (26.02238pt too high) detected at line 468
+ []
+
+
+Overfull \vbox (27.02238pt too high) detected at line 468
+ []
+
+
+Overfull \vbox (28.02238pt too high) detected at line 468
+ []
+
+
+Overfull \vbox (29.02238pt too high) detected at line 468
+ []
+
+
+Overfull \vbox (30.02238pt too high) detected at line 468
+ []
+
+
+Overfull \vbox (31.02238pt too high) detected at line 468
+ []
+
+
+Overfull \vbox (32.02238pt too high) detected at line 468
+ []
+
+
+Overfull \vbox (33.02238pt too high) detected at line 468
+ []
+
+
+Overfull \vbox (34.02238pt too high) detected at line 468
+ []
+
+
+Overfull \vbox (35.02238pt too high) detected at line 468
+ []
+
+
+Overfull \vbox (36.02238pt too high) detected at line 468
+ []
+
+
+Overfull \vbox (37.02238pt too high) detected at line 468
+ []
+
+
+Overfull \vbox (38.02238pt too high) detected at line 468
+ []
+
+
+Overfull \vbox (39.02238pt too high) detected at line 468
+ []
+
+
+Overfull \vbox (40.02238pt too high) detected at line 468
+ []
+
+
+Overfull \vbox (41.02238pt too high) detected at line 468
+ []
+
+
+Overfull \vbox (42.02238pt too high) detected at line 468
+ []
+
+
+Overfull \vbox (43.02238pt too high) detected at line 468
+ []
+
+
+Overfull \vbox (44.02238pt too high) detected at line 468
+ []
+
+
+Overfull \vbox (45.02238pt too high) detected at line 468
+ []
+
+
+Overfull \vbox (46.02238pt too high) detected at line 468
+ []
+
+
+Overfull \vbox (47.02238pt too high) detected at line 468
+ []
+
+
+Overfull \vbox (48.02238pt too high) detected at line 468
+ []
+
+
+Overfull \vbox (49.02238pt too high) detected at line 468
+ []
+
+
+Overfull \vbox (50.02238pt too high) detected at line 468
+ []
+
+
+Overfull \vbox (51.02238pt too high) detected at line 468
+ []
+
+
+Overfull \vbox (52.02238pt too high) detected at line 468
+ []
+
+
+Overfull \vbox (53.02238pt too high) detected at line 468
+ []
+
+
+Overfull \vbox (54.02238pt too high) detected at line 468
+ []
+
+
+Overfull \vbox (55.02238pt too high) detected at line 468
+ []
+
+
+Overfull \vbox (56.02238pt too high) detected at line 468
+ []
+
+
+Overfull \vbox (57.02238pt too high) detected at line 468
+ []
+
+
+Overfull \vbox (58.02238pt too high) detected at line 468
+ []
+
+
+Overfull \vbox (59.02238pt too high) detected at line 468
+ []
+
+
+Overfull \vbox (60.02238pt too high) detected at line 468
+ []
+
+
+Overfull \vbox (61.02238pt too high) detected at line 468
+ []
+
+
+Overfull \vbox (62.02238pt too high) detected at line 468
+ []
+
+
+Overfull \vbox (63.02238pt too high) detected at line 468
+ []
+
+
+Overfull \vbox (64.02238pt too high) detected at line 468
+ []
+
+
+Overfull \vbox (65.02238pt too high) detected at line 468
+ []
+
+
+Overfull \vbox (66.02238pt too high) detected at line 468
+ []
+
+
+Overfull \vbox (67.02238pt too high) detected at line 468
+ []
+
+
+Overfull \vbox (68.02238pt too high) detected at line 468
+ []
+
+
+Overfull \vbox (69.02238pt too high) detected at line 468
+ []
+
+
+Overfull \vbox (70.02238pt too high) detected at line 468
+ []
+
+
+Overfull \vbox (71.02238pt too high) detected at line 468
+ []
+
+
+Overfull \vbox (72.02238pt too high) detected at line 468
+ []
+
+
+Overfull \vbox (73.02238pt too high) detected at line 468
+ []
+
+
+Overfull \vbox (74.02238pt too high) detected at line 468
+ []
+
+
+Overfull \vbox (75.02238pt too high) detected at line 468
+ []
+
+
+Overfull \vbox (76.02238pt too high) detected at line 468
+ []
+
+
+Overfull \vbox (77.02238pt too high) detected at line 468
+ []
+
+
+Overfull \vbox (78.02238pt too high) detected at line 468
+ []
+
+
+Overfull \vbox (79.02238pt too high) detected at line 468
+ []
+
+
+Overfull \vbox (80.02238pt too high) detected at line 468
+ []
+
+
+Overfull \vbox (81.02238pt too high) detected at line 468
+ []
+
+
+Overfull \vbox (82.02238pt too high) detected at line 468
+ []
+
+
+Overfull \vbox (83.02238pt too high) detected at line 468
+ []
+
+
+Overfull \vbox (84.02238pt too high) detected at line 468
+ []
+
+
+Overfull \vbox (85.02238pt too high) detected at line 468
+ []
+
+
+Overfull \vbox (86.02238pt too high) detected at line 468
+ []
+
+
+Overfull \vbox (87.02238pt too high) detected at line 468
+ []
+
+
+Overfull \vbox (88.02238pt too high) detected at line 468
+ []
+
+
+Overfull \vbox (89.02238pt too high) detected at line 468
+ []
+
+
+Overfull \vbox (90.02238pt too high) detected at line 468
+ []
+
+
+Overfull \vbox (91.02238pt too high) detected at line 468
+ []
+
+
+Overfull \vbox (92.02238pt too high) detected at line 468
+ []
+
+
+Overfull \vbox (93.02238pt too high) detected at line 468
+ []
+
+
+Overfull \vbox (94.02238pt too high) detected at line 468
+ []
+
+
+Overfull \vbox (95.02238pt too high) detected at line 468
+ []
+
+
+Overfull \vbox (96.02238pt too high) detected at line 468
+ []
+
+
+Overfull \vbox (97.02238pt too high) detected at line 468
+ []
+
+
+Overfull \vbox (98.02238pt too high) detected at line 468
+ []
+
+
+Overfull \vbox (99.02238pt too high) detected at line 468
+ []
+
+
+Overfull \vbox (100.02238pt too high) detected at line 468
+ []
+
+
+Package mdframed Warning: correct box splittet fails
+ It seems you are using a non splittable contents
+(mdframed)                 on input line 468.
+
+Package mdframed Info: You first box width is to small
+ mdframed fixed it
+(mdframed)              on input line 468.
+[9 <./diagrama.png>] (p9.tex
+<diagram2.png, id=51, 436.63126pt x 169.13188pt>
 File: diagram2.png Graphic file (type png)
 <use diagram2.png>
 Package pdftex.def Info: diagram2.png  used on input line 6.
 (pdftex.def)             Requested size: 227.62204pt x 88.17102pt.
-) [11 <./diagram2.png>] [12]
-<Diagrama3.png, id=63, 853.1875pt x 346.29375pt>
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+) [10] [11 <./diagram2.png>]
+<Diagrama3.png, id=61, 853.1875pt x 346.29375pt>
 File: Diagrama3.png Graphic file (type png)
 <use Diagrama3.png>
-Package pdftex.def Info: Diagrama3.png  used on input line 570.
+Package pdftex.def Info: Diagrama3.png  used on input line 529.
 (pdftex.def)             Requested size: 227.62204pt x 92.38562pt.
  (p10.tex
 Missing character: There is no 0 in font rsfs7!
-) [13 <./Diagrama3.png>]
-Package mdframed Info: Not enough space on this page on input line 590.
- [14] (main.aux
+) [12 <./Diagrama3.png>]
+Package mdframed Info: Not enough space on this page on input line 549.
+ [13] (main.aux
 LaTeX Info: Redefining \. on input line 9.
 LaTeX Info: Redefining \% on input line 9.
 )
@@ -639,17 +1044,17 @@ LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
  ) 
 Here is how much of TeX's memory you used:
- 16094 strings out of 476339
- 325036 string characters out of 5788592
- 1954340 words of memory out of 5000000
- 36178 multiletter control sequences out of 15000+600000
+ 16092 strings out of 476339
+ 324958 string characters out of 5788592
+ 1951340 words of memory out of 5000000
+ 36179 multiletter control sequences out of 15000+600000
  517880 words of font info for 54 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 116i,17n,118p,566b,365s stack positions out of 10000i,1000n,20000p,200000b,200000s
- <C:\Users\ASUS\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1000.pk><C:/Users/ASUS/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/ASUS/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/ASUS/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx7.pfb><C:/Users/ASUS/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/ASUS/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/ASUS/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi5.pfb><C:/Users/ASUS/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/ASUS/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/ASUS/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/Users/ASUS/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/ASUS/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/ASUS/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy5.pfb><C:/Users/ASUS/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/ASUS/AppData/Local/Programs/MiKTeX/fonts/type1/public/rsfs/rsfs10.pfb><C:/Users/ASUS/AppData/Local/Programs/MiKTeX/fonts/type1/public/rsfs/rsfs7.pfb>
-Output written on main.pdf (14 pages, 284528 bytes).
+ 116i,19n,118p,566b,430s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ <C:\Users\ASUS\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1000.pk><C:/Users/ASUS/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/ASUS/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/ASUS/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx7.pfb><C:/Users/ASUS/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/ASUS/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/ASUS/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi5.pfb><C:/Users/ASUS/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/ASUS/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/ASUS/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/Users/ASUS/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/ASUS/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/ASUS/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy5.pfb><C:/Users/ASUS/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/ASUS/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/latxfont/line10.pfb><C:/Users/ASUS/AppData/Local/Programs/MiKTeX/fonts/type1/public/rsfs/rsfs10.pfb><C:/Users/ASUS/AppData/Local/Programs/MiKTeX/fonts/type1/public/rsfs/rsfs7.pfb>
+Output written on main.pdf (13 pages, 283685 bytes).
 PDF statistics:
- 138 PDF objects out of 1000 (max. 8388607)
+ 140 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  28 words of extra memory for PDF output out of 10000 (max. 10000000)
 
