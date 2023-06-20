@@ -271,50 +271,55 @@
     \end{answer}
     \input{p4.tex}
     \begin{answer}[Punto 4]
-        Dado que la ecuacion de estado representa un sistema hidrostatico con $u = u(P,v)$ entonces:
+        \begin{itemize}
+            \item Si $(q,p)$ son variables canónicas entonces satisfacen las ecuaciones canonicas de Hamilton, es decir:
+            \begin{align*}
+                \dot q &= \frac{\partial H}{\partial p} \quad \text{y} \quad \dot p = -\frac{\partial H}{\partial q} \quad (18.1)
+            \end{align*}
+            Si ademas define la transformacion:
+            \begin{equation*}
+                \begin{gathered}
+                    Q=\log \left(1+q^{1 / 2} \cos p\right) \\
+                    P=2\left(1+q^{1 / 2} \cos p\right) q^{1 / 2} \sin p
+                \end{gathered}    \quad (18.2)
+            \end{equation*}
+            Entonces se tiene que por la regla de la cadena aplicada en (18.1) y (18.2):
+            \begin{align*}
+                \dot q &= \frac{\partial H}{\partial p} = \frac{\partial H}{\partial P} \frac{\partial P}{\partial p} + \frac{\partial H}{\partial Q} \frac{\partial Q}{\partial p}\\
+                &= \frac{\partial H}{\partial P} 2 \left( q^{1/2} \cos p + q \cos (2p) \right) - \frac{\partial H}{\partial Q} \frac{q^{1/2} \sin p}{1 + q^{1/2} \cos p} \quad (18.3.1)
+            \end{align*}
+            \begin{align*}
+                \dot p &= - \frac {\partial H}{\partial q} = -\frac{\partial H}{\partial P} \frac{\partial P}{\partial q} - \frac{\partial H}{\partial Q} \frac{\partial Q}{\partial q}\\
+                &= -\frac{\partial H}{\partial P} \left(\frac1{q^{1/2}} + 2\cos p\right)\sin p - \frac{\partial H}{\partial Q} \frac{\cos p}{2(q^{1/2}  + q \cos p)} \quad (18.3.2)
+            \end{align*}
+            \begin{align*}
+                \dot Q &= \frac{\partial Q}{\partial q} \dot q + \frac{\partial Q}{\partial p} \dot p\\
+                &= \frac{\cos p}{2(q^{1/2}  + q \cos p)} \dot q - \frac{q^{1/2} \sin p}{1 + q^{1/2} \cos p} \dot p \quad (18.4.1)
+            \end{align*}
+            \begin{align*}
+                \dot P &= \frac{\partial P}{\partial q} \dot q + \frac{\partial P}{\partial p} \dot p\\
+                &= \left(\frac1{q^{1/2}} + 2\cos p\right)\sin p \dot q + 2 \left( q^{1/2} \cos p + q \cos (2p) \right) \dot p \quad (18.4.2) 
+            \end{align*}
+            Reemplazando (18.3.1) y (18.3.2) en (18.4.1) y (18.4.2):
+            \begin{align*}
+                \dot Q &= \frac{\cos p}{2(q^{1/2}  + q \cos p)} \left( \frac{\partial H}{\partial P} 2 \left( q^{1/2} \cos p + q \cos (2p) \right) - \frac{\partial H}{\partial Q} \frac{q^{1/2} \sin p}{1 + q^{1/2} \cos p} \right)\\
+                &-\frac{q^{1/2} \sin p}{1 + q^{1/2} \cos p} \left( -\frac{\partial H}{\partial P} \left(\frac1{q^{1/2}} + 2\cos p\right)\sin p - \frac{\partial H}{\partial Q} \frac{\cos p}{2(q^{1/2}  + q \cos p)} \right)\\\\
+                &= \frac{\cos p}{2(q^{1/2}  + q \cos p)} \left( \frac{\partial H}{\partial P} 2 \left( q^{1/2} \cos p + q \cos^2 p - q \sin^2 p \right) - \frac{\partial H}{\partial Q} \frac{q^{1/2} \sin p}{1 + q^{1/2} \cos p} \right)\\
+                &+ \frac{q^{1/2} \sin p}{1 + q^{1/2} \cos p} \left(\frac{\partial H}{\partial P} \left(\frac{1 + q^{1/2}\cos p}{q^{1/2}} + \cos p\right)\sin p + \frac{\partial H}{\partial Q} \frac{\cos p}{2q^{1/2}(1  + q^{1/2} \cos p)} \right)\\\\
+            \end{align*}
+            \begin{align*}
+                &= \frac{\cos p}{2(q^{1/2}  + q \cos p)} \left( \frac{\partial H}{\partial P} 2 \left( q^{1/2}  + q \cos p\right)\cos p - \frac{\partial H}{\partial P} 2\left( q \sin^2 p \right) - \frac{\partial H}{\partial Q} \frac{q^{1/2} \sin p}{1 + q^{1/2} \cos p} \right)\\
+                &+ \frac{q^{1/2} \sin p}{1 + q^{1/2} \cos p} \left(\frac{\partial H}{\partial P} \left(\frac{1 + q^{1/2}\cos p}{q^{1/2}} \sin p \right) + \frac{\partial H}{\partial P} \cos p\sin p + \frac{\partial H}{\partial Q} \frac{\cos p}{2q^{1/2}(1  + q^{1/2} \cos p)} \right)\\\\
+                &=  \left( \frac{\partial H}{\partial P} \cos^2 p - \cancel{\frac{\partial H}{\partial P} \frac{q^{1/2}\cos p\sin^2 p }{(1  + q^{1/2}\cos p)}} +\cancel{\frac{\partial H}{\partial Q} \frac{\cos p \sin p}{2(1 + q^{1/2} \cos p)^2}} \right)\\
+                &+ \left(\frac{\partial H}{\partial P} \sin^2 p + \frac{\partial H}{\partial P}\frac{q^{1/2} \cos p \sin^2 p}{1 + q^{1/2} \cos p}  -\frac{\partial H}{\partial Q} \frac{\cos p \sin p}{2(1  + q^{1/2} \cos p)^2} \right)\\\\
+                &= \frac{\partial H}{\partial P} \cos^2 p + \frac{\partial H}{\partial P} \sin^2 p + \frac{\partial H}{\partial Q} \frac{\cos p \sin p}{(1  + q^{1/2} \cos p)^2} \\
+                &= \frac{\partial H}{\partial P} + \frac{\partial H}{\partial Q} \frac{\cos p \sin p}{(1  + q^{1/2} \cos p)^2} \quad (18.5.1)\\
+            \end{align*}
 
-        \begin{align*}
-            du = \left( \frac{\partial u}{\partial P} \right)_v dP + \left( \frac{\partial u}{\partial v} \right)_P dv \quad (4.2)
-        \end{align*}
-        Donde de (4.1):
-        \begin{align*}
-            \left(\frac {\partial u}{\partial P}\right)_v &= \left(
-                \frac{\partial}{\partial P} \left(  P\frac v\Gamma + \frac{f(v)}\Gamma \right)
-            \right)_v \\ 
-            &= \frac{v}{\Gamma} 
-        \end{align*}
-        \begin{align*}
-            \left(\frac {\partial u}{\partial v}\right)_P &= \left(
-                \frac{\partial}{\partial v} \left(  P\frac v\Gamma + \frac{f(v)}\Gamma \right)
-            \right)_P\\
-            &= \left( \frac{\partial}{\partial v} \left( \frac{f(v)}\Gamma \right) \right)_P + \frac P \Gamma\left( \frac{\partial}{\partial v} \left(  v \right) \right)_P\\
-            &= \frac 1\Gamma \left( \frac{\partial f(v)}{\partial v} \right)_P + \frac P \Gamma\\
-        \end{align*}
-        Reemplazando en (4.2) tenemos que:
-        \begin{align*}
-            \Gamma dU = v dP + \left( \frac{\partial f(v)}{\partial v} \right)_P dv + P dv \quad  &\Rightarrow \quad \left(\frac {\partial u}{\partial T}\right)_v = \frac v\Gamma \left( \frac{\partial P}{\partial T} \right)_v = c_V\\
-            &\Rightarrow \quad c_V =- \frac v\Gamma \left( \frac{\partial P}{\partial v } \right)_T \left( \frac{\partial v}{\partial T} \right)_v\\
-            &\Rightarrow \quad c_V = \frac v\Gamma \frac \beta \kappa \\
-            &\Rightarrow \quad \Gamma = \frac{\beta v}{c_V \kappa}
-        \end{align*}
-       
-    \end{answer}
-    \input{p5.tex}
-    \begin{answer}[Punto 5]
-        Dado que este es este es un sistema hidrostatico y paramagnetico la primera ley de la termodinamica toma la forma:
-        \begin{align*}
-            dQ = dU - PdV + \mu_0 \mathscr Hd\mathscr{M} \quad (5.1)
-        \end{align*}
-        Donde las variables termodinamicas asociadas a un sistema hidrostatico son $T,~P,~V$ y las variable termodinamicas asociadas a un sistema paramagnetico son $T, \mathscr{H}, \mathscr{M}$.
-        Coordenadas de las cuales solo tres son independientes, siendo las mas convinientes $T,V,\mathscr M$, por lo tanto 
-        $$dU = dU(T,V, \mathscr{M}) =  \left(\frac{\partial U}{\partial T}\right)_{V, \mathscr{M}} dT +\left(\frac{\partial U}{\partial V}\right)_{T, \mathscr{M}} dV + \left(\frac{\partial U}{\partial \mathscr{M}}\right)_{T,V} d\mathscr{M}$$ 
 
-        Reemplazando el diferencial de energia interna en (5.1) entonces:
 
-        \begin{align*}
-            dQ &=  \left(\frac{\partial U}{\partial T}\right)_{V, \mathscr{M}} dT +\left(\frac{\partial U}{\partial V}\right)_{T, \mathscr{M}} dV + \left(\frac{\partial U}{\partial \mathscr{M}}\right)_{T,V} d\mathscr{M} - PdV + \mu_0 \mathscr H d\mathscr M\\
-             &= \left(\frac{\partial U}{\partial T}\right)_{V, \mathscr{M}} dT + \left[\left(\frac{\partial U}{\partial V}\right)_{T, \mathscr{M}} - P \right]dV + \left[\left(\frac{\partial U}{\partial \mathscr{M} } \right)_{T,V} + \mu_0\mathscr H\right] d\mathscr M
-        \end{align*}
+           
+        \end{itemize}
     \end{answer}
     \input{p6.tex}
     \begin{answer}[Punto 6]
