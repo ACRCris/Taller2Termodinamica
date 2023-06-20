@@ -286,15 +286,18 @@
             Entonces se tiene que por la regla de la cadena aplicada en (18.1) y (18.2):
             \begin{align*}
                 \dot q &= \frac{\partial H}{\partial p} = \frac{\partial H}{\partial P} \frac{\partial P}{\partial p} + \frac{\partial H}{\partial Q} \frac{\partial Q}{\partial p}\\
-                &= \frac{\partial H}{\partial P} 2 \left( q^{1/2} \cos p + q \cos (2p) \right) - \frac{\partial H}{\partial Q} \frac{q^{1/2} \sin p}{1 + q^{1/2} \cos p} \quad (18.3.1)
+                &= \frac{\partial H}{\partial P} 2 \left( q^{1/2} \cos p + q \cos (2p) \right) - \frac{\partial H}{\partial Q} \frac{q^{1/2} \sin p}{1 + q^{1/2} \cos p} \\
+                &= \frac{\partial H}{\partial P} 2  \left( q^{1/2} \cos p + q \cos (2p) \right) - \frac{\partial H}{\partial Q} \frac{2q \sin^2 p}{P} \quad (18.3.1)
             \end{align*}
             \begin{align*}
                 \dot p &= - \frac {\partial H}{\partial q} = -\frac{\partial H}{\partial P} \frac{\partial P}{\partial q} - \frac{\partial H}{\partial Q} \frac{\partial Q}{\partial q}\\
-                &= -\frac{\partial H}{\partial P} \left(\frac1{q^{1/2}} + 2\cos p\right)\sin p - \frac{\partial H}{\partial Q} \frac{\cos p}{2(q^{1/2}  + q \cos p)} \quad (18.3.2)
+                &= -\frac{\partial H}{\partial P} \left(\frac1{q^{1/2}} + 2\cos p\right)\sin p - \frac{\partial H}{\partial Q} \frac{\cos p}{2(q^{1/2}  + q \cos p) }\\
+                &= -\frac{\partial H}{\partial P} \left(\frac1{q^{1/2}} + 2\cos p\right)\sin p - \frac{\partial H}{\partial Q} \frac{\cos p \sin p}{P} \quad (18.3.2)
             \end{align*}
             \begin{align*}
                 \dot Q &= \frac{\partial Q}{\partial q} \dot q + \frac{\partial Q}{\partial p} \dot p\\
-                &= \frac{\cos p}{2(q^{1/2}  + q \cos p)} \dot q - \frac{q^{1/2} \sin p}{1 + q^{1/2} \cos p} \dot p \quad (18.4.1)
+                &= \frac{\cos p}{2(q^{1/2}  + q \cos p)} \dot q - \frac{q^{1/2} \sin p}{1 + q^{1/2} \cos p} \dot p\\
+                &= \frac{\cos p \sin p}{P} \dot q - \frac{2q \sin^2 p}{P} \dot p \quad (18.4.1)
             \end{align*}
             \begin{align*}
                 \dot P &= \frac{\partial P}{\partial q} \dot q + \frac{\partial P}{\partial p} \dot p\\
@@ -302,23 +305,63 @@
             \end{align*}
             Reemplazando (18.3.1) y (18.3.2) en (18.4.1) y (18.4.2):
             \begin{align*}
-                \dot Q &= \frac{\cos p}{2(q^{1/2}  + q \cos p)} \left( \frac{\partial H}{\partial P} 2 \left( q^{1/2} \cos p + q \cos (2p) \right) - \frac{\partial H}{\partial Q} \frac{q^{1/2} \sin p}{1 + q^{1/2} \cos p} \right)\\
-                &-\frac{q^{1/2} \sin p}{1 + q^{1/2} \cos p} \left( -\frac{\partial H}{\partial P} \left(\frac1{q^{1/2}} + 2\cos p\right)\sin p - \frac{\partial H}{\partial Q} \frac{\cos p}{2(q^{1/2}  + q \cos p)} \right)\\\\
-                &= \frac{\cos p}{2(q^{1/2}  + q \cos p)} \left( \frac{\partial H}{\partial P} 2 \left( q^{1/2} \cos p + q \cos^2 p - q \sin^2 p \right) - \frac{\partial H}{\partial Q} \frac{q^{1/2} \sin p}{1 + q^{1/2} \cos p} \right)\\
-                &+ \frac{q^{1/2} \sin p}{1 + q^{1/2} \cos p} \left(\frac{\partial H}{\partial P} \left(\frac{1 + q^{1/2}\cos p}{q^{1/2}} + \cos p\right)\sin p + \frac{\partial H}{\partial Q} \frac{\cos p}{2q^{1/2}(1  + q^{1/2} \cos p)} \right)\\\\
+                \dot Q &= \frac{\cos p \sin p}{P} \left( \frac{\partial H}{\partial P} 2  \left( q^{1/2} \cos p + q \cos (2p) \right) - \frac{\partial H}{\partial Q} \frac{2q \sin^2 p}{P} \right)\\
+                &- \frac{2q \sin^2 p}{P} \left( -\frac{\partial H}{\partial P} \left(\frac1{q^{1/2}} + 2\cos p\right)\sin p - \frac{\partial H}{\partial Q} \frac{\cos p \sin p}{P} \right)\\\\
+                &= \frac{\cos p \sin p}{P} \left( \frac{\partial H}{\partial P} 2 \left( q^{1/2} \cos p + q \cos^2 p - q \sin^2 p \right) - \frac{\partial H}{\partial Q} \frac{2q \sin^2 p}{P} \right)\\
+                &+ \frac{2q \sin^2 p}{P} \left(\frac{\partial H}{\partial P} \left(\frac{1 + q^{1/2}\cos p}{q^{1/2}} + \cos p\right)\sin p + \frac{\partial H}{\partial Q} \frac{\cos p \sin p}{P} \right)\\\\
+                &= \frac{\cos p \sin p}{P} \left( \frac{\partial H}{\partial P} 2 \left( q^{1/2}  + q \cos p\right)\frac{\sin p}{\sin p}\cos p - \frac{\partial H}{\partial P} 2\left( q \sin^2 p \right)\right) - \cancel{\frac{\partial H}{\partial Q} \frac{2q \sin^3 p\cos p}{P^2}} \\
+                &+ \frac{2q \sin^2 p}{P} \left(\frac{\partial H}{\partial P} 2\left(\frac{q^{1/2} + q\cos p}{2q} \sin p \right) + \frac{\partial H}{\partial P} \cos p\sin p\right) +\cancel{\frac{\partial H}{\partial Q} \frac{2q \sin^3 p\cos p}{P^2}} \\
+                &=  \frac{\cos p \sin p}{P} \left( \frac{\partial H}{\partial P}P\frac{\cos p}{\sin p} - \frac{\partial H}{\partial P} 2\left( q \sin^2 p \right)\right)+ \frac{2q \sin^2 p}{P} \left(\frac{\partial H}{\partial P} \left(\frac{P}{2q}  \right) + \frac{\partial H}{\partial P} \cos p\sin p\right)\\
+                &=  \frac{\partial H}{\partial P}\cos^2 p - \cancel{2\frac{\partial H}{\partial P}q \sin^3 p \cos p \frac 1 P}+ \frac{\partial H}{\partial P} \sin^2 p + \cancel{2\frac{\partial H}{\partial P} \cos p\sin^3 p \frac 1P}\\
+                &=  \frac{\partial H}{\partial P} \quad (18.5.1)\\
+            \end{align*}
+
+            \begin{align*}
+                \dot P &= \left(\frac1{q^{1/2}} + 2\cos p\right)\sin p \left( \frac{\partial H}{\partial P} 2  \left( q^{1/2} \cos p + q \cos (2p) \right) - \frac{\partial H}{\partial Q} \frac{2q \sin^2 p}{P} \right)\\
+                &+ 2 \left( q^{1/2} \cos p + q \cos (2p) \right) \left( -\frac{\partial H}{\partial P} \left(\frac1{q^{1/2}} + 2\cos p\right)\sin p - \frac{\partial H}{\partial Q} \frac{\cos p \sin p}{P} \right)\\\\
+                &= \cancel{\left(\frac1{q^{1/2}} + 2\cos p\right)\sin p\frac{\partial H}{\partial P} 2  \left( q^{1/2} \cos p + q \cos (2p) \right)} - \left(\frac1{q^{1/2}} + 2\cos p\right) \frac{\partial H}{\partial Q} \frac{2q \sin^3 p}{P}\\
+                &+ \cancel{2 \left( q^{1/2} \cos p + q \cos (2p) \right)\frac{\partial H}{\partial P} \left(\frac1{q^{1/2}} + 2\cos p\right)\sin p} + 2 \left( q^{1/2} \cos p + q \cos (2p) \right) \frac{\partial H}{\partial Q} \frac{\cos p \sin p}{P} \\\\
+                &= - \left(\frac{1 + q^{1/2}\cos p}{q^{1/2}} + \cos p\right)\sin p \frac{\partial H}{\partial Q} \frac{2q \sin^3 p}{P} - 2 \left( q^{1/2} \cos p + q \cos^2 p - q \sin^2 p \right) \frac{\partial H}{\partial Q} \frac{\cos p \sin p}{P} \\
             \end{align*}
             \begin{align*}
-                &= \frac{\cos p}{2(q^{1/2}  + q \cos p)} \left( \frac{\partial H}{\partial P} 2 \left( q^{1/2}  + q \cos p\right)\cos p - \frac{\partial H}{\partial P} 2\left( q \sin^2 p \right) - \frac{\partial H}{\partial Q} \frac{q^{1/2} \sin p}{1 + q^{1/2} \cos p} \right)\\
-                &+ \frac{q^{1/2} \sin p}{1 + q^{1/2} \cos p} \left(\frac{\partial H}{\partial P} \left(\frac{1 + q^{1/2}\cos p}{q^{1/2}} \sin p \right) + \frac{\partial H}{\partial P} \cos p\sin p + \frac{\partial H}{\partial Q} \frac{\cos p}{2q^{1/2}(1  + q^{1/2} \cos p)} \right)\\\\
-                &=  \left( \frac{\partial H}{\partial P} \cos^2 p - \cancel{\frac{\partial H}{\partial P} \frac{q^{1/2}\cos p\sin^2 p }{(1  + q^{1/2}\cos p)}} +\cancel{\frac{\partial H}{\partial Q} \frac{\cos p \sin p}{2(1 + q^{1/2} \cos p)^2}} \right)\\
-                &+ \left(\frac{\partial H}{\partial P} \sin^2 p + \frac{\partial H}{\partial P}\frac{q^{1/2} \cos p \sin^2 p}{1 + q^{1/2} \cos p}  -\frac{\partial H}{\partial Q} \frac{\cos p \sin p}{2(1  + q^{1/2} \cos p)^2} \right)\\\\
-                &= \frac{\partial H}{\partial P} \cos^2 p + \frac{\partial H}{\partial P} \sin^2 p + \frac{\partial H}{\partial Q} \frac{\cos p \sin p}{(1  + q^{1/2} \cos p)^2} \\
-                &= \frac{\partial H}{\partial P} + \frac{\partial H}{\partial Q} \frac{\cos p \sin p}{(1  + q^{1/2} \cos p)^2} \quad (18.5.1)\\
+                &= - \left(\frac {P}{2q} + \cos p\sin p\right) \frac{\partial H}{\partial Q} \frac{2q \sin^2 p}{P} -  \left( 2 \left( q^{1/2}  + q \cos p\right)\frac{\sin p}{\sin p}\cos p -2\left( q \sin^2 p \right)\right) \frac{\partial H}{\partial Q} \frac{\cos p \sin p}{P} \\
+                &= - \frac{\partial H}{\partial Q}  \sin^2 - \frac{\partial H}{\partial Q} \frac{2q \sin^3 p \cos p}{P} - \left( P \frac{\cos p}{\sin p} -2\left( q \sin^2 p \right)\right) \frac{\partial H}{\partial Q} \frac{\cos p \sin p}{P} \\
+                &= - \frac{\partial H}{\partial Q}  \sin^2 + \cancel{\frac{\partial H}{\partial Q} \frac{2q \sin^3 p \cos p}{P}} - \frac{\partial H}{\partial Q}  \cos^2 p-  \cancel{\frac{\partial H}{\partial Q} \frac{2 q \cos p \sin^3 p}{P} }\\
+                &= - \frac{\partial H}{\partial Q} \quad (18.5.2)\\
+            \end{align*}
+            Por que si $K = H(Q,P)$ entonces las anterioes ecuaciones son las ecuaciones canonicas de Hamilton y por lo tanto $(P,Q)$ son variables canonicas.
+
+            \item  Dado que $F_3 = F_3(p,Q)$, pues:
+            \begin{align*}
+                F_3 =-\left(e^Q-1\right)^2 \tan p
+            \end{align*}
+            Entonces de la ecuaciones de canonicas de transformacion para $F_3$:
+            \begin{align*}
+                q = - \frac{\partial F_3}{\partial p} \quad \text{y} \quad P = \frac{\partial F_3}{\partial Q} \quad (18.6)
             \end{align*}
 
+            se sigue que:
+            \begin{align*}
+                q = - \frac{\partial F_3}{\partial p} = -\frac{\partial}{\partial p} \left(-\left(e^Q-1\right)^2 \tan p\right) = \left(e^Q-1\right)^2 \sec^2 p \quad (18.7.1)\\
+                P = -\frac{\partial F_3}{\partial Q} = -\frac{\partial}{\partial Q} \left(-\left(e^Q-1\right)^2 \tan p\right) = 2\left(e^Q-1\right)e^Q \tan p \quad (18.7.2)
+            \end{align*}
+            Despejando $Q$ de (18.7.1):
+            \begin{align*}
+                q = \left(e^Q-1\right)^2 \sec^2 p \quad &\Rightarrow \quad \left(e^Q-1\right)^2 = \frac q{\sec^2 p}\\
+                &\Rightarrow \quad e^Q-1 =  \sqrt{\frac q{\sec^2 p}}\\
+                &\Rightarrow \quad e^Q = 1 + \sqrt{\frac q{\sec^2 p}}\\
+                &\Rightarrow \quad Q = \ln \left(1 + \sqrt{\frac q{\sec^2 p}}\right)\\
+                &\Rightarrow \quad Q = \ln \left(1 + q^{1/2} \cos p\right) \quad (18.8.1)
+            \end{align*}
+            Reemplazando (18.8.1) en (18.7.2):
+            \begin{align*}
+                P = 2\left(e^Q-1\right)e^Q \tan p \quad &\Rightarrow \quad P = -2\left(1 - q^{1/2} \cos p -1\right)\left(1 - q^{1/2} \cos p\right) \tan p\\
+                &\Rightarrow \quad P = -2(1 - 2q^{1/2} \cos p + q \cos^2 p -1 + q^{1/2} \cos p) \tan p\\
+                &\Rightarrow \quad P = -2  \left(q^{1/2}\cos p + q\cos^2 p\right) \tan p\\
+                &\Rightarrow \quad P = -2q^{1/2} \cos p \left(1 + q^{1/2} \cos p\right) \tan p \quad (18.8.2)
+            \end{align*}
 
-
-           
+            De (18.8.1) y (18.8.2) se concluye que $F_3$ es una funcion generatriz de (18.2) 
         \end{itemize}
     \end{answer}
     \input{p6.tex}
