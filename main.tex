@@ -77,41 +77,6 @@
             &=  \frac{p}{\alpha} \left( -\frac{\partial H}{\partial q} \right) + q\alpha\left( \frac{\partial H}{\partial p} \right) \quad (15.4.2)
         \end{align*}
 
-        Ahora expresando $p= p(Q,P)$ y $q = q(Q,P)$:
-
-        \begin{align*}
-            \frac q p = \frac 1 \alpha \tan(Q) \quad &\Rightarrow \quad  \frac{q^2}{p^2} = \frac 1 {\alpha^2} \tan^2(Q)\\
-            &\Rightarrow \quad  \frac{p^2}{\alpha^2 q^2} = \frac 1 {\tan^2(Q)}\\
-            & \Rightarrow \quad  P = \frac{\alpha q^2}{2}\left(1+\frac{p^2}{\alpha^2 q^2}\right) = \frac{\alpha q^2}{2}\left(1+ \frac{1}{\tan^2(Q)} \right)\\
-            & \Rightarrow \quad  q = \sqrt{
-                \frac{2 P}{\alpha}}\sin (Q) \quad \text{y} \quad p = \sqrt{
-                    2 P \alpha}\cos (Q) \quad (15.5)
-        \end{align*}
-
-        Y aplicando la regla de la cadena en (15.3) y reemplazando (15.5) tenemos que:
-        \begin{align*}
-            \dot P &= -\frac{\partial K}{\partial Q} = -\frac{\partial K}{\partial q} \frac{\partial q}{\partial Q} - \frac{\partial K}{\partial p} \frac{\partial p}{\partial Q}\\
-            &=  -\frac{\partial K}{\partial q}\left( \sqrt{
-                \frac{2 P}{\alpha}}\cos (Q) \right) - \frac{\partial K}{\partial p} \left( -\sqrt{
-                    2 P \alpha}\sin (Q) \right)\\
-            &= -\frac{\partial K}{\partial q}\sqrt{
-                \frac{2 P}{\alpha}}\cos (Q) + \frac{\partial K}{\partial p} \sqrt{
-                    2 P \alpha}\sin (Q) \quad (15.6.1)
-        \end{align*}
-
-        \begin{align*}
-            \dot Q = \frac{\partial K}{\partial P} &= \frac{\partial K}{\partial q} \frac{\partial q}{\partial P} + \frac{\partial K}{\partial p} \frac{\partial p}{\partial P}\\
-            &= \frac{\partial K}{\partial q}\left(\sqrt{\frac{1}{2Pa}} \sin (Q)\right) + \frac{\partial K}{\partial p} \left( \sqrt{\frac{a}{2P}} \cos (Q)\right) \quad (15.6.2)
-        \end{align*}
-
-        Igualando (15.4.1) con (15.6.1) y (15.4.2) con (15.6.2) tenemos que:
-
-        \begin{align*}
-            \frac 1 {2P}  \left( q\frac{\partial H}{\partial q} +  p \frac{\partial H}{\partial p} \right) &= -\frac{\partial K}{\partial q}\sqrt{
-                \frac{2 P}{\alpha}}\cos (Q) + \frac{\partial K}{\partial p} \sqrt{
-                    2 P \alpha}\sin (Q)\\
-        \end{align*}
-
         Aplicando la regla de la cadena en (15.1) tenemos que:
         \begin{align*}
             \dot p = -\frac{\partial H}{\partial q} &= -\frac{\partial H}{\partial Q} \frac{\partial Q}{\partial q} - \frac{\partial H}{\partial P} \frac{\partial P}{\partial q}\\
@@ -176,7 +141,7 @@
     \end{answer}
     \input{p3.tex}
     \begin{answer}[Punto 3]
-        Dado que se busca una funcion generatriz $F'= F'(q_j, p_k,Q_l,P_m,t), \quad j + k + l+m = 2n$ tal que la transformacion canonica $M$ asociada satisfaga que:
+        Dado que se busca una funcion generatriz $F'= F'(q_j, p_k,Q_l,P_m,t), \quad j=l,  k=m =1,..,n \text{ o }  j=m,  l=m =1,..,n$, para algun $j,k,l,m$ tal que la transformacion canonica $M$ asociada satisfaga que:
         \begin{align*}
             \mathbf{\dot X} = M \dot {\mathbf{x} }\quad (17.1)
         \end{align*}
@@ -339,23 +304,23 @@
             q_l = \frac{\partial F'}{\partial p_l} & \qquad p_m = -\frac{\partial F'}{\partial q_m} \\\\
             \qquad K = H+\frac{\partial F'}{\partial t}
         \end{align*}
-    Si consideramos $F'(q_j, p_k, Q_l, P_m, t) = F^{q}_j(q_j)F^{p}_k(p_k)F^{Q}_l(Q_l)F^{P}_m(P_m)F^t(t)$ entonces:
+    Si consideramos $F'(q_j, p_k,q_m, p_l,  t) = F^{q}_j(q_j)F^{p}_k(p_k)G^{q}_m(q_m)G^{p}_l(P_l)F^t(t)$ entonces:
     \begin{align*}
-        p_j = \frac{dF^q_j}{dq_j} & \qquad q_k = -\frac{dF^p_k}{dp_k} \\\\
-        q_l = \frac{dF^p_l}{dp_l} & \qquad p_m = -\frac{dF^q_m}{dq_m} \\\\
+        p_jdq_j = dF^p_j(p_j) & \qquad q_kdp_k = -dF^q_k(p_k) \\\\
+        q_ldp_l = dG^q_l(q_l) & \qquad p_m dq_m= -dG^p_m(p_m) \\\\
         \qquad K = H+\frac{dF^t}{dt}
     \end{align*}
     Ecuaciones las cuales tiene como solucion:
     \begin{align*}
         F^q_j(q_j) &= \int p_j dq_j = p_jq_j + c_1\\
         F^p_k(p_k) &= -\int q_k dp_k = - p_k q_k + c_2\\
-        F^Q_l(Q_l) &= \int P_l dQ_l = P_lQ_l + c_3\\
-        F^P_m(P_m) &= -\int Q_m dP_m  = -P_m Q_m + c_4\\
+        G^q_l(q_l) &= \int p_l dq_l = p_lq_l + c_3\\
+        G^p_m(p_m) &= -\int q_m dq_m  = -p_m q_m + c_4\\
         F^t(t) &= \int (K-H) dt\\
     \end{align*}
     Por lo que una funcion generatriz que satisface (17.4) es
     \begin{align*}
-        F'(q_j, p_k, Q_l, P_m, t) = (p_j q_j + c_1)(- p_k q_k + c_2)(P_l Q_l + c_3)(-P_m Q_m + c_4) F^t(t)
+        F'(q_j, p_k, Q_l, P_m, t) = (p_j q_j + c_1)(- p_k q_k + c_2)(p_l q_l + c_3)(-p_m q_m + c_4) F^t(t)
     \end{align*}
     \end{answer}
     \input{p4.tex}
