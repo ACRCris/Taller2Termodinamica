@@ -437,43 +437,6 @@
             \end{pmatrix} = J
         \end{align*}
         Por lo tanto $M$ es una transformación canónica.
-        \item Considere la funcion generatriz $F' = F'(q_1, p_2, P_1, Q_2, t)$ tal que:
-        \begin{align*}
-            F(q_1, q_2, Q_1, Q_2, t)  \rightarrow F''(q_1, p_2, Q_1, Q_2, t) \quad \Rightarrow\\
-        \end{align*} 
-        \begin{align*}F''(q_1, p_1, Q_1, Q_1, t) &= q_2 \frac{\partial F}{\partial q_2}  - F\\
-            &= q_2 p_2 - F
-        \end{align*}
-        \begin{align*}
-            F''(q_1,p_2,Q_1,Q_2,t) \rightarrow F'(q_1, p_2, P_1, Q_2, t) \quad \Rightarrow 
-        \end{align*}
-        \begin{align*}
-            \quad F'(q_1,p_2,P_1,Q_2,t) &= Q_1 \frac{\partial F''}{\partial Q_1}  - F''\\
-            &= -Q_1 \frac{\partial F}{\partial Q_1}  - q_2 p_2 + F \\
-            &= Q_1 P_1 - q_2 p_2 + F(q_1, q_2, Q_1, Q_2, t) \quad (19.2)
-        \end{align*}
-
-        Donde de (19.2) se tiene que:
-
-        \begin{align*}
-            \frac{dF}{dt}  &=p_1 \dot q_1 + p_2 \dot q_2 - P_1\dot Q_1- P_2 \dot Q_2 - (H - K)\\
-            &= \frac{\partial F}{\partial q_1} \dot q_1 + \frac{\partial F}{\partial q_2} \dot q_2- \frac{\partial F}{\partial Q_1}\dot Q_1- \frac{\partial F}{\partial Q_2} \dot Q_2\\
-            &= \frac d{dt}\left(F'(q_1, p_2, P_1, Q_2, t) + q_2 p_2 - Q_1 P_1 \right)\\
-            &= \frac d{dt}\left(F'(q_1, p_2, P_1, Q_2, t) \right) + \frac d{dt}\left(q_2 p_2 \right) - \frac d{dt}\left(Q_1 P_1 \right)\\
-            &= \frac d{dt}\left(F'(q_1, p_2, P_1, Q_2, t) \right) + \dot q_2 p_2 + q_2 \dot p_2 - \dot Q_1 P_1 - Q_1 \dot P_1 \quad \Rightarrow\\
-        \end{align*}
-        \begin{align*}
-            \frac {dF'}{dt} &= p_1\dot q_1 - q_2 \dot p_2 + Q_1\dot P_1 - P_2\dot Q_2 - (H-K)\\
-            &= \frac{\partial F'}{\partial q_1} \dot q_1 + \frac{\partial F'}{\partial p_2} \dot p_2 + \frac{\partial F'}{\partial P_1}\dot P_1+\frac{\partial F'}{\partial Q_2} \dot Q_2 + \frac{\partial F'}{\partial t} \quad \Rightarrow\\
-        \end{align*}
-        \begin{equation*}
-            \begin{align*}
-                p_1 = \frac{\partial F'}{\partial q_1} & \qquad q_2 = -\frac{\partial F'}{\partial p_2} \\\\
-                Q_1 = \frac{\partial F'}{\partial P_1} & \qquad P_2= -\frac{\partial F'}{\partial Q_2} \\\\
-                \qquad K = H+\frac{\partial F'}{\partial t} 
-            \end{align*} \quad (19.3)
-        \end{equation*}
-      
     
         \item Considere la funcion generatriz $F' = F'(q_1, p_2, P_1, P_2, t)$ tal que:
         \begin{align*}
@@ -521,6 +484,12 @@
                 \qquad K = H+\frac{\partial F'}{\partial t} 
             \end{align*} \quad (19.3)
         \end{equation*}
+        Ahora operando las ecuaciones (19.1)  entonces:
+        \begin{align*}
+            p_1 = P_1 - 2p_2 &\qquad q_2 = -2q_1 - P_2\\
+            Q_1 = q_1 &\qquad Q_2 = p_2
+        \end{align*}
+        
         
 
     \end{answer}
