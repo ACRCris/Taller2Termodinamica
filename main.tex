@@ -364,43 +364,164 @@
             De (18.8.1) y (18.8.2) se concluye que $F_3$ es una funcion generatriz de (18.2) 
         \end{itemize}
     \end{answer}
-    \input{p6.tex}
-    \begin{answer}[Punto 6]
-        Dado que la ecuacion de estado para un gas ideal es:
+    \input{p5.tex}
+    \begin{answer}[Punto 19]
+        Si de las ecuaciones:
+        $$
+        \begin{array}{cl}
+        Q_1=q_1, & P_1=p_1-2 p_2 \\
+        Q_2=p_2, & P_2=-2 q_1-q_2
+        \end{array} \quad (19.1)
+        $$
+
+        Calculamos la matriz de transformación $M$:
         \begin{align*}
-            PV = nRT \quad (6.1) \quad \text{con}  \quad \left(\frac{\partial U}{\partial V}\right)_T = 0 \quad \text{y} \quad \left(\frac{\partial U}{\partial P}\right)_V = 0
+            M = \begin{pmatrix}
+                \frac{\partial Q_1}{\partial q_1} & \frac{\partial Q_1}{\partial q_2} & \frac{\partial Q_1}{\partial p_1} & \frac{\partial Q_1}{\partial p_2}\\
+                \frac{\partial Q_2}{\partial q_1} & \frac{\partial Q_2}{\partial q_2} & \frac{\partial Q_2}{\partial p_1} & \frac{\partial Q_2}{\partial p_2}\\
+                \frac{\partial P_1}{\partial q_1} & \frac{\partial P_1}{\partial q_2} & \frac{\partial P_1}{\partial p_1} & \frac{\partial P_1}{\partial p_2}\\
+                \frac{\partial P_2}{\partial q_1} & \frac{\partial P_2}{\partial q_2} & \frac{\partial P_2}{\partial p_1} & \frac{\partial P_2}{\partial p_2}\\
+            \end{pmatrix} = \begin{pmatrix}
+                1 & 0 & 0 & 0\\
+                0 & 0 & 0 & 1\\
+                0 & 0 & 1 & -2\\
+                -2 & -1 & 0 & 0\\
+            \end{pmatrix}
         \end{align*}
-        Por lo que la energia interna cumple que $U = U(T)$
+        Entonces la matriz $M$ es una transformación canónica si y solo si:
         \begin{align*}
-            dU = \left(\frac{\partial U}{\partial T}\right)_V dT   \quad \Rightarrow \quad C_V =  \frac{dU}{dT}= \left(\frac{\partial U}{\partial T}\right)_V \quad (6.2)
-        \end{align*}\
-        Por otro lado de la primera ley de la termodinamica para el gas ideal, desde las ecuacion (2.1) y (6.2), toma la forma:
-        \begin{align*}
-            dQ = \left(\frac{\partial U}{\partial T}\right)_V dT + PdV  = C_VdT + PdV \quad (6.3)
+            M^T J M = J \quad J = \begin{pmatrix}
+                0 & \mathbf 1\\
+                -\mathbf 1 & 0\\
+            \end{pmatrix} = \begin{pmatrix}
+                0 & 0 & 1 & 0\\
+                0 & 0 & 0 & 1\\
+                -1 & 0 & 0 & 0\\
+                0 & -1 & 0 & 0\\
+            \end{pmatrix}
         \end{align*}
-        Donde 
+        Lo cual podemos comprobar:
         \begin{align*}
-            dT &= \left(\frac{\partial T}{\partial V}\right)_P dV + \left(\frac{\partial T}{\partial P}\right)_V dP\\
-            &= \frac{P}{nR}dV + \frac{V}{nR}dP \quad 
+            M^T J M &= \begin{pmatrix}
+                1 & 0 & 0 & 0\\
+                0 & 0 & 0 & 1\\
+                0 & 0 & 1 & -2\\
+                -2 & -1 & 0 & 0\\
+            \end{pmatrix}^T \begin{pmatrix}
+                0 & 0 & 1 & 0\\
+                0 & 0 & 0 & 1\\
+                -1 & 0 & 0 & 0\\
+                0 & -1 & 0 & 0\\
+            \end{pmatrix} \begin{pmatrix}
+                1 & 0 & 0 & 0\\
+                0 & 0 & 0& 1\\
+                0 & 0 & 1 & -2\\
+                -2 & -1 & 0 & 0\\
+            \end{pmatrix} \\
+            &= \begin{pmatrix}
+                1 & 0 & 0 & -2\\
+                0 & 0 & 0 & -1\\
+                0 & 0 & 1 & 0\\
+                0 & 1 & -2 & 0\\
+            \end{pmatrix} \begin{pmatrix}
+                0 & 0 & 1 & -2\\
+                -2 & -1 & 0 & 0\\
+                -1 & 0 & 0 & 0\\
+                0 & 0& 0& -1\\
+            \end{pmatrix} \\
+            &= \begin{pmatrix}
+                0 & 0 & 1 & 0\\
+                0 & 0 & 0 & 1\\
+                -1 & 0 & 0 & 0\\
+                0 & -1& 0 & 0\\
+            \end{pmatrix} = J
         \end{align*}
-        Reemplazando en (6.3) tenemos que:
+        Por lo tanto $M$ es una transformación canónica.
+        \item Considere la funcion generatriz $F' = F'(q_1, p_2, P_1, Q_2, t)$ tal que:
         \begin{align*}
-            dQ = C_V \left( \frac{P}{nR}dV + \frac{V}{nR}dP \right) + PdV \quad &\Rightarrow \quad dQ = \frac{C_V}{nR}PdV + \frac{C_V}{nR}VdP + PdV\\
-            &\Rightarrow \quad dQ = \frac{C_V}{nR}VdP + \left( \frac{C_V}{nR} + 1 \right)PdV\\
-            &\Rightarrow \quad dQ =  \frac{C_V}{nR}VdP + \left( \frac{C_V + nR}{nR}\right)PdV\\
-            &\Rightarrow \quad dQ =  \frac{C_V}{nR}VdP +  \frac{C_P}{nR} PdV \quad (6.4)\\
+            F(q_1, q_2, Q_1, Q_2, t)  \rightarrow F''(q_1, p_2, Q_1, Q_2, t) \quad \Rightarrow\\
+        \end{align*} 
+        \begin{align*}F''(q_1, p_1, Q_1, Q_1, t) &= q_2 \frac{\partial F}{\partial q_2}  - F\\
+            &= q_2 p_2 - F
         \end{align*}
-        Donde se uso que $C_P - C_V = nR$ para un gas ideal.
-        Ahora si consideramos tambien que es gas esta sometido a un proceso adiabatico entonces de (6.4)
         \begin{align*}
-            dQ = 0 \quad &\Rightarrow \quad \frac{C_V}{nR}VdP +  \frac{C_P}{nR} PdV = 0\\
-            &\Rightarrow \quad \frac{C_V}{nR}VdP = - \frac{C_P}{nR} PdV\\
-            &\Rightarrow \quad \frac{C_P}{C_V}\frac{dV}{V} = -\frac{dP}{P}\\
-            &\Rightarrow \quad \gamma \ln(V) = -\ln(P) + C\\
-            &\Rightarrow \quad \ln(V^\gamma) = \ln(P^{-1}) + C\\
-            &\Rightarrow \quad V^\gamma = P^{-1}e^C\\
-            &\Rightarrow \quad PV^\gamma = e^C = \text{constante}\\
+            F''(q_1,p_2,Q_1,Q_2,t) \rightarrow F'(q_1, p_2, P_1, Q_2, t) \quad \Rightarrow 
         \end{align*}
+        \begin{align*}
+            \quad F'(q_1,p_2,P_1,Q_2,t) &= Q_1 \frac{\partial F''}{\partial Q_1}  - F''\\
+            &= -Q_1 \frac{\partial F}{\partial Q_1}  - q_2 p_2 + F \\
+            &= Q_1 P_1 - q_2 p_2 + F(q_1, q_2, Q_1, Q_2, t) \quad (19.2)
+        \end{align*}
+
+        Donde de (19.2) se tiene que:
+
+        \begin{align*}
+            \frac{dF}{dt}  &=p_1 \dot q_1 + p_2 \dot q_2 - P_1\dot Q_1- P_2 \dot Q_2 - (H - K)\\
+            &= \frac{\partial F}{\partial q_1} \dot q_1 + \frac{\partial F}{\partial q_2} \dot q_2- \frac{\partial F}{\partial Q_1}\dot Q_1- \frac{\partial F}{\partial Q_2} \dot Q_2\\
+            &= \frac d{dt}\left(F'(q_1, p_2, P_1, Q_2, t) + q_2 p_2 - Q_1 P_1 \right)\\
+            &= \frac d{dt}\left(F'(q_1, p_2, P_1, Q_2, t) \right) + \frac d{dt}\left(q_2 p_2 \right) - \frac d{dt}\left(Q_1 P_1 \right)\\
+            &= \frac d{dt}\left(F'(q_1, p_2, P_1, Q_2, t) \right) + \dot q_2 p_2 + q_2 \dot p_2 - \dot Q_1 P_1 - Q_1 \dot P_1 \quad \Rightarrow\\
+        \end{align*}
+        \begin{align*}
+            \frac {dF'}{dt} &= p_1\dot q_1 - q_2 \dot p_2 + Q_1\dot P_1 - P_2\dot Q_2 - (H-K)\\
+            &= \frac{\partial F'}{\partial q_1} \dot q_1 + \frac{\partial F'}{\partial p_2} \dot p_2 + \frac{\partial F'}{\partial P_1}\dot P_1+\frac{\partial F'}{\partial Q_2} \dot Q_2 + \frac{\partial F'}{\partial t} \quad \Rightarrow\\
+        \end{align*}
+        \begin{equation*}
+            \begin{align*}
+                p_1 = \frac{\partial F'}{\partial q_1} & \qquad q_2 = -\frac{\partial F'}{\partial p_2} \\\\
+                Q_1 = \frac{\partial F'}{\partial P_1} & \qquad P_2= -\frac{\partial F'}{\partial Q_2} \\\\
+                \qquad K = H+\frac{\partial F'}{\partial t} 
+            \end{align*} \quad (19.3)
+        \end{equation*}
+      
+    
+        \item Considere la funcion generatriz $F' = F'(q_1, p_2, P_1, P_2, t)$ tal que:
+        \begin{align*}
+            F(q_1, q_2, Q_1, Q_2, t)  \rightarrow F''(q_1, p_2, Q_1, Q_2, t) \quad \Rightarrow\\
+        \end{align*} 
+        \begin{align*}F''(q_1, p_1, Q_1, Q_1, t) &= q_2 \frac{\partial F}{\partial q_2}  - F\\
+            &= q_2 p_2 - F
+        \end{align*}
+        \begin{align*}
+            F''(q_1,p_2,Q_1,Q_2,t) \rightarrow F'''(q_1, p_2, P_1, Q_2, t) \quad \Rightarrow 
+        \end{align*}
+        \begin{align*}
+            \quad F'''(q_1,p_2,P_1,Q_2,t) &= Q_1 \frac{\partial F''}{\partial Q_1}  - F''\\
+            &= -Q_1 \frac{\partial F}{\partial Q_1}  - q_2 p_2 + F \\
+            &= Q_1 P_1 - q_2 p_2 + F(q_1, q_2, Q_1, Q_2, t) \quad (19.2)
+        \end{align*}
+        \begin{align*}
+            F'''(q_1,p_2,P_1,Q_2,t) \rightarrow F'(q_1, p_2, P_1, P_2, t) \quad \Rightarrow 
+        \end{align*}
+        \begin{align*}
+            \quad F'(q_1,p_2,P_1,Q_2,t) &= Q_2 \frac{\partial F'''}{\partial Q_2}  - F'''\\
+            &= Q_2 \frac{\partial F}{\partial Q_2}  -Q_1 P_1 +  q_2 p_2 - F \\
+            &= -Q_2 P_2 - Q_1 P_1 + q_2 p_2 - F(q_1, q_2, Q_1, Q_2, t) \quad (19.2)
+        \end{align*}
+
+        Donde de (19.2) se tiene que:
+
+        \begin{align*}
+            \frac{dF}{dt}  &=p_1 \dot q_1 + p_2 \dot q_2 - P_1\dot Q_1- P_2 \dot Q_2 - (H - K)\\
+            &= \frac{\partial F}{\partial q_1} \dot q_1 + \frac{\partial F}{\partial q_2} \dot q_2- \frac{\partial F}{\partial Q_1}\dot Q_1- \frac{\partial F}{\partial Q_2} \dot Q_2\\
+            &= \frac d{dt}\left(-F'(q_1, p_2, P_1, P_2, t) + q_2 p_2 - Q_1 P_1 - Q_2P_2\right)\\
+            &= \frac d{dt}\left(-F'(q_1, p_2, P_1, P_2, t) \right) + \frac d{dt}\left(q_2 p_2 \right) - \frac d{dt}\left(Q_1 P_1 \right) - \frac d{dt}\left(Q_2 P_2 \right)\\
+            &= \frac d{dt}\left(-F'(q_1, p_2, P_1, P_2, t) \right) + \dot q_2 p_2 + q_2 \dot p_2 - \dot Q_1 P_1 - Q_1 \dot P_1 - \dot Q_2 P_2 - Q_2 \dot P_2 \quad \Rightarrow\\
+        \end{align*}
+        
+        \begin{align*}
+            \frac {dF'}{dt} &= p_1\dot q_1 - q_2 \dot p_2 + Q_1\dot P_1 + Q_2 \dot P_2 - (H-K)\\
+            &= \frac{\partial F'}{\partial q_1} \dot q_1 + \frac{\partial F'}{\partial p_2} \dot p_2 + \frac{\partial F'}{\partial P_1}\dot P_1+\frac{\partial F'}{\partial P_2} \dot P_2 + \frac{\partial F'}{\partial t} \quad \Rightarrow\\
+        \end{align*}
+
+        \begin{equation*}
+            \begin{align*}
+                p_1 = \frac{\partial F'}{\partial q_1} & \qquad q_2 = -\frac{\partial F'}{\partial p_2} \\\\
+                Q_1 = \frac{\partial F'}{\partial P_1} & \qquad Q_2= \frac{\partial F'}{\partial P_2} \\\\
+                \qquad K = H+\frac{\partial F'}{\partial t} 
+            \end{align*} \quad (19.3)
+        \end{equation*}
+        
 
     \end{answer}
     \input{p7.tex}
