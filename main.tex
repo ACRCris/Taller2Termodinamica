@@ -511,51 +511,9 @@
     \begin{answer}[punto 21]
         De la definicion de bracket de Lagrange:
         \begin{align*}
-            \left\{A,B\right\} \equiv \left\{A,B\right\}_{q,p} = \frac{\partial q_i}{\partial A} \frac{\partial p_i}{\partial B} - \frac{\partial p_i}{\partial A} \frac{\partial q_i}{\partial B} \quad (21.1)
+            \left\{A,B\right\} \equiv \left\{A,B\right\}_{q,p} = \frac{\partial A}{\partial q_i} \frac{\partial B}{\partial p_i} - \frac{\partial  A}{\partial p_i} \frac{\partial B }{\partial q_i} \quad (21.1)
         \end{align*}
-        Entonces si definimos $f\equiv f(q_j, p_j) = \left\{A(q_j, p_j),B(q_j, p_j)\right\}$ entonces:
-        \begin{align*}
-            \frac{\partial f}{\partial q_i} &= \frac{\partial}{\partial q_i} \left\{A,B\right\} = \frac{\partial}{\partial q_i} \left(\frac{\partial q_j}{\partial A} \frac{\partial p_j}{\partial B} - \frac{\partial p_j}{\partial A} \frac{\partial q_j}{\partial B}\right)\\
-            &= \frac{\partial q_j}{\partial A} \frac{\partial^2 p_j}{\partial q_i \partial B} - \frac{\partial p_j}{\partial A} \frac{\partial^2 q_j}{\partial q_i \partial B} - \frac{\partial p_j}{\partial A} \frac{\partial^2 p_j}{\partial q_i \partial B} + \frac{\partial q_j}{\partial A} \frac{\partial^2 q_j}{\partial q_i \partial B}\\
-            &= \frac{\partial q_j}{\partial A} \frac{\partial^2 p_j}{\partial q_i \partial B} - \frac{\partial p_j}{\partial A} \frac{\partial^2 q_j}{\partial q_i \partial B} \quad (21.2.1)        \end{align*}
-        \begin{align*}
-            \left\{C, \left\{A,B\right\}\right\} &= \frac{\partial q_i}{\partial C} \frac{\partial p_i}{\partial f} - \frac{\partial p_i}{\partial C} \frac{\partial q_i}{\partial f}\\
-            &= \frac{\partial q_i}{\partial C} \frac{\partial p_i}{\partial A} \frac{\partial A}{\partial f} + \frac{\partial q_i}{\partial C} \frac{\partial p_i}{\partial B} \frac{\partial B}{\partial f} - \frac{\partial p_i}{\partial C} \frac{\partial q_i}{\partial A} \frac{\partial A}{\partial f} - \frac{\partial p_i}{\partial C} \frac{\partial q_i}{\partial B} \frac{\partial B}{\partial f}\\
-            &= \frac{\partial q_i}{\partial C} \frac{\partial p_i}{\partial A} \frac{\partial A}{\partial f} - \frac{\partial p_i}{\partial C} \frac{\partial q_i}{\partial A} \frac{\partial A}{\partial f} + \frac{\partial q_i}{\partial C} \frac{\partial p_i}{\partial B} \frac{\partial B}{\partial f} - \frac{\partial p_i}{\partial C} \frac{\partial q_i}{\partial B} \frac{\partial B}{\partial f}\\
-            &= \left[\frac{\partial q_i}{\partial C} \frac{\partial p_i}{\partial A}  - \frac{\partial q_i}{\partial C} \frac{\partial p_i}{\partial A}\right] \frac{\partial A}{\partial f} + \left[\frac{\partial q_i}{\partial C} \frac{\partial p_i}{\partial B}  - \frac{\partial q_i}{\partial C} \frac{\partial p_i}{\partial B} \right]\frac{\partial B}{\partial f}\\
-            &= \left\{C,A \right\} \frac{\partial A}{\partial f} + \left\{C,B \right\} \frac{\partial B}{\partial f}\\
-        \end{align*}
-        \begin{align*}
-            \left\{C, \left\{A,B\right\}\right\} &= \frac{\partial q_i}{\partial C} \frac{\partial p_i}{\partial \{A,B\}} - \frac{\partial p_i}{\partial C} \frac{\partial q_i}{\partial \{A,B\}}\\
-            &= \frac{\partial q_i}{\partial C} \frac{\partial p_i}{\partial A} \frac{\partial A}{\partial \{A,B\}} + \frac{\partial q_i}{\partial C} \frac{\partial p_i}{\partial B} \frac{\partial B}{\partial \{A,B\}} - \frac{\partial p_i}{\partial C} \frac{\partial q_i}{\partial A} \frac{\partial A}{\partial \{A,B\}} - \frac{\partial p_i}{\partial C} \frac{\partial q_i}{\partial B} \frac{\partial B}{\partial \{A,B\}}\\
-            &= \frac{\partial q_i}{\partial C} \frac{\partial p_i}{\partial A} \frac{\partial A}{\partial \{A,B\}} - \frac{\partial p_i}{\partial C} \frac{\partial q_i}{\partial A} \frac{\partial A}{\partial \{A,B\}} + \frac{\partial q_i}{\partial C} \frac{\partial p_i}{\partial B} \frac{\partial B}{\partial \{A,B\}} - \frac{\partial p_i}{\partial C} \frac{\partial q_i}{\partial B} \frac{\partial B}{\partial \{A,B\}}\\
-            &= \left[\frac{\partial q_i}{\partial C} \frac{\partial p_i}{\partial A}  - \frac{\partial q_i}{\partial C} \frac{\partial p_i}{\partial A}\right] \frac{\partial A}{\partial \{A,B\}} + \left[\frac{\partial q_i}{\partial C} \frac{\partial p_i}{\partial B}  - \frac{\partial q_i}{\partial C} \frac{\partial p_i}{\partial B} \right]\frac{\partial B}{\partial \{A,B\}}\\
-            &= \left\{C,A \right\} \frac{\partial A}{\partial \{A,B\}} + \left\{C,B \right\} \frac{\partial B}{\partial \{A,B\}}\\
-        \end{align*}
-
-        Que es?
-
-        \begin{align*}
-            \frac{\partial n}{\partial f} &= \frac{\partial n}{\partial \{A,B\}}= \frac{\partial n}{\partial A} \frac{\partial A}{\partial \{A,B\}} + \frac{\partial n}{\partial B} \frac{\partial B}{\partial \{A,B\}} = \frac{\partial n}{\partial A} \frac{\partial A}{\partial f} + \frac{\partial n}{\partial B} \frac{\partial B}{\partial f}\\
-            &= \frac{\partial n}{\partial \{A,B\}} = \frac{\partial n}{\partial q_i} \frac{\partial q_i}{\partial \{A,B\}} + \frac{\partial n}{\partial p_i} \frac{\partial p_i}{\partial \{A,B\}} = \frac{\partial n}{\partial q_i} \frac{\partial q_i}{\partial f} + \frac{\partial n}{\partial p_i} \frac{\partial p_i}{\partial f}\\
-        \end{align*}
-        
-        \begin{align*}
-            \frac{\partial n}{\partial \{A,B\}} &= \frac{\partial n}{\partial \left(\frac{\partial q_i}{\partial A} \frac{\partial p_i}{\partial B} - \frac{\partial p_i}{\partial A} \frac{\partial q_i}{\partial B}\right)}
-        \end{align*}
-
-        \begin{align*}
-            \frac{\partial A}{\partial f} = \frac{\partial A}{\partial \{A,B\}} = \frac{\partial A}{\partial q_i} \frac{\partial q_i}{\partial \{A,B\}} + \frac{\partial A}{\partial p_i} \frac{\partial p_i}{\partial \{A,B\}} = \frac{\partial A}{\partial q_i} \frac{\partial q_i}{\partial f} + \frac{\partial A}{\partial p_i} \frac{\partial p_i}{\partial f}\\
-        \end{align*}
-        \begin{align*}
-            A = f(q_i, p_i) \quad A - f(q_i, p_i) =0  
-        \end{align*}
-        Si $F(A,q_i,p_i) = A - f(q_i, p_i)= 0$ entonces:
-        \begin{align*}
-            \frac{\partial F}{\partial q_i} &= \frac{\partial A}{\partial q_i} - \frac{\partial f}{\partial q_i} = 0\\
-            \frac{\partial F}{\partial p_i} &= \frac{\partial A}{\partial p_i} - \frac{\partial f}{\partial p_i} = 0\\
-        \end{align*}
-        %===================================================================================================
+        Entonces si definimos $f\equiv f(q_j, p_j) = \left\{A(q_j, p_j),B(q_j, p_j)\right\}$ entonces:}
 
         $p_i = p_i(u,v)$ y $q_i = q_i(u,v)$ como tambien $u = u(q_i, p_i)$ y $v = v(q_i, p_i)$, matricialmente se escribe  
         \begin{align*}
