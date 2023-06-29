@@ -513,9 +513,8 @@
         \begin{align*}
             \left\{A,B\right\} \equiv \left\{A,B\right\}_{q,p} = \frac{\partial A}{\partial q_i} \frac{\partial B}{\partial p_i} - \frac{\partial  A}{\partial p_i} \frac{\partial B }{\partial q_i} \quad (21.1)
         \end{align*}
-        Entonces si definimos $f\equiv f(q_j, p_j) = \left\{A(q_j, p_j),B(q_j, p_j)\right\}$ entonces:}
 
-        $p_i = p_i(u,v)$ y $q_i = q_i(u,v)$ como tambien $u = u(q_i, p_i)$ y $v = v(q_i, p_i)$, matricialmente se escribe  
+        Considerando $u = u(q_i, p_i)$ y $v = v(q_i, p_i)$, y usando la notacion matricial:
         \begin{align*}
             \frac{\partial u}{\partial \pmb \eta} = \frac {\partial u}{\partial (q_i, p_i)} = \begin{pmatrix}
                 \frac{\partial u}{\partial q_i} \\
@@ -526,7 +525,6 @@
             \end{pmatrix}
         \end{align*}
         De esta forma
-
         \begin{align*}
             \left[u,v\right] &= \tilde{\frac{\partial u}{\partial \pmb \eta}} J {\frac{\partial v}{\partial \pmb \eta}}\\
             &= \begin{pmatrix}
@@ -556,55 +554,34 @@
             \left[u,v\right] &= \partial_i u J_{ij} \partial_j v\\
         \end{align*}
 
-        Tambien en matricialmente se escribe: 
+        Por lo que para $A=A(q_i, p_i)$ y $B=B(q_i, p_i)$ y $C=C(q_i, p_i)$  funciones analiticas, se tiene que:
         \begin{align*}
-            \frac{\partial \pmb \eta}{\partial u} = \frac {\partial (q_i, p_i)}{\partial u} = \begin{pmatrix}
-                \frac{\partial q_i}{\partial u} \\
-                \frac{\partial p_i}{\partial u} \\
-            \end{pmatrix} \quad \text{y} \quad \frac{\partial \pmb \eta}{\partial v} = \frac {\partial (q_i, p_i)}{\partial v} = \begin{pmatrix}
-                \frac{\partial q_i}{\partial v} \\
-                \frac{\partial p_i}{\partial v} \\
-            \end{pmatrix}
+            \left\{A, \left\{B,C \right\} \right\} &= \left\{A, \partial_i B J_{ij} \partial_j C \right\}\\
+            &= \partial_i A J_{ij} \partial_j \left(\partial_k B J_{kl} \partial_l C \right)\\
+            &= \partial_i A J_{ij} \left(\partial_j \partial_k B J_{kl} \partial_l C + \partial_k B J_{kl} \partial_j \partial_l C \right)\\
+            &=  \partial_i A J_{ij}\partial_j \partial_k B J_{kl} \partial_l C + \partial_i A J_{ij}\partial_k B J_{kl} \partial_j \partial_l C \\
+            &= \partial_l C  J_{kl} \partial_i A J_{ij}\partial_k \partial_j B + \partial_k B J_{kl}\partial_j \partial_l C \partial_i A J_{ij} \\
+            &= -\partial_l C  J_{lk} \partial_k \partial_j B \partial_i A J_{ij} + \partial_k B J_{kl} \partial_i A J_{ij} \partial_j \partial_l C   \\
+            &= -\partial_l C  J_{lk}\partial_k \partial_j B J_{ij}\partial_i A + \partial_k B J_{kl} \partial_i A J_{ij} \partial_j \partial_l C  \\
+            &= \partial_l C  J_{lk} \partial_k \partial_j BJ_{ji}\partial_i A + \partial_l C  J_{lk} \partial_j BJ_{ji}\partial_k  \partial_i A_i + \partial_l C  J_{lk} \partial_j BJ_{ij}\partial_k  \partial_i A_i + \partial_k B J_{kl} \partial_i A J_{ij} \partial_l \partial_j C \\
+            &= \partial_l C  J_{lk}\left(\partial_k \partial_j BJ_{ji}\partial_i A + \partial_j BJ_{ji}\partial_k  \partial_i A\right) + \partial_j B J_{ji}\partial_l\partial_i A  J_{lk}   \partial_k C   + \partial_k B J_{kl} \partial_i A J_{ij} \partial_l \partial_j C\\
+            &= \partial_l C  J_{lk}\partial_k\left(\partial_j BJ_{ji} \partial_i A\right) + \partial_k B J_{kl}\partial_i\partial_l A  J_{ij}   \partial_j C   + \partial_k B J_{kl} \partial_i A J_{ij} \partial_l \partial_j C\\
+            &= -\partial_l C  J_{lk}\partial_k\left(\partial_i A J_{ij} \partial_j B\right) + \partial_k B J_{kl}\partial_l(\partial_i A  J_{ij}   \partial_j C)  \\
+            &= -\partial_l C  J_{lk}\partial_k\left\{A,B\right\} - \partial_k B J_{kl}\partial_l\left\{C,A\right\}  \\
+            &= -\left\{C,\left\{A,B\right\}\right\} - \left\{B,\left\{C,A\right\}\right\}  \quad \Rightarrow  \\
         \end{align*}
-        Asi tenemos que:
         \begin{align*}
-            \left\{u,v\right\} &= \tilde{\frac{\partial \pmb \eta}{\partial u}} J {\frac{\partial \pmb \eta}{\partial v}}\\
-            &= \begin{pmatrix}
-                \frac{\partial q_i}{\partial u} \\
-                \frac{\partial p_i}{\partial u} \\
-            \end{pmatrix}
-            \begin{pmatrix}
-                0 & \mathbf 1\\
-                -\mathbf 1 & 0\\
-            \end{pmatrix}
-            \begin{pmatrix}
-                \frac{\partial q_i}{\partial v} \\
-                \frac{\partial p_i}{\partial v} \\
-            \end{pmatrix}\\
-            &= \begin{pmatrix}
-                \frac{\partial q_i}{\partial u} &
-                \frac{\partial p_i}{\partial u}
-            \end{pmatrix}
-            \begin{pmatrix}
-                \frac{\partial q_i}{\partial v} \\
-                -\frac{\partial p_i}{\partial v} \\
-                 \end{pmatrix}\\
-            &= \frac{\partial q_i}{\partial u} \frac{\partial p_i}{\partial v} - \frac{\partial p_i}{\partial u} \frac{\partial q_i}{\partial v}\\
-        \end{align*}
-        En notacion tensorial $\partial^i u \equiv \frac{\partial \pmb \eta_i }{\partial u}$ y $\partial^i v \equiv \frac{\partial \pmb \eta_i }{\partial v}$ entonces:
-        \begin{align*}
-            \left\{u,v\right\} &= \partial^i u J_{ij} \partial^j v\\
-        \end{align*}
-        Por lo tanto:
-        \begin{align*}
-            \left\{A,B\right\} &= \partial^i A J_{ij} \partial^j B \quad \Rightarrow 
-        \end{align*} 
-        \begin{align*}
-            \left\{C,\left\{A,B\right\}\right\} &= \partial^i C J_{ij} \partial^j \left\{A,B\right\} \\
-            &= \partial^i C J_{ij} \partial^j \left(\partial^k A J_{kl} \partial^l B\right)\\
-            &= \partial^i C J_{ij}\left( \partial^j \partial^k A J_{kl} \partial^l B + \partial^k A J_{kl} \partial^j \partial^l B\right)\\
+            \left\{A, \left\{B,C \right\} \right\} + \left\{B, \left\{C,A \right\} \right\} + \left\{C, \left\{A,B \right\} \right\} = 0 \quad (21.2)
         \end{align*}
 
+
+
+        \begin{align*}
+            J_{ij} J_{kl}
+        \end{align*}
+
+      
+     
 
 
     \end{answer}
