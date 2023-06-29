@@ -11,8 +11,8 @@
 % Other details
 % TODO: Fill these
 %-------------------------------%
-\title{Taller 2}
-\setmembername{Laura Rodríguez,Cristian Peña,Daniel Pardo,Miguel Martínez,Cristian Perez} 
+\title{Taller 3}
+\setmembername{Cristian Perez} 
 
 %-------------------------------%
 % Add / Delete commands and packages
@@ -486,35 +486,168 @@
         \end{equation*}
         Ahora operando las ecuaciones (19.1)  entonces:
         \begin{align*}
-            p_1 = P_1 - 2p_2 &\qquad q_2 = -2q_1 - P_2\\
-            Q_1 = q_1 &\qquad Q_2 = p_2
+            p_1 = P_1 + 2p_2 &\qquad q_2 = -2q_1 - P_2 \quad (19.4.1)\\
+            Q_1 = q_1 &\qquad Q_2 = p_2 \quad (19.4.2)
         \end{align*}
-        
-        
+        Comparando (19.3) y (19.4):
+        \begin{align*}
+                P_1 + 2p_2 = \frac{\partial F'}{\partial q_1} &\qquad  2q_1 + P_2 = \frac{\partial F'}{\partial p_2} \\
+                q_1 = \frac{\partial F'}{\partial P_1} &\qquad  p_2= \frac{\partial F'}{\partial P_2} \\
+        \end{align*}
+        Entonces:
+        \begin{align*}
+            F'(q_1, p_2, P_1, P_2, t) = q_1 P_1 + p_2 P_2 + 2p_2 q_1 \quad (19.5)
+        \end{align*}
+        Es la funcion generatriz que genera la transformacion canónica (19.1), pues se puede verificar que:
+        \begin{align*}
+            p_1 = \frac{\partial F'}{\partial q_1} &= \frac{\partial}{\partial q_1} \left(q_1 P_1 + p_2 P_2 + 2p_2 q_1\right) = -P_1 - 2p_2\\
+            q_2 = -\frac{\partial F'}{\partial p_2} &= -\frac{\partial}{\partial p_2} \left(q_1 P_1 + p_2 P_2 + 2p_2 q_1\right) =- P_2 - 2q_1\\
+            Q_1 = \frac{\partial F'}{\partial P_1} &= \frac{\partial}{\partial P_1} \left(q_1 P_1 + p_2 P_2 + 2p_2 q_1\right) = q_1\\  
+            Q_2 = \frac{\partial F'}{\partial P_2} &= \frac{\partial}{\partial P_2} \left(q_1 P_1 + p_2 P_2 + 2p_2 q_1\right) = p_2\\
+        \end{align*}
 
     \end{answer}
     \input{p7.tex}
-    \begin{answer}[Punto 7]
-        Dado que este es un sistema paramagnetico e hidrostatico  con funcion de energia interna $U = U(T)$ tal que $dU = C_{V, \mathscr{M}} dT$, entonces de el ejercicio 5 tenemos que la primera ley de la termodinamica queda:
+    \begin{answer}[punto 21]
+        De la definicion de bracket de Lagrange:
         \begin{align*}
-            dQ = C_{V, \mathscr{M}} dT + PdV - \mu_0 \mathscr{H} d\mathscr{M} \quad (7.1) \quad \text{donde } \quad \left(\frac{\partial U}{\partial V}\right)_{\mathscr{M},T} = 0 \quad \text{y} \quad \left(\frac{\partial U}{\partial \mathscr{M}}\right)_{T,V} = 0 
+            \left\{A,B\right\} \equiv \left\{A,B\right\}_{q,p} = \frac{\partial q_i}{\partial A} \frac{\partial p_i}{\partial B} - \frac{\partial p_i}{\partial A} \frac{\partial q_i}{\partial B} \quad (21.1)
         \end{align*}
-        Y para un proceso adiabatico $dQ = 0$ entonces de (7.1) tenemos que:
+        Entonces si definimos $f\equiv f(q_j, p_j) = \left\{A(q_j, p_j),B(q_j, p_j)\right\}$ entonces:
         \begin{align*}
-            0 = C_{V, \mathscr{M}} dT + PdV - \mu_0 \mathscr{H} d\mathscr{M} \quad &\Rightarrow \quad C_{V, \mathscr{M}} + P\frac{dV}{dT}= \mu_0 \mathscr{H}\frac{d\mathscr{M}}{dT} \quad (7.2)\\
-        \end{align*}
-        Donde para un gas ideal y para un sistema paramagnetico se cumplem respectivamente que:
+            \frac{\partial f}{\partial q_i} &= \frac{\partial}{\partial q_i} \left\{A,B\right\} = \frac{\partial}{\partial q_i} \left(\frac{\partial q_j}{\partial A} \frac{\partial p_j}{\partial B} - \frac{\partial p_j}{\partial A} \frac{\partial q_j}{\partial B}\right)\\
+            &= \frac{\partial q_j}{\partial A} \frac{\partial^2 p_j}{\partial q_i \partial B} - \frac{\partial p_j}{\partial A} \frac{\partial^2 q_j}{\partial q_i \partial B} - \frac{\partial p_j}{\partial A} \frac{\partial^2 p_j}{\partial q_i \partial B} + \frac{\partial q_j}{\partial A} \frac{\partial^2 q_j}{\partial q_i \partial B}\\
+            &= \frac{\partial q_j}{\partial A} \frac{\partial^2 p_j}{\partial q_i \partial B} - \frac{\partial p_j}{\partial A} \frac{\partial^2 q_j}{\partial q_i \partial B} \quad (21.2.1)        \end{align*}
         \begin{align*}
-            PV = nRT \quad \text{y} \quad \mathscr{M} = \frac{C_C \mathscr{H}}{T} \quad &\Rightarrow \quad V = \frac{nRT}{P} \quad \text{y} \quad \frac{d\mathscr{M}}{dT} = -\frac{C_C\mathscr H}{T^2}\\
+            \left\{C, \left\{A,B\right\}\right\} &= \frac{\partial q_i}{\partial C} \frac{\partial p_i}{\partial f} - \frac{\partial p_i}{\partial C} \frac{\partial q_i}{\partial f}\\
+            &= \frac{\partial q_i}{\partial C} \frac{\partial p_i}{\partial A} \frac{\partial A}{\partial f} + \frac{\partial q_i}{\partial C} \frac{\partial p_i}{\partial B} \frac{\partial B}{\partial f} - \frac{\partial p_i}{\partial C} \frac{\partial q_i}{\partial A} \frac{\partial A}{\partial f} - \frac{\partial p_i}{\partial C} \frac{\partial q_i}{\partial B} \frac{\partial B}{\partial f}\\
+            &= \frac{\partial q_i}{\partial C} \frac{\partial p_i}{\partial A} \frac{\partial A}{\partial f} - \frac{\partial p_i}{\partial C} \frac{\partial q_i}{\partial A} \frac{\partial A}{\partial f} + \frac{\partial q_i}{\partial C} \frac{\partial p_i}{\partial B} \frac{\partial B}{\partial f} - \frac{\partial p_i}{\partial C} \frac{\partial q_i}{\partial B} \frac{\partial B}{\partial f}\\
+            &= \left[\frac{\partial q_i}{\partial C} \frac{\partial p_i}{\partial A}  - \frac{\partial q_i}{\partial C} \frac{\partial p_i}{\partial A}\right] \frac{\partial A}{\partial f} + \left[\frac{\partial q_i}{\partial C} \frac{\partial p_i}{\partial B}  - \frac{\partial q_i}{\partial C} \frac{\partial p_i}{\partial B} \right]\frac{\partial B}{\partial f}\\
+            &= \left\{C,A \right\} \frac{\partial A}{\partial f} + \left\{C,B \right\} \frac{\partial B}{\partial f}\\
         \end{align*}
-        Reemplazando en (7.2)
         \begin{align*}
-            C_{V, \mathscr{M}} + P\frac{dV}{dT}= \mu_0 \mathscr{H}\frac{d\mathscr{M}}{dT} \quad &\Rightarrow \quad \frac{nRT}{V} dV =  -\left( C_{V,\mathscr M} +  \mu_0 \mathscr H\frac{C_C\mathscr H}{T^2} \right)dT\\
-            & \Rightarrow \quad \frac{nR}{V} dV + C_{V,\mathscr M}\frac{dT}{T}  +  \mu_0C_C\mathscr H^2 \frac{dT}{T^3} = 0\\ 
-            & \Rightarrow \quad nR \ln(V) + C_{V,\mathscr M} \ln(T) -  \frac{\mu_0 C_C\mathscr H^2 }{2T^2}  = C\\ 
-            & \Rightarrow \quad nR \ln(V) + C_{V,\mathscr M} \ln(T) -  \frac{\mathscr{M}^2 }{2 C_C}  = C \quad  \frac{\mathscr{H}^2}{T^2} = \frac{ \mathscr{M}^2}{C_C^2}\\
-            & \Rightarrow \quad \frac{C_{V,\mathscr M}}{nR} + \ln(V)  = \frac{\mathscr{M}^2}{2 C_C nR} + \ln(A) \quad \text{donde } A = e^C = \text{constante}\\
+            \left\{C, \left\{A,B\right\}\right\} &= \frac{\partial q_i}{\partial C} \frac{\partial p_i}{\partial \{A,B\}} - \frac{\partial p_i}{\partial C} \frac{\partial q_i}{\partial \{A,B\}}\\
+            &= \frac{\partial q_i}{\partial C} \frac{\partial p_i}{\partial A} \frac{\partial A}{\partial \{A,B\}} + \frac{\partial q_i}{\partial C} \frac{\partial p_i}{\partial B} \frac{\partial B}{\partial \{A,B\}} - \frac{\partial p_i}{\partial C} \frac{\partial q_i}{\partial A} \frac{\partial A}{\partial \{A,B\}} - \frac{\partial p_i}{\partial C} \frac{\partial q_i}{\partial B} \frac{\partial B}{\partial \{A,B\}}\\
+            &= \frac{\partial q_i}{\partial C} \frac{\partial p_i}{\partial A} \frac{\partial A}{\partial \{A,B\}} - \frac{\partial p_i}{\partial C} \frac{\partial q_i}{\partial A} \frac{\partial A}{\partial \{A,B\}} + \frac{\partial q_i}{\partial C} \frac{\partial p_i}{\partial B} \frac{\partial B}{\partial \{A,B\}} - \frac{\partial p_i}{\partial C} \frac{\partial q_i}{\partial B} \frac{\partial B}{\partial \{A,B\}}\\
+            &= \left[\frac{\partial q_i}{\partial C} \frac{\partial p_i}{\partial A}  - \frac{\partial q_i}{\partial C} \frac{\partial p_i}{\partial A}\right] \frac{\partial A}{\partial \{A,B\}} + \left[\frac{\partial q_i}{\partial C} \frac{\partial p_i}{\partial B}  - \frac{\partial q_i}{\partial C} \frac{\partial p_i}{\partial B} \right]\frac{\partial B}{\partial \{A,B\}}\\
+            &= \left\{C,A \right\} \frac{\partial A}{\partial \{A,B\}} + \left\{C,B \right\} \frac{\partial B}{\partial \{A,B\}}\\
         \end{align*}
+
+        Que es?
+
+        \begin{align*}
+            \frac{\partial n}{\partial f} &= \frac{\partial n}{\partial \{A,B\}}= \frac{\partial n}{\partial A} \frac{\partial A}{\partial \{A,B\}} + \frac{\partial n}{\partial B} \frac{\partial B}{\partial \{A,B\}} = \frac{\partial n}{\partial A} \frac{\partial A}{\partial f} + \frac{\partial n}{\partial B} \frac{\partial B}{\partial f}\\
+            &= \frac{\partial n}{\partial \{A,B\}} = \frac{\partial n}{\partial q_i} \frac{\partial q_i}{\partial \{A,B\}} + \frac{\partial n}{\partial p_i} \frac{\partial p_i}{\partial \{A,B\}} = \frac{\partial n}{\partial q_i} \frac{\partial q_i}{\partial f} + \frac{\partial n}{\partial p_i} \frac{\partial p_i}{\partial f}\\
+        \end{align*}
+        
+        \begin{align*}
+            \frac{\partial n}{\partial \{A,B\}} &= \frac{\partial n}{\partial \left(\frac{\partial q_i}{\partial A} \frac{\partial p_i}{\partial B} - \frac{\partial p_i}{\partial A} \frac{\partial q_i}{\partial B}\right)}
+        \end{align*}
+
+        \begin{align*}
+            \frac{\partial A}{\partial f} = \frac{\partial A}{\partial \{A,B\}} = \frac{\partial A}{\partial q_i} \frac{\partial q_i}{\partial \{A,B\}} + \frac{\partial A}{\partial p_i} \frac{\partial p_i}{\partial \{A,B\}} = \frac{\partial A}{\partial q_i} \frac{\partial q_i}{\partial f} + \frac{\partial A}{\partial p_i} \frac{\partial p_i}{\partial f}\\
+        \end{align*}
+        \begin{align*}
+            A = f(q_i, p_i) \quad A - f(q_i, p_i) =0  
+        \end{align*}
+        Si $F(A,q_i,p_i) = A - f(q_i, p_i)= 0$ entonces:
+        \begin{align*}
+            \frac{\partial F}{\partial q_i} &= \frac{\partial A}{\partial q_i} - \frac{\partial f}{\partial q_i} = 0\\
+            \frac{\partial F}{\partial p_i} &= \frac{\partial A}{\partial p_i} - \frac{\partial f}{\partial p_i} = 0\\
+        \end{align*}
+        %===================================================================================================
+
+        $p_i = p_i(u,v)$ y $q_i = q_i(u,v)$ como tambien $u = u(q_i, p_i)$ y $v = v(q_i, p_i)$, matricialmente se escribe  
+        \begin{align*}
+            \frac{\partial u}{\partial \pmb \eta} = \frac {\partial u}{\partial (q_i, p_i)} = \begin{pmatrix}
+                \frac{\partial u}{\partial q_i} \\
+                \frac{\partial u}{\partial p_i} \\
+            \end{pmatrix} \quad \text{y} \quad \frac{\partial v}{\partial \pmb \eta} = \frac {\partial v}{\partial (q_i, p_i)} = \begin{pmatrix}
+                \frac{\partial v}{\partial q_i} \\
+                \frac{\partial v}{\partial p_i} \\
+            \end{pmatrix}
+        \end{align*}
+        De esta forma
+
+        \begin{align*}
+            \left[u,v\right] &= \tilde{\frac{\partial u}{\partial \pmb \eta}} J {\frac{\partial v}{\partial \pmb \eta}}\\
+            &= \begin{pmatrix}
+                \frac{\partial u}{\partial q_i} &
+                \frac{\partial u}{\partial p_i} 
+            \end{pmatrix} 
+            \begin{pmatrix}
+                0 & \mathbf 1\\
+                -\mathbf 1 & 0\\
+            \end{pmatrix}
+            \begin{pmatrix}
+                \frac{\partial v}{\partial q_i} \\
+                \frac{\partial v}{\partial p_i} \\
+            \end{pmatrix}\\
+            &= \begin{pmatrix}
+                \frac{\partial u}{\partial q_i} &
+                \frac{\partial u}{\partial p_i}
+            \end{pmatrix}
+            \begin{pmatrix}
+                \frac{\partial v}{\partial p_i} \\
+                -\frac{\partial v}{\partial q_i} \\
+            \end{pmatrix}\\
+            &= \frac{\partial u}{\partial q_i} \frac{\partial v}{\partial p_i} - \frac{\partial u}{\partial p_i} \frac{\partial v}{\partial q_i}\\
+        \end{align*}
+        En notacion tensorial $\partial_i u \equiv \frac{\partial u}{\partial \eta_i}$ y $\partial_i v \equiv \frac{\partial v}{\partial \eta_i}$ entonces:
+        \begin{align*}
+            \left[u,v\right] &= \partial_i u J_{ij} \partial_j v\\
+        \end{align*}
+
+        Tambien en matricialmente se escribe: 
+        \begin{align*}
+            \frac{\partial \pmb \eta}{\partial u} = \frac {\partial (q_i, p_i)}{\partial u} = \begin{pmatrix}
+                \frac{\partial q_i}{\partial u} \\
+                \frac{\partial p_i}{\partial u} \\
+            \end{pmatrix} \quad \text{y} \quad \frac{\partial \pmb \eta}{\partial v} = \frac {\partial (q_i, p_i)}{\partial v} = \begin{pmatrix}
+                \frac{\partial q_i}{\partial v} \\
+                \frac{\partial p_i}{\partial v} \\
+            \end{pmatrix}
+        \end{align*}
+        Asi tenemos que:
+        \begin{align*}
+            \left\{u,v\right\} &= \tilde{\frac{\partial \pmb \eta}{\partial u}} J {\frac{\partial \pmb \eta}{\partial v}}\\
+            &= \begin{pmatrix}
+                \frac{\partial q_i}{\partial u} \\
+                \frac{\partial p_i}{\partial u} \\
+            \end{pmatrix}
+            \begin{pmatrix}
+                0 & \mathbf 1\\
+                -\mathbf 1 & 0\\
+            \end{pmatrix}
+            \begin{pmatrix}
+                \frac{\partial q_i}{\partial v} \\
+                \frac{\partial p_i}{\partial v} \\
+            \end{pmatrix}\\
+            &= \begin{pmatrix}
+                \frac{\partial q_i}{\partial u} &
+                \frac{\partial p_i}{\partial u}
+            \end{pmatrix}
+            \begin{pmatrix}
+                \frac{\partial q_i}{\partial v} \\
+                -\frac{\partial p_i}{\partial v} \\
+                 \end{pmatrix}\\
+            &= \frac{\partial q_i}{\partial u} \frac{\partial p_i}{\partial v} - \frac{\partial p_i}{\partial u} \frac{\partial q_i}{\partial v}\\
+        \end{align*}
+        En notacion tensorial $\partial^i u \equiv \frac{\partial \pmb \eta_i }{\partial u}$ y $\partial^i v \equiv \frac{\partial \pmb \eta_i }{\partial v}$ entonces:
+        \begin{align*}
+            \left\{u,v\right\} &= \partial^i u J_{ij} \partial^j v\\
+        \end{align*}
+        Por lo tanto:
+        \begin{align*}
+            \left\{A,B\right\} &= \partial^i A J_{ij} \partial^j B \quad \Rightarrow 
+        \end{align*} 
+        \begin{align*}
+            \left\{C,\left\{A,B\right\}\right\} &= \partial^i C J_{ij} \partial^j \left\{A,B\right\} \\
+            &= \partial^i C J_{ij} \partial^j \left(\partial^k A J_{kl} \partial^l B\right)\\
+            &= \partial^i C J_{ij}\left( \partial^j \partial^k A J_{kl} \partial^l B + \partial^k A J_{kl} \partial^j \partial^l B\right)\\
+        \end{align*}
+
+
 
     \end{answer}
     \input{p8.tex}
