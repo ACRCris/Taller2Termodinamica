@@ -586,107 +586,57 @@
 
     \end{answer}
     \input{p8.tex}
-    \begin{answer}[Punto 8]
-        Dado que durante todo el ciclo se tiene que durante proceso isobarico se cumple
+    \begin{answer}[Punto 22]
+        Partiendo de las ecuaciones canonicas de Hamilton:
         \begin{align*}
-            C_P = \left( \frac{dQ}{dT} \right)_P  \quad &\Rightarrow \quad Q_{12} = C_P \int _{T_1}^{T_2} dT = C_P (T_2 - T_1) \quad (8.1.1) \quad \text{si el calor es absorbido}\\
-            &\Rightarrow \quad Q_{12} = -C_P \int _{T_1}^{T_2} dT = -C_P (T_2 - T_1) \quad (8.1.2) \quad \text{si el calor es cedido}\\
+            \dot q_i &= \frac{\partial H}{\partial p_i} \quad \text{y} \quad \dot p_i = -\frac{\partial H}{\partial q_i} \quad  \frac{\partial H }{\partial t} = -\frac{\partial L}{\partial t} \quad (22.1)
         \end{align*}
-        Como de $1 \rightarrow 2$ es un proceso adiabatico entonces $dQ = 0$ y por lo tanto
+        Y sea $u = u(q_i, p_i, t)$, entonces:
         \begin{align*}
-            P_1V_1^\gamma = P_2V_2^\gamma \quad (8.2)
-        \end{align*}
-        De $2 \rightarrow 3$ es un proceso isobarico el calor absorbido por el sistema es:
-        \begin{align*}
-            Q_{2\rightarrow 3} = C_P \Delta T = C_P (T_3 - T_2) \quad \text{Aplicando (8.1.1)}
-        \end{align*}
-        De $3 \rightarrow 4$ es un proceso adiabatico:
-        \begin{align*}
-            P_1V_4^\gamma = P_2V_3^\gamma \quad (8.3)
-        \end{align*}
-        Por ultimo de $4 \rightarrow 1$ es un proceso isocorico por lo que el calor absorbido es
-        \begin{align*}
-            Q_{4\rightarrow 1} = C_V \Delta T = C_P (T_4 - T_1) \quad \text{Aplicando (8.1.2)}
-        \end{align*}
-        Dividiendo ahora las expresiones (8.2) y (8.3) tenemos que:
-        \begin{align*}
-            \frac{V_1^\gamma}{V_4^\gamma} = \frac{V_2^\gamma}{V_3^\gamma} \quad &\Rightarrow \quad \frac{V_1}{V_4} = \frac{V_2}{V_3}\\
-            & \Rightarrow \quad V_1 V_3 = V_2 V_4 \quad (8.4)
+            \frac{du}{dt} &= \frac{\partial u}{\partial q_i} \dot q_i + \frac{\partial u}{\partial p_i} \dot p_i + \frac{\partial u}{\partial t}\\
+            &= \frac{\partial u}{\partial q_i} \frac{\partial H}{\partial p_i} - \frac{\partial u}{\partial p_i} \frac{\partial H}{\partial q_i} + \frac{\partial u}{\partial t}\\
+            &= \left\{u, H\right\} + \frac{\partial u}{\partial t} \quad (22.2)
         \end{align*}
 
-        Por la definicion de eficiencia:
+        Si definimos: $\pmb \eta \equiv (q_i(t), p_i(t))$, tal que $\dot {\pmb \eta} = (\dot q_i, \dot p_i)$, entonces:
         \begin{align*}
-            \eta &= 1 - \frac{Q_{4\rightarrow 1}}{Q_{2\rightarrow 3}} = 1 - \frac{C_P (T_4 - T_1)}{C_P (T_3 - T_2)}\\
-            &= 1 - \frac{T_3 - T_2}{T_4 - T_1} = 1 - \frac{\frac{P_1 V_4}{nR} - \frac{P_1 V_1}{nR}}{\frac{P_2 V_3}{nR}  -\frac{P_2 V_2}{nR}} \quad \text{Aplicando (6.1)}\\
-            &= 1 - \frac{P_1V_4 -P_1 V_1 }{P_2 V_3 - P_2 V_2} = 1 - \frac{P_1}{P_2} \frac{V_3 - V_2}{V_1 - V_4}\\
-            &= 1 - \left( \frac{V_2}{V_1} \right)^{\gamma} \frac{V_4 - V_1}{V_3 - V_2} = \left( \frac{V_2}{V_1} \right)^{\gamma-1} \frac{V_4V_2 - V_1V_2}{V_3V_1 - V_2V_1}  \quad \text{Aplicando (8.2)}\\
-            &= 1 - \left( \frac{V_2}{V_1} \right)^{\gamma-1} \frac{ V_3 V_1 - V_2 V_1}{V_3 V_1 - V_2 V_1} = 1 - \left( \frac{V_2}{V_1} \right)^{\gamma-1} \quad \text{Aplicando (8.4)}\\
-            &= 1 - \left( \frac{V_2^\gamma}{V_1^\gamma} \right)^{\frac{\gamma-1}{\gamma}} = 1 - \left( \frac{P_1}{P_2} \right)^{\frac{\gamma-1}{\gamma}} \quad \text{Aplicando (8.2)}\\
+            \dot {\pmb \eta} &= \begin{pmatrix}
+                \dot q_i \\
+                \dot p_i \\
+            \end{pmatrix} = \begin{pmatrix}
+                \frac{\partial H}{\partial p_i} \\
+                -\frac{\partial H}{\partial q_i} \\
+            \end{pmatrix}\\
+             &= \begin{pmatrix}
+                0 & \mathbf 1\\
+                -\mathbf 1 & 0\\
+            \end{pmatrix} \begin{pmatrix}
+                \frac{\partial H}{\partial q_i} \\
+                \frac{\partial H}{\partial p_i} \\
+            \end{pmatrix} 
+            = J \frac{\partial H}{\partial \pmb \eta} = \tilde{\frac{\partial \pmb \eta}{\partial \pmb \eta}} J \frac{\partial H}{\partial \pmb \eta} \\
+            &= \left\{\pmb \eta, H\right\} \quad  \Rightarrow 
+        \end{align*}
+
+        \begin{align*}
+            \dot {\pmb \eta} = \left\{\pmb \eta, H\right\} \quad (22.2)
+        \end{align*}
+        Son las ecuaciones canonicas de Hamilton en corchetes de Poisson, con $\frac{\partial \pmb \eta}{\partial t} =0$, pues podemos notar que:
+        \begin{align*}
+            \left\{q_i, H \right\} = \tilde{\frac{\partial  q_i}{\partial \pmb \eta}} J \frac{\partial H}{\partial \pmb \eta} = \begin{pmatrix} 1 \\ 0 \end{pmatrix} \begin{pmatrix} 0 & 1 \\ -1 & 0 \end{pmatrix} \begin{pmatrix} \frac{\partial H}{\partial q_i} \\ \frac{\partial H}{\partial p_i} \end{pmatrix} = \frac{\partial H}{\partial p_i} = \dot q_i\\
+        \end{align*}
+        \begin{align*}
+            \left\{p_i, H \right\} = \tilde{\frac{\partial  p_i}{\partial \pmb \eta}} J \frac{\partial H}{\partial \pmb \eta} = \begin{pmatrix} 0 \\ 1 \end{pmatrix} \begin{pmatrix} 0 & 1 \\ -1 & 0 \end{pmatrix} \begin{pmatrix} \frac{\partial H}{\partial q_i} \\ \frac{\partial H}{\partial p_i} \end{pmatrix} = -\frac{\partial H}{\partial q_i} = \dot p_i\\
+        \end{align*}
+        \begin{align*}
+            \left\{H, H \right\} + \frac{\partial H}{\partial t}= \tilde{\frac{\partial  H}{\partial \pmb \eta}} J \frac{\partial H}{\partial \pmb \eta} = \begin{pmatrix} \frac{\partial H}{\partial q_i} \\ \frac{\partial H}{\partial p_i} \end{pmatrix} \begin{pmatrix} 0 & 1 \\ -1 & 0 \end{pmatrix} \begin{pmatrix} \frac{\partial H}{\partial q_i} \\ \frac{\partial H}{\partial p_i} \end{pmatrix} = \frac{d H}{d t}
         \end{align*}
     \end{answer}
     \input{p9.tex}
-    \begin{answer}[Punto 9]
-        Dado que el calor y la entropia estan relacionada por la ecuacion:
-        \begin{align*}
-            dQ = TdS \quad (9.1)
-        \end{align*}
-        \begin{itemize}
-            \item [a.] En un diagrama $PV$ del un ciclo de Carnot consiste de dos curvas adiabaticas, la cuales en un digrama $TS$ consisten de dos lineas rectas que representa la entropia constante para distintos valores de la temperatura, pero a difrencia del diagrama anterior, este diagrama tambien consistira de dos curvas isotermicas representadas por dos lineas horizontales conectando las dos lineas adiabaticas, como se ve en la figura 1
-            De esta manera la eficiencia va estar dada por 
-    
-            \begin{align*}
-                \eta &= 1 - \frac{Q_{4\rightarrow 1}}{Q_{2\rightarrow 3}} = 1 - \frac{|Q_L|}{|Q_H|}\\
-                &= 1 - \frac{T_L \Delta S_L}{T_H \Delta S_H} \quad \text{Aplicando (9.1)}\\
-                &= 1 - \frac{T_L}{T_H} \quad 
-            \end{align*}
-            Esto ultimo debido a que  $2\rightarrow 3 \quad \text{y} \quad 4\rightarrow 1 \quad \text{son isoentropicos es decir} \quad S_3 = S_2 \quad \text{y} \quad S_4 = S_1 \Rightarrow \Delta S_L = \Delta S_H$
-            \item [b.] Del diagrama de la izquierda obtenemos que:
-            \begin{align*}
-                |Q_H| &= T_1 (S_ 1- S_2)= T_1 \Delta S_H \\
-                |Q_L| &= -\int_{S_1}^{S_2} T(S) dS = -\int_{S_1}^{S_2} \left( \frac{T_1 - T_2 }{S_1 - S_2}S - \frac{T_1S_2 - T_2S_1}{S_1 - S_2}\right)dS \\
-                &= -\left( \frac{T_1 - T_2 }{S_1 - S_2} \frac{S_2^2 - S_1^2}{2} - \frac{T_1S_2 - T_2S_1}{S_1 - S_2} (S_2 - S_1)\right)\\
-                &=-\left( T_2 - T_1 \frac{S_2 + S_1}{2} + T_1S_2 - T_2S_1\right)\\
-                &= - \left(\frac 12 T_2S_1 + \frac 12 T_2 S_2 - \frac 12 T_1 S_1 - \frac 12 T_1 S_2  + T_1S_2 -T_2S_1\right)\\
-                &= - \left( -\frac 12 T_1 S_1 + \frac 12 T_1 S_2 - \frac 12 T_2 S_1 + \frac 12 T_2 S_2 \right)\\
-                &= - \left( \frac 12 T_1 (S_2 - S_1) + \frac 12 T_2 (S_2- S_1) \right)\\
-                &= \frac 12 (T_1 + T_2) (S_1 - S_2)\\
-            \end{align*}
-            De esta manera la eficiencia queda:
-            \begin{align*}
-                \eta_L = 1 - \frac{|Q_L|}{|Q_H|} = 1 - \frac{T_1 + T_2}{2T_1} = \frac{T_1 - T_2}{2T_1}
-            \end{align*}
-            Ahora del  diagrama de la derecha obtenemos que:
-            \begin{align*}
-                |Q_L| &= T_2 (S_ 2- S_1)\\
-                |Q_H| &= \int_{S_1}^{S_2} T(S) dS = \int_{S_1}^{S_2} \left( \frac{T_2 - T_1 }{S_2 - S_1}S - \frac{T_2S_1 - T_1S_2}{S_2 - S_1}\right)dS \\
-                &= \left( \frac{T_2 - T_1 }{S_2 - S_1} \frac{S_2^2 - S_1^2}{2} - \frac{T_2S_1 - T_1S_2}{S_2 - S_1} (S_2 - S_1)\right)\\
-                &=\left( T_2 - T_1 \frac{S_2 + S_1}{2} - T_2S_1 + T_1S_2\right)\\
-                &= \left(-\frac 12 T_1S_1 - \frac 12 T_1 S_2 + \frac 12 T_2 S_1 + \frac 12 T_2 S_2  - T_2S_1 +T_1S_2\right)\\
-                &= \left( -\frac 12 T_1 S_1 + \frac 12 T_1 S_2 - \frac 12 T_2 S_1 + \frac 12 T_2 S_2 \right)\\
-                &= \left( \frac 12 T_1 (S_2 - S_1) + \frac 12 T_2 (S_2- S_1) \right)\\
-                &= \frac 12 (T_1 + T_2) (S_2 - S_1)\\
-            \end{align*}
-            Por lo que ahora la eficiencia queda:
-            \begin{align*}
-                \eta_R = 1 - \frac{|Q_L|}{|Q_H|} = 1 - \frac{2T_2}{T_1 + T_2} = \frac{T_1 - T_2}{T_1+T_2}
-            \end{align*}
-            Si realizamos la difrencia de estas dos eficiencias tenemos que:
-            \begin{align*}
-                \eta_L - \eta_R &= \frac{T_1 - T_2}{2T_1} - \frac{T_1 - T_2}{T_1+T_2} = \frac{(T_1 - T_2)(T_1 + T_2) - 2T_1(T_1 - T_2)}{2T_1(T_1 + T_2)}\\
-                &= \frac {T_1^2 - T_2^2 - 2T_1^2 + 2T_1T_2}{2T_1(T_1 + T_2)} = \frac{-T_1^2 + 2T_1T_2 - T_2^2}{2T_1(T_1 + T_2)}\\
-                &= \frac{-(T_1 - T_2)^2}{2T_1(T_1 + T_2)} < 0 
-            \end{align*}
-            De esta forma el ciclo de la derecha es mas eficiente que el de la izquierda.
-
-        \end{itemize}
-        
+    \begin{answer}[Punto 23]
+         
     \end{answer}
 
-    \begin{figure}[h]
-        \centering
-        \includegraphics[width=0.5\textwidth]{Diagrama3.png}
-        \caption{Diagrama $TS$ de un ciclo de Carnot}
-    \end{figure}
 
     \input{p10.tex}
     \begin{answer}[Punto 10]
